@@ -400,7 +400,7 @@ const plantsData = [
         scientificName: "Cactaceae",
         description: "Planta suculenta adaptada a ambientes secos, com espinhos e formas variadas.",
         image: "/../imagens/cacto.webp",
-        images: ["/../imagens/cacto.webp", "/../imagens/cacto.webp","/../imagens/cacto.webp"],
+        images: ["/../imagens/cacto.webp", "/../imagens/cacto.webp",""],
         category: "ornamental",
         size: "pequeno",
         light: "sol-pleno",
