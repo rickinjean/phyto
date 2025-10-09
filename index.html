@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phytografia - Sistema de Pesquisa Botânica</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/phyto/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -19,9 +19,9 @@
                 </a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Início</a></li>
-                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
-                    <li><a href="guides.html" class="nav-link">Guia de Cultivo</a></li>
-                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li><a href="/phyto/catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="/phyto/guides.html" class="nav-link">Guia de Cultivo</a></li>
+                    <li><a href="/phyto/about.html" class="nav-link">Sobre</a></li>
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle">
                             <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
@@ -29,7 +29,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="admin.html">Meu Perfil</a></li>
+                            <li><a href="/phyto/admin.html">Meu Perfil</a></li>
                             <li><a href="#" onclick="logout()">Sair</a></li>
                         </ul>
                     </li>
@@ -60,7 +60,7 @@
             
             <!-- Search Bar -->
             <div class="search-container">
-                <form id="mainSearchForm" action="catalog.html" method="GET">
+                <form id="mainSearchForm" action="/phyto/catalog.html" method="GET">
                     <div class="search-box">
                         <i class="fas fa-search"></i>
                         <input type="text" placeholder="Pesquise por plantas, cores ou características..." id="searchInput" name="query">
@@ -86,19 +86,19 @@
                     <i class="fas fa-book-open"></i>
                     <h3>Explorar Catálogo</h3>
                     <p>Navegue por nossa extensa coleção de plantas organizadas por categorias</p>
-                    <a href="catalog.html" class="card-btn">Explorar</a>
+                    <a href="/phyto/catalog.html" class="card-btn">Explorar</a>
                 </div>
                 <div class="quick-access-card">
                     <i class="fas fa-seedling"></i>
                     <h3>Guias de Cultivo</h3>
                     <p>Aprenda como cultivar e cuidar de suas plantas favoritas</p>
-                    <a href="guides.html" class="card-btn">Aprender</a>
+                    <a href="/phyto/guides.html" class="card-btn">Aprender</a>
                 </div>
                 <div class="quick-access-card">
                     <i class="fas fa-star"></i>
                     <h3>Meu Perfil</h3>
                     <p>Acesse o seu perfil mais rapidamente</p>
-                    <a href="profile.html" class="card-btn">Ver Perfil</a>
+                    <a href="/phyto/profile.html" class="card-btn">Ver Perfil</a>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@
                             <div class="plant-image">
                                 <img src="imagens/rosavermelha.jpg" alt="Rosa">
                                 <div class="plant-overlay">
-                                    <i class="fas fa-heart"></i>
+                                    <i class="f/phyto/as fa-heart"></i>
                                     <i class="fas fa-share"></i>
                                 </div>
                             </div>
@@ -295,18 +295,18 @@
                     <h3>Navegação</h3>
                     <ul>
                         <li><a href="index.html">Início</a></li>
-                        <li><a href="catalog.html">Catálogo</a></li>
-                        <li><a href="guides.html">Guia de Cultivo</a></li>
-                        <li><a href="about.html">Sobre</a></li>
+                        <li><a href="/phyto/catalog.html">Catálogo</a></li>
+                        <li><a href="/phyto/guides.html">Guia de Cultivo</a></li>
+                        <li><a href="/phyto/about.html">Sobre</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Recursos</h3>
                     <ul>
-                        <li><a href="guides.html">Guias de Cultivo</a></li>
-                        <li><a href="api.html">API</a></li>
-                        <li><a href="help.html">Ajuda</a></li>
-                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="/phyto/guides.html">Guias de Cultivo</a></li>
+                        <li><a href="/phyto/api.html">API</a></li>
+                        <li><a href="/phyto/help.html">Ajuda</a></li>
+                        <li><a href="/phyto/contact.html">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -322,7 +322,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/phyto/script.js"></script>
 </body>
 </html>
 

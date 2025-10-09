@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciar Avaliações - Phytografia Admin</title>
+    <title>Gerenciar Usuários - Phytografia Admin</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -14,12 +14,12 @@
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="nav-logo">
+                <a href="/../index.html" class="nav-logo">
                     <i class="fas fa-leaf"></i>
                     <span>Phytografia</span>
                 </a>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="/../index.html" class="nav-link">Início</a></li>
                     <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
                     <li><a href="guides.html" class="nav-link">Guia de Cultivo</a></li>
                     <li><a href="about.html" class="nav-link">Sobre</a></li>
@@ -54,7 +54,7 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item active">
                     <a href="admin-usuarios.html">
                         <i class="fas fa-users"></i>
                         <span>Usuários</span>
@@ -66,7 +66,7 @@
                         <span>Plantas</span>
                     </a>
                 </li>
-                <li class="menu-item active">
+                <li class="menu-item">
                     <a href="admin-avaliacoes.html">
                         <i class="fas fa-star"></i>
                         <span>Avaliações</span>
@@ -104,75 +104,75 @@
     <main class="admin-main">
         <section class="admin-section active">
             <div class="section-header">
-                <h1>Gerenciar Avaliações</h1>
-                <p>Moderação e análise de avaliações de plantas</p>
+                <h1>Gerenciar Usuários</h1>
+                <p>Análise detalhada e gerenciamento de usuários do sistema</p>
                 <div class="header-actions">
-                    <button class="primary-btn" onclick="exportReviews()">
+                    <button class="primary-btn" onclick="exportUsers()">
                         <i class="fas fa-download"></i>
-                        Exportar Avaliações
+                        Exportar Usuários
                     </button>
-                    <button class="secondary-btn" onclick="openAddReviewModal()">
-                        <i class="fas fa-plus"></i>
-                        Adicionar Avaliação
+                    <button class="secondary-btn" onclick="openAddUserModal()">
+                        <i class="fas fa-user-plus"></i>
+                        Adicionar Usuário
                     </button>
                 </div>
             </div>
 
-            <!-- Review Statistics Cards -->
+            <!-- User Statistics Cards -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-users"></i>
                     </div>
                     <div class="stat-content">
-                        <h3 id="totalReviewsCount">8,743</h3>
-                        <p>Total de Avaliações</p>
-                        <span class="stat-change positive">+89 esta semana</span>
+                        <h3 id="totalUsersCount">4,127</h3>
+                        <p>Total de Usuários</p>
+                        <span class="stat-change positive">+186 esta semana</span>
                     </div>
                     <div class="stat-chart">
-                        <canvas id="totalReviewsChart"></canvas>
+                        <canvas id="totalUsersChart"></canvas>
                     </div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-user-plus"></i>
                     </div>
                     <div class="stat-content">
-                        <h3 id="pendingReviewsCount">12</h3>
-                        <p>Avaliações Pendentes</p>
-                        <span class="stat-change neutral">Aguardando moderação</span>
+                        <h3 id="newUsersCount">186</h3>
+                        <p>Contas Criadas (7 dias)</p>
+                        <span class="stat-change positive">+23% vs semana anterior</span>
                     </div>
                     <div class="stat-chart">
-                        <canvas id="pendingReviewsChart"></canvas>
+                        <canvas id="newUsersChart"></canvas>
                     </div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <i class="fas fa-flag"></i>
+                        <i class="fas fa-user-minus"></i>
                     </div>
                     <div class="stat-content">
-                        <h3 id="reportedReviewsCount">5</h3>
-                        <p>Avaliações Reportadas</p>
-                        <span class="stat-change negative">+2 esta semana</span>
+                        <h3 id="deletedUsersCount">12</h3>
+                        <p>Contas Excluídas (7 dias)</p>
+                        <span class="stat-change negative">+8 esta semana</span>
                     </div>
                     <div class="stat-chart">
-                        <canvas id="reportedReviewsChart"></canvas>
+                        <canvas id="deletedUsersChart"></canvas>
                     </div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <i class="fas fa-thumbs-up"></i>
+                        <i class="fas fa-user-check"></i>
                     </div>
                     <div class="stat-content">
-                        <h3 id="approvedReviewsCount">8,726</h3>
-                        <p>Avaliações Aprovadas</p>
-                        <span class="stat-change positive">+87 esta semana</span>
+                        <h3 id="activeUsersCount">3,892</h3>
+                        <p>Usuários Ativos</p>
+                        <span class="stat-change positive">+156 este mês</span>
                     </div>
                     <div class="stat-chart">
-                        <canvas id="approvedReviewsChart"></canvas>
+                        <canvas id="activeUsersChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -180,100 +180,103 @@
             <!-- Detailed Charts Section -->
             <div class="charts-section">
                 <div class="chart-row">
-                    <!-- Reviews by Rating -->
+                    <!-- User Registration Trends -->
                     <div class="dashboard-card large">
                         <div class="card-header">
-                            <h3>Distribuição de Avaliações por Estrelas</h3>
+                            <h3>Tendências de Cadastro de Usuários</h3>
                             <div class="chart-controls">
-                                <select id="ratingPeriod" onchange="updateRatingChart()">
-                                    <option value="all">Todas</option>
+                                <select id="registrationPeriod" onchange="updateRegistrationChart()">
                                     <option value="7">Últimos 7 dias</option>
-                                    <option value="30">Últimos 30 dias</option>
+                                    <option value="30" selected>Últimos 30 dias</option>
+                                    <option value="90">Últimos 90 dias</option>
+                                    <option value="365">Último ano</option>
                                 </select>
                             </div>
                         </div>
                         <div class="chart-container">
-                            <canvas id="reviewsByRatingChart"></canvas>
+                            <canvas id="userRegistrationChart"></canvas>
                         </div>
                     </div>
 
-                    <!-- Review Trends -->
+                    <!-- User Activity Heatmap -->
                     <div class="dashboard-card">
                         <div class="card-header">
-                            <h3>Tendências de Avaliações</h3>
-                            <button class="info-btn" title="Número de avaliações ao longo do tempo">
+                            <h3>Atividade por Hora do Dia</h3>
+                            <button class="info-btn" title="Mostra quando os usuários são mais ativos">
                                 <i class="fas fa-info-circle"></i>
                             </button>
                         </div>
                         <div class="chart-container">
-                            <canvas id="reviewTrendsChart"></canvas>
+                            <canvas id="userActivityHeatmap"></canvas>
                         </div>
                     </div>
                 </div>
 
                 <div class="chart-row">
-                    <!-- Top Plants by Review -->
+                    <!-- User Demographics -->
                     <div class="dashboard-card">
                         <div class="card-header">
-                            <h3>Top 5 Plantas Mais Bem Avaliadas</h3>
-                            <button class="info-btn" title="Plantas com as maiores médias de avaliação">
-                                <i class="fas fa-info-circle"></i>
-                            </button>
+                            <h3>Demografia dos Usuários</h3>
+                            <div class="chart-controls">
+                                <select id="demographicType" onchange="updateDemographicChart()">
+                                    <option value="age">Por Idade</option>
+                                    <option value="location">Por Localização</option>
+                                    <option value="device">Por Dispositivo</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="chart-container">
-                            <canvas id="topPlantsByReviewChart"></canvas>
+                            <canvas id="userDemographicsChart"></canvas>
                         </div>
                     </div>
 
-                    <!-- Reviews by User Role -->
+                    <!-- User Engagement -->
                     <div class="dashboard-card">
                         <div class="card-header">
-                            <h3>Avaliações por Tipo de Usuário</h3>
-                            <button class="info-btn" title="Distribuição de avaliações por função do usuário">
+                            <h3>Engajamento dos Usuários</h3>
+                            <button class="info-btn" title="Frequência de uso da plataforma">
                                 <i class="fas fa-info-circle"></i>
                             </button>
                         </div>
                         <div class="chart-container">
-                            <canvas id="reviewsByUserRoleChart"></canvas>
+                            <canvas id="userEngagementChart"></canvas>
                         </div>
                     </div>
 
-                    <!-- Sentiment Analysis -->
+                    <!-- User Retention -->
                     <div class="dashboard-card">
                         <div class="card-header">
-                            <h3>Análise de Sentimento</h3>
-                            <button class="info-btn" title="Sentimento geral das avaliações (positivo, neutro, negativo)">
+                            <h3>Retenção de Usuários</h3>
+                            <button class="info-btn" title="Percentual de usuários que retornam">
                                 <i class="fas fa-info-circle"></i>
                             </button>
                         </div>
                         <div class="chart-container">
-                            <canvas id="sentimentAnalysisChart"></canvas>
+                            <canvas id="userRetentionChart"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Review Management Table -->
+            <!-- User Management Table -->
             <div class="content-filters">
                 <div class="filter-group">
-                    <input type="text" id="reviewSearch" placeholder="Buscar avaliações por planta, usuário ou conteúdo...">
-                    <select id="reviewRating">
-                        <option value="">Todas as notas</option>
-                        <option value="5">5 Estrelas</option>
-                        <option value="4">4 Estrelas</option>
-                        <option value="3">3 Estrelas</option>
-                        <option value="2">2 Estrelas</option>
-                        <option value="1">1 Estrela</option>
+                    <input type="text" id="userSearch" placeholder="Buscar usuários por nome ou email...">
+                    <select id="userRole">
+                        <option value="">Todas as funções</option>
+                        <option value="user">Usuário</option>
+                        <option value="moderator">Moderador</option>
+                        <option value="admin">Administrador</option>
                     </select>
-                    <select id="reviewStatus">
+                    <select id="userStatus">
                         <option value="">Todos os status</option>
-                        <option value="pending">Pendente</option>
-                        <option value="approved">Aprovada</option>
-                        <option value="rejected">Rejeitada</option>
-                        <option value="reported">Reportada</option>
+                        <option value="active">Ativo</option>
+                        <option value="inactive">Inativo</option>
+                        <option value="suspended">Suspenso</option>
+                        <option value="banned">Banido</option>
                     </select>
-                    <input type="date" id="reviewDateFrom" placeholder="Data da avaliação (de)">
-                    <input type="date" id="reviewDateTo" placeholder="Data da avaliação (até)">
+                    <input type="date" id="registrationDateFrom" placeholder="Data de cadastro (de)">
+                    <input type="date" id="registrationDateTo" placeholder="Data de cadastro (até)">
                 </div>
                 <div class="view-options">
                     <button class="view-btn active" data-view="table">
@@ -285,121 +288,116 @@
                 </div>
             </div>
             
-            <div class="reviews-table-container">
-                <table class="admin-table" id="reviewsTable">
+            <div class="users-table-container">
+                <table class="admin-table" id="usersTable">
                     <thead>
                         <tr>
                             <th>
-                                <input type="checkbox" id="selectAllReviews">
+                                <input type="checkbox" id="selectAllUsers">
                             </th>
-                            <th>Planta</th>
-                            <th>Usuário</th>
-                            <th>Avaliação</th>
-                            <th>Comentário</th>
+                            <th>Avatar</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Função</th>
                             <th>Status</th>
-                            <th>Data</th>
+                            <th>Plantas Favoritas</th>
+                            <th>Último Acesso</th>
+                            <th>Cadastrado em</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
-                    <tbody id="reviewsTableBody">
-                        <!-- Reviews data will be populated by JavaScript -->
+                    <tbody id="usersTableBody">
+                        <!-- Users data will be populated by JavaScript -->
                     </tbody>
                 </table>
             </div>
             
             <div class="table-pagination">
                 <div class="pagination-info">
-                    Mostrando <span id="reviewsShowing">1-20</span> de <span id="reviewsTotal">8,743</span> avaliações
+                    Mostrando <span id="usersShowing">1-20</span> de <span id="usersTotal">4,127</span> usuários
                 </div>
                 <div class="pagination-controls">
-                    <button class="pagination-btn" id="reviewsPrevBtn" disabled>
+                    <button class="pagination-btn" id="usersPrevBtn" disabled>
                         <i class="fas fa-chevron-left"></i>
                     </button>
+                    <button class="pagination-btn active">1</button>
                     <button class="pagination-btn">2</button>
                     <button class="pagination-btn">3</button>
-                    <button class="pagination-btn" id="reviewsNextBtn">
+                    <button class="pagination-btn" id="usersNextBtn">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- Add Review Modal -->
-        <div id="addReviewModal" class="modal">
+        <!-- Add User Modal -->
+        <div id="addUserModal" class="modal">
             <div class="modal-content">
                 <span class="close-modal">&times;</span>
-                <h2>Adicionar Nova Avaliação</h2>
-                <form id="addReviewForm">
+                <h2>Adicionar Novo Usuário</h2>
+                <form id="addUserForm">
                     <div class="form-field">
-                        <label for="reviewPlantName">Planta</label>
-                        <input type="text" id="reviewPlantName" required>
+                        <label for="userName">Nome</label>
+                        <input type="text" id="userName" required>
                     </div>
                     <div class="form-field">
-                        <label for="reviewUserName">Usuário</label>
-                        <input type="text" id="reviewUserName" required>
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" required>
                     </div>
                     <div class="form-field">
-                        <label for="reviewRatingSelect">Avaliação</label>
-                        <select id="reviewRatingSelect">
-                            <option value="5">5 Estrelas</option>
-                            <option value="4">4 Estrelas</option>
-                            <option value="3">3 Estrelas</option>
-                            <option value="2">2 Estrelas</option>
-                            <option value="1">1 Estrela</option>
+                        <label for="userPassword">Senha</label>
+                        <input type="password" id="userPassword" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userRoleSelect">Função</label>
+                        <select id="userRoleSelect">
+                            <option value="user">Usuário</option>
+                            <option value="moderator">Moderador</option>
+                            <option value="admin">Administrador</option>
                         </select>
                     </div>
-                    <div class="form-field">
-                        <label for="reviewComment">Comentário</label>
-                        <textarea id="reviewComment" rows="4"></textarea>
-                    </div>
                     <div class="form-actions">
-                        <button type="button" class="btn secondary" onclick="closeAddReviewModal()">Cancelar</button>
-                        <button type="submit" class="btn primary">Adicionar Avaliação</button>
+                        <button type="button" class="btn secondary" onclick="closeAddUserModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Adicionar Usuário</button>
                     </div>
                 </form>
             </div>
         </div>
 
-        <!-- Edit Review Modal -->
-        <div id="editReviewModal" class="modal">
+        <!-- Edit User Modal -->
+        <div id="editUserModal" class="modal">
             <div class="modal-content">
                 <span class="close-modal">&times;</span>
-                <h2>Editar Avaliação</h2>
-                <form id="editReviewForm">
-                    <input type="hidden" id="editReviewId">
+                <h2>Editar Usuário</h2>
+                <form id="editUserForm">
+                    <input type="hidden" id="editUserId">
                     <div class="form-field">
-                        <label for="editReviewPlantName">Planta</label>
-                        <input type="text" id="editReviewPlantName" required>
+                        <label for="editUserName">Nome</label>
+                        <input type="text" id="editUserName" required>
                     </div>
                     <div class="form-field">
-                        <label for="editReviewUserName">Usuário</label>
-                        <input type="text" id="editReviewUserName" required>
+                        <label for="editUserEmail">Email</label>
+                        <input type="email" id="editUserEmail" required>
                     </div>
                     <div class="form-field">
-                        <label for="editReviewRating">Avaliação</label>
-                        <select id="editReviewRating">
-                            <option value="5">5 Estrelas</option>
-                            <option value="4">4 Estrelas</option>
-                            <option value="3">3 Estrelas</option>
-                            <option value="2">2 Estrelas</option>
-                            <option value="1">1 Estrela</option>
+                        <label for="editUserRole">Função</label>
+                        <select id="editUserRole">
+                            <option value="user">Usuário</option>
+                            <option value="moderator">Moderador</option>
+                            <option value="admin">Administrador</option>
                         </select>
                     </div>
                     <div class="form-field">
-                        <label for="editReviewComment">Comentário</label>
-                        <textarea id="editReviewComment" rows="4"></textarea>
-                    </div>
-                    <div class="form-field">
-                        <label for="editReviewStatus">Status</label>
-                        <select id="editReviewStatus">
-                            <option value="pending">Pendente</option>
-                            <option value="approved">Aprovada</option>
-                            <option value="rejected">Rejeitada</option>
-                            <option value="reported">Reportada</option>
+                        <label for="editUserStatus">Status</label>
+                        <select id="editUserStatus">
+                            <option value="active">Ativo</option>
+                            <option value="inactive">Inativo</option>
+                            <option value="suspended">Suspenso</option>
+                            <option value="banned">Banido</option>
                         </select>
                     </div>
                     <div class="form-actions">
-                        <button type="button" class="btn secondary" onclick="closeEditReviewModal()">Cancelar</button>
+                        <button type="button" class="btn secondary" onclick="closeEditUserModal()">Cancelar</button>
                         <button type="submit" class="btn primary">Salvar Alterações</button>
                     </div>
                 </form>
@@ -460,6 +458,6 @@
     <script src="../script.js"></script>
     <script src="../admin.js"></script>
     <script src="../admin-layout.js"></script>
-    <script src="admin-avaliacoes.js"></script>
+    <script src="admin-usuarios.js"></script>
 </body>
 </html>

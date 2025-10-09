@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciar Plantas - Phytografia Admin</title>
+    <title>Gerenciar Pesquisas - Phytografia Admin</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -14,12 +14,12 @@
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="nav-logo">
+                <a href="/../index.html" class="nav-logo">
                     <i class="fas fa-leaf"></i>
                     <span>Phytografia</span>
                 </a>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="/../index.html" class="nav-link">Início</a></li>
                     <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
                     <li><a href="guides.html" class="nav-link">Guia de Cultivo</a></li>
                     <li><a href="about.html" class="nav-link">Sobre</a></li>
@@ -60,7 +60,7 @@
                         <span>Usuários</span>
                     </a>
                 </li>
-                <li class="menu-item active">
+                <li class="menu-item">
                     <a href="admin-plantas.html">
                         <i class="fas fa-seedling"></i>
                         <span>Plantas</span>
@@ -72,7 +72,7 @@
                         <span>Avaliações</span>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item active">
                     <a href="admin-pesquisas.html">
                         <i class="fas fa-search"></i>
                         <span>Pesquisas</span>
@@ -104,75 +104,75 @@
     <main class="admin-main">
         <section class="admin-section active">
             <div class="section-header">
-                <h1>Gerenciar Plantas</h1>
-                <p>Análise detalhada e gerenciamento de plantas do sistema</p>
+                <h1>Gerenciar Pesquisas</h1>
+                <p>Análise e gerenciamento de termos de pesquisa e tendências</p>
                 <div class="header-actions">
-                    <button class="primary-btn" onclick="openAddPlantModal()">
-                        <i class="fas fa-plus"></i>
-                        Adicionar Nova Planta
-                    </button>
-                    <button class="secondary-btn" onclick="exportPlants()">
+                    <button class="primary-btn" onclick="exportSearchData()">
                         <i class="fas fa-download"></i>
-                        Exportar Plantas
+                        Exportar Dados
+                    </button>
+                    <button class="secondary-btn" onclick="openSearchSettings()">
+                        <i class="fas fa-cog"></i>
+                        Configurações de Pesquisa
                     </button>
                 </div>
             </div>
 
-            <!-- Plant Statistics Cards -->
+            <!-- Search Statistics Cards -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <i class="fas fa-seedling"></i>
+                        <i class="fas fa-search"></i>
                     </div>
                     <div class="stat-content">
-                        <h3 id="totalPlantsCount">1,234</h3>
-                        <p>Total de Plantas</p>
-                        <span class="stat-change positive">+56 esta semana</span>
+                        <h3 id="totalSearchesCount">12,345</h3>
+                        <p>Total de Pesquisas</p>
+                        <span class="stat-change positive">+1,234 esta semana</span>
                     </div>
                     <div class="stat-chart">
-                        <canvas id="totalPlantsChart"></canvas>
+                        <canvas id="totalSearchesChart"></canvas>
                     </div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <i class="fas fa-plus-square"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="stat-content">
-                        <h3 id="newPlantsCount">56</h3>
-                        <p>Plantas Adicionadas (7 dias)</p>
-                        <span class="stat-change positive">+15% vs semana anterior</span>
+                        <h3 id="uniqueSearchesCount">8,765</h3>
+                        <p>Pesquisas Únicas</p>
+                        <span class="stat-change positive">+876 esta semana</span>
                     </div>
                     <div class="stat-chart">
-                        <canvas id="newPlantsChart"></canvas>
+                        <canvas id="uniqueSearchesChart"></canvas>
                     </div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-times-circle"></i>
                     </div>
                     <div class="stat-content">
-                        <h3 id="topRatedPlant">Orquídea Phalaenopsis</h3>
-                        <p>Planta Mais Avaliada</p>
-                        <span class="stat-change neutral">Média 4.8 estrelas</span>
+                        <h3 id="noResultsSearchesCount">123</h3>
+                        <p>Pesquisas Sem Resultado</p>
+                        <span class="stat-change negative">+12 esta semana</span>
                     </div>
                     <div class="stat-chart">
-                        <canvas id="topRatedPlantChart"></canvas>
+                        <canvas id="noResultsSearchesChart"></canvas>
                     </div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-lightbulb"></i>
                     </div>
                     <div class="stat-content">
-                        <h3 id="trendingPlant">Costela-de-Adão</h3>
-                        <p>Planta em Tendência</p>
-                        <span class="stat-change positive">+25% buscas esta semana</span>
+                        <h3 id="newKeywordsCount">45</h3>
+                        <p>Novas Palavras-chave</p>
+                        <span class="stat-change positive">+5 esta semana</span>
                     </div>
                     <div class="stat-chart">
-                        <canvas id="trendingPlantChart"></canvas>
+                        <canvas id="newKeywordsChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -180,99 +180,91 @@
             <!-- Detailed Charts Section -->
             <div class="charts-section">
                 <div class="chart-row">
-                    <!-- Plant Category Distribution -->
+                    <!-- Search Volume Trends -->
                     <div class="dashboard-card large">
                         <div class="card-header">
-                            <h3>Distribuição de Plantas por Categoria</h3>
+                            <h3>Volume de Pesquisa ao Longo do Tempo</h3>
                             <div class="chart-controls">
-                                <select id="plantCategory" onchange="updatePlantCategoryChart()">
-                                    <option value="all">Todas</option>
-                                    <option value="ornamental">Ornamentais</option>
-                                    <option value="medicinal">Medicinais</option>
-                                    <option value="frutifera">Frutíferas</option>
+                                <select id="searchVolumePeriod" onchange="updateSearchVolumeChart()">
+                                    <option value="7">Últimos 7 dias</option>
+                                    <option value="30" selected>Últimos 30 dias</option>
+                                    <option value="90">Últimos 90 dias</option>
+                                    <option value="365">Último ano</option>
                                 </select>
                             </div>
                         </div>
                         <div class="chart-container">
-                            <canvas id="plantCategoryChart"></canvas>
+                            <canvas id="searchVolumeChart"></canvas>
                         </div>
                     </div>
 
-                    <!-- Plant Growth Trends -->
+                    <!-- Top Search Terms -->
                     <div class="dashboard-card">
                         <div class="card-header">
-                            <h3>Tendências de Crescimento de Plantas</h3>
-                            <button class="info-btn" title="Número de novas plantas adicionadas ao longo do tempo">
+                            <h3>Top 10 Termos de Pesquisa</h3>
+                            <button class="info-btn" title="Termos mais pesquisados">
                                 <i class="fas fa-info-circle"></i>
                             </button>
                         </div>
                         <div class="chart-container">
-                            <canvas id="plantGrowthChart"></canvas>
+                            <canvas id="topSearchTermsChart"></canvas>
                         </div>
                     </div>
                 </div>
 
                 <div class="chart-row">
-                    <!-- Plant Popularity -->
+                    <!-- Search Categories -->
                     <div class="dashboard-card">
                         <div class="card-header">
-                            <h3>Popularidade das Plantas (Visualizações)</h3>
-                            <button class="info-btn" title="Plantas mais visualizadas">
+                            <h3>Pesquisas por Categoria</h3>
+                            <button class="info-btn" title="Distribuição de pesquisas por categoria de planta">
                                 <i class="fas fa-info-circle"></i>
                             </button>
                         </div>
                         <div class="chart-container">
-                            <canvas id="plantPopularityChart"></canvas>
+                            <canvas id="searchCategoriesChart"></canvas>
                         </div>
                     </div>
 
-                    <!-- Plant Health Status -->
+                    <!-- Search Location -->
                     <div class="dashboard-card">
                         <div class="card-header">
-                            <h3>Status de Saúde das Plantas</h3>
-                            <button class="info-btn" title="Distribuição de plantas por status de saúde (saudável, com pragas, doente)">
+                            <h3>Origem Geográfica das Pesquisas</h3>
+                            <button class="info-btn" title="Países/regiões com mais pesquisas">
                                 <i class="fas fa-info-circle"></i>
                             </button>
                         </div>
                         <div class="chart-container">
-                            <canvas id="plantHealthChart"></canvas>
+                            <canvas id="searchLocationChart"></canvas>
                         </div>
                     </div>
 
-                    <!-- Plant Origin -->
+                    <!-- Search Device Type -->
                     <div class="dashboard-card">
                         <div class="card-header">
-                            <h3>Origem das Plantas</h3>
-                            <button class="info-btn" title="Distribuição de plantas por região de origem">
+                            <h3>Pesquisas por Tipo de Dispositivo</h3>
+                            <button class="info-btn" title="Distribuição de pesquisas por desktop, mobile, tablet">
                                 <i class="fas fa-info-circle"></i>
                             </button>
                         </div>
                         <div class="chart-container">
-                            <canvas id="plantOriginChart"></canvas>
+                            <canvas id="searchDeviceChart"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Plant Management Table -->
+            <!-- Search Terms Table -->
             <div class="content-filters">
                 <div class="filter-group">
-                    <input type="text" id="plantSearch" placeholder="Buscar plantas por nome ou espécie...">
-                    <select id="plantCategoryFilter">
-                        <option value="">Todas as categorias</option>
-                        <option value="ornamental">Ornamental</option>
-                        <option value="medicinal">Medicinal</option>
-                        <option value="frutifera">Frutífera</option>
-                        <option value="hortalica">Hortaliça</option>
-                    </select>
-                    <select id="plantStatusFilter">
+                    <input type="text" id="searchTermSearch" placeholder="Buscar termo de pesquisa...">
+                    <select id="searchTermStatus">
                         <option value="">Todos os status</option>
-                        <option value="available">Disponível</option>
-                        <option value="unavailable">Indisponível</option>
-                        <option value="pending">Pendente</option>
+                        <option value="resolved">Resolvido</option>
+                        <option value="unresolved">Não Resolvido</option>
                     </select>
-                    <input type="date" id="plantAddedDateFrom" placeholder="Data de adição (de)">
-                    <input type="date" id="plantAddedDateTo" placeholder="Data de adição (até)">
+                    <input type="date" id="searchDateFrom" placeholder="Data da pesquisa (de)">
+                    <input type="date" id="searchDateTo" placeholder="Data da pesquisa (até)">
                 </div>
                 <div class="view-options">
                     <button class="view-btn active" data-view="table">
@@ -284,133 +276,44 @@
                 </div>
             </div>
             
-            <div class="plants-table-container">
-                <table class="admin-table" id="plantsTable">
+            <div class="search-terms-table-container">
+                <table class="admin-table" id="searchTermsTable">
                     <thead>
                         <tr>
                             <th>
-                                <input type="checkbox" id="selectAllPlants">
+                                <input type="checkbox" id="selectAllSearchTerms">
                             </th>
-                            <th>Imagem</th>
-                            <th>Nome Popular</th>
-                            <th>Nome Científico</th>
-                            <th>Categoria</th>
-                            <th>Status</th>
-                            <th>Avaliação Média</th>
-                            <th>Adicionado em</th>
+                            <th>Termo de Pesquisa</th>
+                            <th>Número de Pesquisas</th>
+                            <th>Resultados Encontrados</th>
+                            <th>Taxa de Sucesso</th>
+                            <th>Última Pesquisa</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
-                    <tbody id="plantsTableBody">
-                        <!-- Plants data will be populated by JavaScript -->
+                    <tbody id="searchTermsTableBody">
+                        <!-- Search terms data will be populated by JavaScript -->
                     </tbody>
                 </table>
             </div>
             
             <div class="table-pagination">
                 <div class="pagination-info">
-                    Mostrando <span id="plantsShowing">1-20</span> de <span id="plantsTotal">1,234</span> plantas
+                    Mostrando <span id="searchTermsShowing">1-20</span> de <span id="searchTermsTotal">12,345</span> termos
                 </div>
                 <div class="pagination-controls">
-                    <button class="pagination-btn" id="plantsPrevBtn" disabled>
+                    <button class="pagination-btn" id="searchTermsPrevBtn" disabled>
                         <i class="fas fa-chevron-left"></i>
                     </button>
                     <button class="pagination-btn active">1</button>
                     <button class="pagination-btn">2</button>
                     <button class="pagination-btn">3</button>
-                    <button class="pagination-btn" id="plantsNextBtn">
+                    <button class="pagination-btn" id="searchTermsNextBtn">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
             </div>
         </section>
-
-        <!-- Add Plant Modal -->
-        <div id="addPlantModal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h2>Adicionar Nova Planta</h2>
-                <form id="addPlantForm">
-                    <div class="form-field">
-                        <label for="plantName">Nome Popular</label>
-                        <input type="text" id="plantName" required>
-                    </div>
-                    <div class="form-field">
-                        <label for="scientificName">Nome Científico</label>
-                        <input type="text" id="scientificName">
-                    </div>
-                    <div class="form-field">
-                        <label for="plantCategorySelect">Categoria</label>
-                        <select id="plantCategorySelect">
-                            <option value="ornamental">Ornamental</option>
-                            <option value="medicinal">Medicinal</option>
-                            <option value="frutifera">Frutífera</option>
-                            <option value="hortalica">Hortaliça</option>
-                        </select>
-                    </div>
-                    <div class="form-field">
-                        <label for="plantDescription">Descrição</label>
-                        <textarea id="plantDescription" rows="3"></textarea>
-                    </div>
-                    <div class="form-field">
-                        <label for="plantCareInstructions">Instruções de Cuidado</label>
-                        <textarea id="plantCareInstructions" rows="3"></textarea>
-                    </div>
-                    <div class="form-field">
-                        <label for="plantImage">Imagem da Planta</label>
-                        <input type="file" id="plantImage" accept="image/*">
-                    </div>
-                    <div class="form-actions">
-                        <button type="button" class="btn secondary" onclick="closeAddPlantModal()">Cancelar</button>
-                        <button type="submit" class="btn primary">Adicionar Planta</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Edit Plant Modal -->
-        <div id="editPlantModal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h2>Editar Planta</h2>
-                <form id="editPlantForm">
-                    <input type="hidden" id="editPlantId">
-                    <div class="form-field">
-                        <label for="editPlantName">Nome Popular</label>
-                        <input type="text" id="editPlantName" required>
-                    </div>
-                    <div class="form-field">
-                        <label for="editScientificName">Nome Científico</label>
-                        <input type="text" id="editScientificName">
-                    </div>
-                    <div class="form-field">
-                        <label for="editPlantCategory">Categoria</label>
-                        <select id="editPlantCategory">
-                            <option value="ornamental">Ornamental</option>
-                            <option value="medicinal">Medicinal</option>
-                            <option value="frutifera">Frutífera</option>
-                            <option value="hortalica">Hortaliça</option>
-                        </select>
-                    </div>
-                    <div class="form-field">
-                        <label for="editPlantDescription">Descrição</label>
-                        <textarea id="editPlantDescription" rows="3"></textarea>
-                    </div>
-                    <div class="form-field">
-                        <label for="editPlantCareInstructions">Instruções de Cuidado</label>
-                        <textarea id="editPlantCareInstructions" rows="3"></textarea>
-                    </div>
-                    <div class="form-field">
-                        <label for="editPlantImage">Imagem da Planta</label>
-                        <input type="file" id="editPlantImage" accept="image/*">
-                    </div>
-                    <div class="form-actions">
-                        <button type="button" class="btn secondary" onclick="closeEditPlantModal()">Cancelar</button>
-                        <button type="submit" class="btn primary">Salvar Alterações</button>
-                    </div>
-                </form>
-            </div>
-        </div>
     </main>
 
     <!-- Footer -->
@@ -466,6 +369,6 @@
     <script src="../script.js"></script>
     <script src="../admin.js"></script>
     <script src="../admin-layout.js"></script>
-    <script src="admin-plantas.js"></script>
+    <script src="admin-pesquisas.js"></script>
 </body>
 </html>
