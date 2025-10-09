@@ -5,7 +5,7 @@ const plantsData = [
         scientificName: "Rosa spp.",
         description: "A rosa é uma das flores mais populares e simbólicas do mundo, conhecida por sua beleza, fragrância e variedade de cores. Pertencente à família Rosaceae, esta planta perene é cultivada há milhares de anos tanto para fins ornamentais quanto medicinais.",
         image: "/../imagens/rosavermelha.jpg",
-        images: ["/../imagens/rosavermelha.jpg", "/../imagens/rosavermelha.jpg", "/../imagens/rosavermelha.jpg"],
+        images: ["../imagens\rosavermelha.jpg", "/../imagens/rosavermelha.jpg", "/../imagens/rosavermelha.jpg"],
         category: "ornamental",
         size: "medio",
         light: "sol-pleno",
