@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Phytografia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login/Register Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2 id="authTitle">Entrar</h2>
+                    <p id="authSubtitle">Acesse sua conta no Phytografia</p>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="loginEmail">Email ou Nome de Usuário</label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="loginEmail" name="loginEmail" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Senha</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="loginPassword" name="loginPassword" required>
+                            <button type="button" class="password-toggle" onclick="togglePassword('loginPassword')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkmark"></span>
+                            Lembrar-me
+                        </label>
+                        <a href="#" class="forgot-password" onclick="showForgotPassword()">Esqueci minha senha</a>
+                    </div>
+
+                    <button type="submit" class="auth-btn">Entrar</button>
+
+                    <div class="social-login">
+                        <p>Ou entre com:</p>
+                        <div class="social-buttons">
+                            <button type="button" class="social-btn google-btn">
+                                <i class="fab fa-google"></i>
+                                Google
+                            </button>
+                            <button type="button" class="social-btn facebook-btn">
+                                <i class="fab fa-facebook-f"></i>
+                                Facebook
+                            </button>
+                            <button type="button" class="social-btn github-btn">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Register Form -->
+                <form id="registerForm" class="auth-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="registerUsername">Nome de Usuário</label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="registerUsername" name="registerUsername" required>
+                            <span class="validation-icon"></span>
+                        </div>
+                        <div class="validation-message" id="usernameValidation"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="registerEmail" name="registerEmail" required>
+                            <span class="validation-icon"></span>
+                        </div>
+                        <div class="validation-message" id="emailValidation"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerPassword">Senha</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="registerPassword" name="registerPassword" required>
+                            <button type="button" class="password-toggle" onclick="togglePassword('registerPassword')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength" id="passwordStrength">
+                            <div class="strength-bar">
+                                <div class="strength-fill"></div>
+                            </div>
+                            <div class="strength-text">Força da senha</div>
+                        </div>
+                        <div class="password-requirements">
+                            <p>A senha deve conter:</p>
+                            <ul>
+                                <li id="req-length">Mínimo 8 caracteres</li>
+                                <li id="req-upper">Uma letra maiúscula</li>
+                                <li id="req-lower">Uma letra minúscula</li>
+                                <li id="req-number">Um número</li>
+                                <li id="req-special">Um caractere especial</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmar Senha</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <span class="validation-icon"></span>
+                        </div>
+                        <div class="validation-message" id="confirmPasswordValidation"></div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span class="checkmark"></span>
+                            Concordo com os <a href="terms.html">Termos de Uso</a> e <a href="privacy.html">Política de Privacidade</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="auth-btn">Criar Conta</button>
+                </form>
+
+                <!-- Forgot Password Form -->
+                <form id="forgotPasswordForm" class="auth-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="forgotEmail">Email</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="forgotEmail" name="forgotEmail" required>
+                        </div>
+                        <p class="form-help">Digite seu email para receber as instruções de recuperação de senha.</p>
+                    </div>
+
+                    <button type="submit" class="auth-btn">Enviar Instruções</button>
+                </form>
+
+                <div class="auth-footer">
+                    <p id="authToggleText">
+                        Não tem uma conta? 
+                        <a href="#" id="authToggleLink" onclick="toggleAuthMode()">Cadastre-se</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="auth-info">
+                <div class="info-content">
+                    <h3>Bem-vindo ao Phytografia</h3>
+                    <p>Junte-se à nossa comunidade de entusiastas da botânica e explore o fascinante mundo das plantas.</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-search"></i>
+                            <div>
+                                <h4>Pesquisa Avançada</h4>
+                                <p>Encontre plantas por características específicas</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <h4>Favoritos Personalizados</h4>
+                                <p>Salve suas plantas favoritas e crie coleções</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-calendar"></i>
+                            <div>
+                                <h4>Calendário de Cuidados</h4>
+                                <p>Receba lembretes para cuidar de suas plantas</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Comunidade Ativa</h4>
+                                <p>Compartilhe experiências com outros jardineiros</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h3 id="modalTitle">Sucesso!</h3>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage">Operação realizada com sucesso.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closeModal()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
+

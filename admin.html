@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Phytografia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="guides.html" class="nav-link">Guia de Cultivo</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
+                            pelé
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="admin.html">Meu Perfil</a></li>
+                            <li><a href="#" onclick="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <nav class="sidebar-nav">
+            <ul class="sidebar-menu">
+                <li class="menu-item active" data-section="dashboard">
+                    <a href="#" onclick="showSection('dashboard')">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="users">
+                    <a href="#" onclick="showSection('users')">
+                        <i class="fas fa-users"></i>
+                        <span>Usuários</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="plants">
+                    <a href="#" onclick="showSection('plants')">
+                        <i class="fas fa-seedling"></i>
+                        <span>Plantas</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="reviews">
+                    <a href="#" onclick="showSection('reviews')">
+                        <i class="fas fa-star"></i>
+                        <span>Avaliações</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="searches">
+                    <a href="#" onclick="showSection('searches')">
+                        <i class="fas fa-search"></i>
+                        <span>Pesquisas</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="content">
+                    <a href="#" onclick="showSection('content')">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Conteúdo</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="analytics">
+                    <a href="#" onclick="showSection('analytics')">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Análises</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="settings">
+                    <a href="#" onclick="showSection('settings')">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Dashboard Section -->
+        <section class="admin-section active" id="dashboard">
+            <div class="section-header">
+                <h1>Dashboard</h1>
+                <p>Visão geral do sistema Phytografia</p>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>1,247</h3>
+                        <p>Plantas Cadastradas</p>
+                        <span class="stat-change positive">+12 esta semana</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>3,892</h3>
+                        <p>Usuários Ativos</p>
+                        <span class="stat-change positive">+156 este mês</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>8,743</h3>
+                        <p>Avaliações</p>
+                        <span class="stat-change positive">+89 hoje</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>15,234</h3>
+                        <p>Pesquisas</p>
+                        <span class="stat-change negative">-5% esta semana</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Charts and Recent Activity -->
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Atividade dos Usuários</h3>
+                        <select id="activityPeriod">
+                            <option value="7">Últimos 7 dias</option>
+                            <option value="30">Últimos 30 dias</option>
+                            <option value="90">Últimos 90 dias</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Atividade Recente</h3>
+                        <button class="refresh-btn" onclick="refreshActivity()">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Maria Silva</strong> se cadastrou</p>
+                                <span>2 minutos atrás</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>Nova planta <strong>Orquídea Phalaenopsis</strong> adicionada</p>
+                                <span>15 minutos atrás</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>João Santos</strong> avaliou Rosa com 5 estrelas</p>
+                                <span>1 hora atrás</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>Informações da <strong>Lavanda</strong> foram atualizadas</p>
+                                <span>2 horas atrás</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h3>Ações Rápidas</h3>
+                <div class="actions-grid">
+                    <a href="ADMIN/admin-plantas.html" class="action-btn">
+                        <i class="fas fa-plus"></i>
+                        <span>Adicionar Planta</span>
+                    </a>
+                    <a href="ADMIN/admin-usuarios.html" class="action-btn">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Gerenciar Usuários</span>
+                    </a>
+                    <a href="ADMIN/admin-avaliacoes.html" class="action-btn">
+                        <i class="fas fa-flag"></i>
+                        <span>Moderar Avaliações</span>
+                    </a>
+                    <a href="#" class="action-btn" onclick="exportData()">
+                        <i class="fas fa-download"></i>
+                        <span>Exportar Dados</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <!-- Content Section -->
+        <section class="admin-section" id="content">
+            <div class="section-header">
+                <h1>Gerenciar Conteúdo</h1>
+                <button class="primary-btn" onclick="openContentEditor()">
+                    <i class="fas fa-plus"></i>
+                    Novo Conteúdo
+                </button>
+            </div>
+            
+            <div class="content-tabs">
+                <button class="content-tab active" data-tab="pages">Páginas</button>
+                <button class="content-tab" data-tab="guides">Guias</button>
+                <button class="content-tab" data-tab="media">Mídia</button>
+            </div>
+            
+            <div class="content-tab-content active" id="pages">
+                <div class="pages-grid">
+                    <div class="page-card">
+                        <div class="page-preview">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="page-info">
+                            <h4>Página Inicial</h4>
+                            <p>Última atualização: 15/03/2024</p>
+                            <div class="page-actions">
+                                <button class="edit-btn">Editar</button>
+                                <button class="view-btn">Visualizar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="page-card">
+                        <div class="page-preview">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="page-info">
+                            <h4>Sobre</h4>
+                            <p>Última atualização: 10/03/2024</p>
+                            <div class="page-actions">
+                                <button class="edit-btn">Editar</button>
+                                <button class="view-btn">Visualizar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-tab-content" id="guides">
+                <div class="guides-list">
+                    <div class="guide-item">
+                        <h4>Como Cuidar de Rosas</h4>
+                        <p>Guia completo para cultivo de rosas</p>
+                        <div class="guide-meta">
+                            <span>Publicado em 12/03/2024</span>
+                            <span>1,234 visualizações</span>
+                        </div>
+                        <div class="guide-actions">
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-tab-content" id="media">
+                <div class="media-grid">
+                    <div class="media-item">
+                        <img src="https://via.placeholder.com/150x150/8B4513/FFFFFF?text=Rosa" alt="Rosa">
+                        <div class="media-info">
+                            <p>rosa-vermelha.jpg</p>
+                            <span>2.3 MB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section class="admin-section" id="analytics">
+            <div class="section-header">
+                <h1>Análises e Relatórios</h1>
+                <div class="date-range-picker">
+                    <input type="date" id="startDate">
+                    <span>até</span>
+                    <input type="date" id="endDate">
+                    <button class="apply-btn">Aplicar</button>
+                </div>
+            </div>
+            
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h3>Usuários Ativos</h3>
+                    <div class="chart-container">
+                        <canvas id="usersChart"></canvas>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <h3>Plantas Populares</h3>
+                    <div class="chart-container">
+                        <canvas id="plantsChart"></canvas>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <h3>Avaliações por Mês</h3>
+                    <div class="chart-container">
+                        <canvas id="reviewsChart"></canvas>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <h3>Dispositivos</h3>
+                    <div class="chart-container">
+                        <canvas id="devicesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Users Section -->
+        <section class="admin-section" id="users">
+            <div class="section-header">
+                <h1>Gerenciar Usuários</h1>
+                <button class="primary-btn" onclick="openAddUserModal()">
+                    <i class="fas fa-user-plus"></i>
+                    Adicionar Usuário
+                </button>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>Avatar</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Função</th>
+                            <th>Status</th>
+                            <th>Plantas Cadastradas</th>
+                            <th>Registro</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <!-- User rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Plants Section -->
+        <section class="admin-section" id="plants">
+            <div class="section-header">
+                <h1>Gerenciar Plantas</h1>
+                <button class="primary-btn" onclick="openAddPlantModal()">
+                    <i class="fas fa-plus"></i>
+                    Adicionar Planta
+                </button>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>Imagem</th>
+                            <th>Nome</th>
+                            <th>Nome Científico</th>
+                            <th>Categoria</th>
+                            <th>Status</th>
+                            <th>Avaliações</th>
+                            <th>Criado Em</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="plantsTableBody">
+                        <!-- Plant rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="admin-section" id="reviews">
+            <div class="section-header">
+                <h1>Gerenciar Avaliações</h1>
+                <div class="filter-controls">
+                    <select>
+                        <option>Todas</option>
+                        <option>Pendentes</option>
+                        <option>Aprovadas</option>
+                        <option>Rejeitadas</option>
+                        <option>Reportadas</option>
+                    </select>
+                    <input type="text" placeholder="Buscar avaliação...">
+                </div>
+            </div>
+            
+            <div class="reviews-list" id="reviewsList">
+                <!-- Reviews will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Searches Section -->
+        <section class="admin-section" id="searches">
+            <div class="section-header">
+                <h1>Gerenciar Pesquisas</h1>
+                <div class="filter-controls">
+                    <select>
+                        <option>Mais Recentes</option>
+                        <option>Mais Populares</option>
+                    </select>
+                    <input type="text" placeholder="Buscar termo...">
+                </div>
+            </div>
+            
+            <div class="searches-list">
+                <div class="search-item">
+                    <h4>Rosa</h4>
+                    <p>5,234 pesquisas</p>
+                    <span>Última pesquisa: 10/04/2024</span>
+                </div>
+                <div class="search-item">
+                    <h4>Orquídea</h4>
+                    <p>3,120 pesquisas</p>
+                    <span>Última pesquisa: 08/04/2024</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section class="admin-section" id="settings">
+            <div class="section-header">
+                <h1>Configurações do Sistema</h1>
+                <button class="primary-btn">Salvar Configurações</button>
+            </div>
+            
+            <div class="settings-grid">
+                <div class="setting-card">
+                    <h3>Configurações Gerais</h3>
+                    <div class="form-field">
+                        <label for="siteName">Nome do Site</label>
+                        <input type="text" id="siteName" value="Phytografia">
+                    </div>
+                    <div class="form-field">
+                        <label for="adminEmail">Email do Administrador</label>
+                        <input type="email" id="adminEmail" value="admin@phytografia.com">
+                    </div>
+                </div>
+                <div class="setting-card">
+                    <h3>Integrações</h3>
+                    <div class="form-field">
+                        <label for="analyticsId">ID do Google Analytics</label>
+                        <input type="text" id="analyticsId" value="UA-XXXXX-Y">
+                    </div>
+                    <div class="form-field">
+                        <label for="socialMediaLinks">Links de Redes Sociais</label>
+                        <textarea id="socialMediaLinks" rows="3">Facebook, Twitter, Instagram</textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Plant Modal -->
+        <div id="addPlantModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Adicionar Nova Planta</h2>
+                <form id="addPlantForm">
+                    <div class="form-grid">
+                        <div class="form-section">
+                            <h4>Informações Básicas</h4>
+                            <div class="form-field">
+                                <label for="plantName">Nome da Planta</label>
+                                <input type="text" id="plantName" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="scientificName">Nome Científico</label>
+                                <input type="text" id="scientificName">
+                            </div>
+                            <div class="form-field">
+                                <label for="plantCategorySelect">Categoria</label>
+                                <select id="plantCategorySelect">
+                                    <option value="">Selecione</option>
+                                    <option value="ornamental">Ornamental</option>
+                                    <option value="medicinal">Medicinal</option>
+                                    <option value="alimenticia">Alimentícia</option>
+                                    <option value="nativa">Nativa</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="plantDescription">Descrição</label>
+                                <textarea id="plantDescription" rows="4" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h4>Características</h4>
+                            <div class="form-field">
+                                <label>Altura Máxima (cm)</label>
+                                <input type="number" id="maxHeight">
+                            </div>
+                            <div class="form-field">
+                                <label>Tipo de Solo</label>
+                                <select id="soilType">
+                                    <option value="">Selecione</option>
+                                    <option value="arenoso">Arenoso</option>
+                                    <option value="argiloso">Argiloso</option>
+                                    <option value="humoso">Humoso</option>
+                                    <option value="calcario">Calcário</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Necessidade de Luz</label>
+                                <select id="lightRequirement">
+                                    <option value="">Selecione</option>
+                                    <option value="sol-pleno">Sol Pleno</option>
+                                    <option value="meia-sombra">Meia Sombra</option>
+                                    <option value="sombra">Sombra</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Frequência de Rega</label>
+                                <select id="waterFrequency">
+                                    <option value="">Selecione</option>
+                                    <option value="diaria">Diária</option>
+                                    <option value="2-3-dias">A cada 2-3 dias</option>
+                                    <option value="semanal">Semanal</option>
+                                    <option value="quinzenal">Quinzenal</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Imagens</h4>
+                        <div class="image-upload-area">
+                            <div class="upload-zone" onclick="triggerFileUpload()">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Clique para fazer upload ou arraste imagens aqui</p>
+                                <input type="file" id="plantImages" multiple accept="image/*" style="display: none;">
+                            </div>
+                            <div class="uploaded-images" id="uploadedImages"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeAddPlantModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Adicionar Planta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Footer Placeholder -->
+    <div id="admin-footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+    <script src="admin-layout.js"></script>
+</body>
+</html>
+
+
+        <!-- Users Section -->
+        <section class="admin-section" id="users">
+            <div class="section-header">
+                <h1>Gerenciar Usuários</h1>
+                <p>Análise detalhada e gerenciamento de usuários do sistema</p>
+                <div class="header-actions">
+                    <button class="primary-btn" onclick="exportUsers()">
+                        <i class="fas fa-download"></i>
+                        Exportar Usuários
+                    </button>
+                    <button class="secondary-btn" onclick="openAddUserModal()">
+                        <i class="fas fa-user-plus"></i>
+                        Adicionar Usuário
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalUsersCount">4,127</h3>
+                        <p>Total de Usuários</p>
+                        <span class="stat-change positive">+186 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="totalUsersChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="newUsersCount">186</h3>
+                        <p>Contas Criadas (7 dias)</p>
+                        <span class="stat-change positive">+23% vs semana anterior</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="newUsersChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-minus"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="deletedUsersCount">12</h3>
+                        <p>Contas Excluídas (7 dias)</p>
+                        <span class="stat-change negative">+8 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="deletedUsersChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="activeUsersCount">3,892</h3>
+                        <p>Usuários Ativos</p>
+                        <span class="stat-change positive">+156 este mês</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="activeUsersChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Charts Section -->
+            <div class="charts-section">
+                <div class="chart-row">
+                    <!-- User Registration Trends -->
+                    <div class="dashboard-card large">
+                        <div class="card-header">
+                            <h3>Tendências de Cadastro de Usuários</h3>
+                            <div class="chart-controls">
+                                <select id="registrationPeriod" onchange="updateRegistrationChart()">
+                                    <option value="7">Últimos 7 dias</option>
+                                    <option value="30" selected>Últimos 30 dias</option>
+                                    <option value="90">Últimos 90 dias</option>
+                                    <option value="365">Último ano</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userRegistrationChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- User Activity Heatmap -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Atividade por Hora do Dia</h3>
+                            <button class="info-btn" title="Mostra quando os usuários são mais ativos">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userActivityHeatmap"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <!-- User Demographics -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Demografia dos Usuários</h3>
+                            <div class="chart-controls">
+                                <select id="demographicType" onchange="updateDemographicChart()">
+                                    <option value="age">Por Idade</option>
+                                    <option value="location">Por Localização</option>
+                                    <option value="device">Por Dispositivo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userDemographicsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- User Engagement -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Engajamento dos Usuários</h3>
+                            <button class="info-btn" title="Frequência de uso da plataforma">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userEngagementChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- User Retention -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Retenção de Usuários</h3>
+                            <button class="info-btn" title="Percentual de usuários que retornam">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userRetentionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Management Table -->
+            <div class="content-filters">
+                <div class="filter-group">
+                    <input type="text" id="userSearch" placeholder="Buscar usuários por nome ou email...">
+                    <select id="userRole">
+                        <option value="">Todas as funções</option>
+                        <option value="user">Usuário</option>
+                        <option value="moderator">Moderador</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                    <select id="userStatus">
+                        <option value="">Todos os status</option>
+                        <option value="active">Ativo</option>
+                        <option value="inactive">Inativo</option>
+                        <option value="suspended">Suspenso</option>
+                        <option value="banned">Banido</option>
+                    </select>
+                    <input type="date" id="registrationDateFrom" placeholder="Data de cadastro (de)">
+                    <input type="date" id="registrationDateTo" placeholder="Data de cadastro (até)">
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button class="view-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="users-table-container">
+                <table class="admin-table" id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAllUsers">
+                            </th>
+                            <th>Avatar</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Função</th>
+                            <th>Status</th>
+                            <th>Plantas Favoritas</th>
+                            <th>Último Acesso</th>
+                            <th>Cadastrado em</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <!-- Users data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Mostrando <span id="usersShowing">1-20</span> de <span id="usersTotal">4,127</span> usuários
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn" id="usersPrevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn" id="usersNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add User Modal -->
+        <div id="addUserModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Adicionar Novo Usuário</h2>
+                <form id="addUserForm">
+                    <div class="form-field">
+                        <label for="userName">Nome</label>
+                        <input type="text" id="userName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userPassword">Senha</label>
+                        <input type="password" id="userPassword" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userRoleSelect">Função</label>
+                        <select id="userRoleSelect">
+                            <option value="user">Usuário</option>
+                            <option value="moderator">Moderador</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeAddUserModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Adicionar Usuário</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Edit User Modal -->
+        <div id="editUserModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Editar Usuário</h2>
+                <form id="editUserForm">
+                    <input type="hidden" id="editUserId">
+                    <div class="form-field">
+                        <label for="editUserName">Nome</label>
+                        <input type="text" id="editUserName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editUserEmail">Email</label>
+                        <input type="email" id="editUserEmail" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editUserRoleSelect">Função</label>
+                        <select id="editUserRoleSelect">
+                            <option value="user">Usuário</option>
+                            <option value="moderator">Moderador</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="editUserStatusSelect">Status</label>
+                        <select id="editUserStatusSelect">
+                            <option value="active">Ativo</option>
+                            <option value="inactive">Inativo</option>
+                            <option value="suspended">Suspenso</option>
+                            <option value="banned">Banido</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeEditUserModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <!-- Plants Section -->
+        <section class="admin-section" id="plants">
+            <div class="section-header">
+                <h1>Gerenciar Plantas</h1>
+                <p>Análise detalhada e gerenciamento de plantas do sistema</p>
+                <div class="header-actions">
+                    <button class="primary-btn" onclick="openAddPlantModal()">
+                        <i class="fas fa-plus"></i>
+                        Adicionar Nova Planta
+                    </button>
+                    <button class="secondary-btn" onclick="exportPlants()">
+                        <i class="fas fa-download"></i>
+                        Exportar Plantas
+                    </button>
+                </div>
+            </div>
+
+            <!-- Plant Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalPlantsCount">1,234</h3>
+                        <p>Total de Plantas</p>
+                        <span class="stat-change positive">+56 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="totalPlantsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-plus-square"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="newPlantsCount">56</h3>
+                        <p>Plantas Adicionadas (7 dias)</p>
+                        <span class="stat-change positive">+15% vs semana anterior</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="newPlantsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="topRatedPlant">Orquídea Phalaenopsis</h3>
+                        <p>Planta Mais Avaliada</p>
+                        <span class="stat-change neutral">Média 4.8 estrelas</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="topRatedPlantChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="trendingPlant">Costela-de-Adão</h3>
+                        <p>Planta em Tendência</p>
+                        <span class="stat-change positive">+25% buscas esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="trendingPlantChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Charts Section -->
+            <div class="charts-section">
+                <div class="chart-row">
+                    <!-- Plant Category Distribution -->
+                    <div class="dashboard-card large">
+                        <div class="card-header">
+                            <h3>Distribuição de Plantas por Categoria</h3>
+                            <div class="chart-controls">
+                                <select id="plantCategory" onchange="updatePlantCategoryChart()">
+                                    <option value="all">Todas</option>
+                                    <option value="ornamental">Ornamentais</option>
+                                    <option value="medicinal">Medicinais</option>
+                                    <option value="frutifera">Frutíferas</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="plantCategoryChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Plant Growth Trends -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Tendências de Crescimento de Plantas</h3>
+                            <button class="info-btn" title="Número de novas plantas adicionadas ao longo do tempo">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="plantGrowthChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <!-- Plant Popularity -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Popularidade das Plantas (Visualizações)</h3>
+                            <button class="info-btn" title="Plantas mais visualizadas">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="plantPopularityChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Plant Health Status -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Status de Saúde das Plantas</h3>
+                            <button class="info-btn" title="Distribuição de plantas por status de saúde (saudável, com pragas, doente)">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="plantHealthChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Plant Origin -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Origem das Plantas</h3>
+                            <button class="info-btn" title="Distribuição de plantas por região de origem">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="plantOriginChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plant Management Table -->
+            <div class="content-filters">
+                <div class="filter-group">
+                    <input type="text" id="plantSearch" placeholder="Buscar plantas por nome ou espécie...">
+                    <select id="plantCategoryFilter">
+                        <option value="">Todas as categorias</option>
+                        <option value="ornamental">Ornamental</option>
+                        <option value="medicinal">Medicinal</option>
+                        <option value="frutifera">Frutífera</option>
+                        <option value="hortalica">Hortaliça</option>
+                    </select>
+                    <select id="plantStatusFilter">
+                        <option value="">Todos os status</option>
+                        <option value="available">Disponível</option>
+                        <option value="unavailable">Indisponível</option>
+                        <option value="pending">Pendente</option>
+                    </select>
+                    <input type="date" id="plantAddedDateFrom" placeholder="Data de adição (de)">
+                    <input type="date" id="plantAddedDateTo" placeholder="Data de adição (até)">
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button class="view-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="plants-table-container">
+                <table class="admin-table" id="plantsTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAllPlants">
+                            </th>
+                            <th>Imagem</th>
+                            <th>Nome Popular</th>
+                            <th>Nome Científico</th>
+                            <th>Categoria</th>
+                            <th>Status</th>
+                            <th>Avaliação Média</th>
+                            <th>Adicionado em</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="plantsTableBody">
+                        <!-- Plants data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Mostrando <span id="plantsShowing">1-20</span> de <span id="plantsTotal">1,234</span> plantas
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn" id="plantsPrevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn" id="plantsNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Plant Modal -->
+        <div id="addPlantModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Adicionar Nova Planta</h2>
+                <form id="addPlantForm">
+                    <div class="form-field">
+                        <label for="plantName">Nome Popular</label>
+                        <input type="text" id="plantName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="scientificName">Nome Científico</label>
+                        <input type="text" id="scientificName">
+                    </div>
+                    <div class="form-field">
+                        <label for="plantCategorySelect">Categoria</label>
+                        <select id="plantCategorySelect">
+                            <option value="ornamental">Ornamental</option>
+                            <option value="medicinal">Medicinal</option>
+                            <option value="frutifera">Frutífera</option>
+                            <option value="hortalica">Hortaliça</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="plantDescription">Descrição</label>
+                        <textarea id="plantDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="plantCareInstructions">Instruções de Cuidado</label>
+                        <textarea id="plantCareInstructions" rows="5"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="plantImages">Imagens da Planta</label>
+                        <input type="file" id="plantImages" accept="image/*" multiple>
+                        <div class="uploaded-images" id="uploadedImages"></div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeAddPlantModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Adicionar Planta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Edit Plant Modal -->
+        <div id="editPlantModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Editar Planta</h2>
+                <form id="editPlantForm">
+                    <input type="hidden" id="editPlantId">
+                    <div class="form-field">
+                        <label for="editPlantName">Nome Popular</label>
+                        <input type="text" id="editPlantName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editScientificName">Nome Científico</label>
+                        <input type="text" id="editScientificName">
+                    </div>
+                    <div class="form-field">
+                        <label for="editPlantCategorySelect">Categoria</label>
+                        <select id="editPlantCategorySelect">
+                            <option value="ornamental">Ornamental</option>
+                            <option value="medicinal">Medicinal</option>
+                            <option value="frutifera">Frutífera</option>
+                            <option value="hortalica">Hortaliça</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="editPlantDescription">Descrição</label>
+                        <textarea id="editPlantDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="editPlantCareInstructions">Instruções de Cuidado</label>
+                        <textarea id="editPlantCareInstructions" rows="5"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="editPlantStatus">Status</label>
+                        <select id="editPlantStatus">
+                            <option value="published">Publicado</option>
+                            <option value="draft">Rascunho</option>
+                            <option value="archived">Arquivado</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="editPlantImages">Imagens da Planta</label>
+                        <input type="file" id="editPlantImages" accept="image/*" multiple>
+                        <div class="uploaded-images" id="editUploadedImages"></div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeEditPlantModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <!-- Reviews Section -->
+        <section class="admin-section" id="reviews">
+            <div class="section-header">
+                <h1>Gerenciar Avaliações</h1>
+                <p>Moderação e análise de avaliações de plantas</p>
+                <div class="header-actions">
+                    <button class="primary-btn" onclick="exportReviews()">
+                        <i class="fas fa-download"></i>
+                        Exportar Avaliações
+                    </button>
+                    <button class="secondary-btn" onclick="openAddReviewModal()">
+                        <i class="fas fa-plus"></i>
+                        Adicionar Avaliação
+                    </button>
+                </div>
+            </div>
+
+            <!-- Review Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalReviewsCount">8,743</h3>
+                        <p>Total de Avaliações</p>
+                        <span class="stat-change positive">+89 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="totalReviewsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="pendingReviewsCount">12</h3>
+                        <p>Avaliações Pendentes</p>
+                        <span class="stat-change neutral">Aguardando moderação</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="pendingReviewsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="reportedReviewsCount">5</h3>
+                        <p>Avaliações Reportadas</p>
+                        <span class="stat-change negative">+2 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="reportedReviewsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="approvedReviewsCount">8,726</h3>
+                        <p>Avaliações Aprovadas</p>
+                        <span class="stat-change positive">+87 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="approvedReviewsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Charts Section -->
+            <div class="charts-section">
+                <div class="chart-row">
+                    <!-- Reviews by Rating -->
+                    <div class="dashboard-card large">
+                        <div class="card-header">
+                            <h3>Distribuição de Avaliações por Estrelas</h3>
+                            <div class="chart-controls">
+                                <select id="ratingPeriod" onchange="updateRatingChart()">
+                                    <option value="all">Todas</option>
+                                    <option value="7">Últimos 7 dias</option>
+                                    <option value="30">Últimos 30 dias</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="reviewsByRatingChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Review Trends -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Tendências de Avaliações</h3>
+                            <button class="info-btn" title="Número de avaliações ao longo do tempo">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="reviewTrendsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <!-- Top Plants by Review -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Top 5 Plantas Mais Bem Avaliadas</h3>
+                            <button class="info-btn" title="Plantas com as maiores médias de avaliação">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="topPlantsByReviewChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Reviews by User Role -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Avaliações por Tipo de Usuário</h3>
+                            <button class="info-btn" title="Distribuição de avaliações por função do usuário">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="reviewsByUserRoleChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Sentiment Analysis -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Análise de Sentimento</h3>
+                            <button class="info-btn" title="Sentimento geral das avaliações (positivo, neutro, negativo)">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="sentimentAnalysisChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Management Table -->
+            <div class="content-filters">
+                <div class="filter-group">
+                    <input type="text" id="reviewSearch" placeholder="Buscar avaliações por planta, usuário ou conteúdo...">
+                    <select id="reviewRating">
+                        <option value="">Todas as notas</option>
+                        <option value="5">5 Estrelas</option>
+                        <option value="4">4 Estrelas</option>
+                        <option value="3">3 Estrelas</option>
+                        <option value="2">2 Estrelas</option>
+                        <option value="1">1 Estrela</option>
+                    </select>
+                    <select id="reviewStatus">
+                        <option value="">Todos os status</option>
+                        <option value="pending">Pendente</option>
+                        <option value="approved">Aprovada</option>
+                        <option value="rejected">Rejeitada</option>
+                        <option value="reported">Reportada</option>
+                    </select>
+                    <input type="date" id="reviewDateFrom" placeholder="Data da avaliação (de)">
+                    <input type="date" id="reviewDateTo" placeholder="Data da avaliação (até)">
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button class="view-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="reviews-table-container">
+                <table class="admin-table" id="reviewsTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAllReviews">
+                            </th>
+                            <th>Planta</th>
+                            <th>Usuário</th>
+                            <th>Avaliação</th>
+                            <th>Comentário</th>
+                            <th>Status</th>
+                            <th>Data</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reviewsTableBody">
+                        <!-- Reviews data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Mostrando <span id="reviewsShowing">1-20</span> de <span id="reviewsTotal">8,743</span> avaliações
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn" id="reviewsPrevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn" id="reviewsNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Review Modal -->
+        <div id="addReviewModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Adicionar Nova Avaliação</h2>
+                <form id="addReviewForm">
+                    <div class="form-field">
+                        <label for="reviewPlantName">Planta</label>
+                        <input type="text" id="reviewPlantName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="reviewUserName">Usuário</label>
+                        <input type="text" id="reviewUserName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="reviewRatingSelect">Avaliação</label>
+                        <select id="reviewRatingSelect">
+                            <option value="5">5 Estrelas</option>
+                            <option value="4">4 Estrelas</option>
+                            <option value="3">3 Estrelas</option>
+                            <option value="2">2 Estrelas</option>
+                            <option value="1">1 Estrela</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="reviewComment">Comentário</label>
+                        <textarea id="reviewComment" rows="4"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeAddReviewModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Adicionar Avaliação</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Edit Review Modal -->
+        <div id="editReviewModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Editar Avaliação</h2>
+                <form id="editReviewForm">
+                    <input type="hidden" id="editReviewId">
+                    <div class="form-field">
+                        <label for="editReviewPlantName">Planta</label>
+                        <input type="text" id="editReviewPlantName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editReviewUserName">Usuário</label>
+                        <input type="text" id="editReviewUserName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editReviewRatingSelect">Avaliação</label>
+                        <select id="editReviewRatingSelect">
+                            <option value="5">5 Estrelas</option>
+                            <option value="4">4 Estrelas</option>
+                            <option value="3">3 Estrelas</option>
+                            <option value="2">2 Estrelas</option>
+                            <option value="1">1 Estrela</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="editReviewComment">Comentário</label>
+                        <textarea id="editReviewComment" rows="4"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="editReviewStatusSelect">Status</label>
+                        <select id="editReviewStatusSelect">
+                            <option value="pending">Pendente</option>
+                            <option value="approved">Aprovada</option>
+                            <option value="rejected">Rejeitada</option>
+                            <option value="reported">Reportada</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeEditReviewModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <!-- Searches Section -->
+        <section class="admin-section" id="searches">
+            <div class="section-header">
+                <h1>Gerenciar Pesquisas</h1>
+                <p>Análise e gerenciamento de termos de pesquisa e resultados</p>
+                <div class="header-actions">
+                    <button class="primary-btn" onclick="exportSearches()">
+                        <i class="fas fa-download"></i>
+                        Exportar Pesquisas
+                    </button>
+                    <button class="secondary-btn" onclick="clearSearchHistory()">
+                        <i class="fas fa-broom"></i>
+                        Limpar Histórico
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalSearchesCount">15,234</h3>
+                        <p>Total de Pesquisas</p>
+                        <span class="stat-change positive">+1,234 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="totalSearchesChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="trendingSearchesCount">5</h3>
+                        <p>Termos em Tendência</p>
+                        <span class="stat-change neutral">Monitorando</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="trendingSearchesChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="noResultsSearchesCount">123</h3>
+                        <p>Pesquisas Sem Resultado</p>
+                        <span class="stat-change negative">+15 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="noResultsSearchesChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="conversionRate">78%</h3>
+                        <p>Taxa de Conversão</p>
+                        <span class="stat-change positive">+2% este mês</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="conversionRateChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Charts Section -->
+            <div class="charts-section">
+                <div class="chart-row">
+                    <!-- Search Volume Trends -->
+                    <div class="dashboard-card large">
+                        <div class="card-header">
+                            <h3>Tendências de Volume de Pesquisa</h3>
+                            <div class="chart-controls">
+                                <select id="searchVolumePeriod" onchange="updateSearchVolumeChart()">
+                                    <option value="7">Últimos 7 dias</option>
+                                    <option value="30" selected>Últimos 30 dias</option>
+                                    <option value="90">Últimos 90 dias</option>
+                                    <option value="365">Último ano</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="searchVolumeChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Top Search Terms -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Top 10 Termos de Pesquisa</h3>
+                            <button class="info-btn" title="Termos mais pesquisados pelos usuários">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="topSearchTermsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <!-- Search Origin -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Origem das Pesquisas</h3>
+                            <button class="info-btn" title="De onde os usuários estão pesquisando (país, dispositivo)">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="searchOriginChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Search Effectiveness -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Eficácia da Pesquisa</h3>
+                            <button class="info-btn" title="Percentual de pesquisas que resultam em cliques">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="searchEffectivenessChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Search by Time of Day -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Pesquisas por Hora do Dia</h3>
+                            <button class="info-btn" title="Quando os usuários mais pesquisam">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="searchTimeOfDayChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Terms Table -->
+            <div class="content-filters">
+                <div class="filter-group">
+                    <input type="text" id="searchTermSearch" placeholder="Buscar termo de pesquisa...">
+                    <select id="searchResultFilter">
+                        <option value="">Todos os resultados</option>
+                        <option value="found">Com resultados</option>
+                        <option value="notFound">Sem resultados</option>
+                    </select>
+                    <input type="date" id="searchDateFrom" placeholder="Data da pesquisa (de)">
+                    <input type="date" id="searchDateTo" placeholder="Data da pesquisa (até)">
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button class="view-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="search-terms-table-container">
+                <table class="admin-table" id="searchTermsTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAllSearchTerms">
+                            </th>
+                            <th>Termo de Pesquisa</th>
+                            <th>Número de Pesquisas</th>
+                            <th>Resultados Encontrados</th>
+                            <th>Data da Última Pesquisa</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchTermsTableBody">
+                        <!-- Search terms data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Mostrando <span id="searchTermsShowing">1-20</span> de <span id="searchTermsTotal">15,234</span> termos
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn" id="searchTermsPrevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn" id="searchTermsNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Search Term Modal (if applicable) -->
+        <div id="addSearchTermModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Adicionar Termo de Pesquisa</h2>
+                <form id="addSearchTermForm">
+                    <div class="form-field">
+                        <label for="searchTermName">Termo</label>
+                        <input type="text" id="searchTermName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="searchTermRedirect">Redirecionar para (URL opcional)</label>
+                        <input type="url" id="searchTermRedirect">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeAddSearchTermModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Adicionar Termo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Edit Search Term Modal -->
+        <div id="editSearchTermModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Editar Termo de Pesquisa</h2>
+                <form id="editSearchTermForm">
+                    <input type="hidden" id="editSearchTermId">
+                    <div class="form-field">
+                        <label for="editSearchTermName">Termo</label>
+                        <input type="text" id="editSearchTermName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editSearchResultCount">Número de Pesquisas</label>
+                        <input type="number" id="editSearchResultCount" min="0">
+                    </div>
+                    <div class="form-field">
+                        <label for="editSearchRedirect">Redirecionar para (URL opcional)</label>
+                        <input type="url" id="editSearchRedirect">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeEditSearchTermModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+_conteudo da pesquisa (até)'>
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button class="view-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="content-table-container">
+                <table class="admin-table" id="contentTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAllContent">
+                            </th>
+                            <th>Título</th>
+                            <th>Tipo</th>
+                            <th>Autor</th>
+                            <th>Status</th>
+                            <th>Visualizações</th>
+                            <th>Data de Publicação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contentTableBody">
+                        <!-- Content data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Mostrando <span id="contentShowing">1-20</span> de <span id="contentTotal">345</span> conteúdos
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn" id="contentPrevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn" id="contentNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Content Modal -->
+        <div id="addContentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Adicionar Novo Conteúdo</h2>
+                <form id="addContentForm">
+                    <div class="form-field">
+                        <label for="contentTitle">Título</label>
+                        <input type="text" id="contentTitle" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="contentTypeSelect">Tipo</label>
+                        <select id="contentTypeSelect">
+                            <option value="article">Artigo</option>
+                            <option value="guide">Guia</option>
+                            <option value="news">Notícia</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="contentAuthor">Autor</label>
+                        <input type="text" id="contentAuthor" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="contentSummary">Resumo</label>
+                        <textarea id="contentSummary" rows="3"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="contentBody">Corpo do Conteúdo</label>
+                        <textarea id="contentBody" rows="10" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="contentStatusSelect">Status</label>
+                        <select id="contentStatusSelect">
+                            <option value="published">Publicado</option>
+                            <option value="draft">Rascunho</option>
+                            <option value="pending">Pendente</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeAddContentModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Adicionar Conteúdo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Edit Content Modal -->
+        <div id="editContentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Editar Conteúdo</h2>
+                <form id="editContentForm">
+                    <input type="hidden" id="editContentId">
+                    <div class="form-field">
+                        <label for="editContentTitle">Título</label>
+                        <input type="text" id="editContentTitle" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editContentTypeSelect">Tipo</label>
+                        <select id="editContentTypeSelect">
+                            <option value="article">Artigo</option>
+                            <option value="guide">Guia</option>
+                            <option value="news">Notícia</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="editContentAuthor">Autor</label>
+                        <input type="text" id="editContentAuthor" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editContentSummary">Resumo</label>
+                        <textarea id="editContentSummary" rows="3"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="editContentBody">Corpo do Conteúdo</label>
+                        <textarea id="editContentBody" rows="10" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="editContentStatusSelect">Status</label>
+                        <select id="editContentStatusSelect">
+                            <option value="published">Publicado</option>
+                            <option value="draft">Rascunho</option>
+                            <option value="pending">Pendente</option>
+                            <option value="archived">Arquivado</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeEditContentModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <!-- Searches Section -->
+        <section class="admin-section" id="searches">
+            <div class="section-header">
+                <h1>Gerenciar Pesquisas</h1>
+                <p>Análise e gerenciamento de termos de pesquisa e resultados</p>
+                <div class="header-actions">
+                    <button class="primary-btn" onclick="exportSearches()">
+                        <i class="fas fa-download"></i>
+                        Exportar Pesquisas
+                    </button>
+                    <button class="secondary-btn" onclick="clearSearchHistory()">
+                        <i class="fas fa-broom"></i>
+                        Limpar Histórico
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalSearchesCount">15,234</h3>
+                        <p>Total de Pesquisas</p>
+                        <span class="stat-change positive">+1,234 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="totalSearchesChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="trendingSearchesCount">5</h3>
+                        <p>Termos em Tendência</p>
+                        <span class="stat-change neutral">Monitorando</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="trendingSearchesChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="noResultsSearchesCount">123</h3>
+                        <p>Pesquisas Sem Resultado</p>
+                        <span class="stat-change negative">+15 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="noResultsSearchesChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="conversionRate">78%</h3>
+                        <p>Taxa de Conversão</p>
+                        <span class="stat-change positive">+2% este mês</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="conversionRateChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Charts Section -->
+            <div class="charts-section">
+                <div class="chart-row">
+                    <!-- Search Volume Trends -->
+                    <div class="dashboard-card large">
+                        <div class="card-header">
+                            <h3>Tendências de Volume de Pesquisa</h3>
+                            <div class="chart-controls">
+                                <select id="searchVolumePeriod" onchange="updateSearchVolumeChart()">
+                                    <option value="7">Últimos 7 dias</option>
+                                    <option value="30" selected>Últimos 30 dias</option>
+                                    <option value="90">Últimos 90 dias</option>
+                                    <option value="365">Último ano</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="searchVolumeChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Top Search Terms -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Top 10 Termos de Pesquisa</h3>
+                            <button class="info-btn" title="Termos mais pesquisados pelos usuários">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="topSearchTermsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <!-- Search Origin -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Origem das Pesquisas</h3>
+                            <button class="info-btn" title="De onde os usuários estão pesquisando (país, dispositivo)">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="searchOriginChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Search Effectiveness -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Eficácia da Pesquisa</h3>
+                            <button class="info-btn" title="Percentual de pesquisas que resultam em cliques">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="searchEffectivenessChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Search by Time of Day -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Pesquisas por Hora do Dia</h3>
+                            <button class="info-btn" title="Quando os usuários mais pesquisam">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="searchTimeOfDayChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Terms Table -->
+            <div class="content-filters">
+                <div class="filter-group">
+                    <input type="text" id="searchTermSearch" placeholder="Buscar termo de pesquisa...">
+                    <select id="searchResultFilter">
+                        <option value="">Todos os resultados</option>
+                        <option value="found">Com resultados</option>
+                        <option value="notFound">Sem resultados</option>
+                    </select>
+                    <input type="date" id="searchDateFrom" placeholder="Data da pesquisa (de)">
+                    <input type="date" id="searchDateTo" placeholder="Data da pesquisa (até)">
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button class="view-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="search-terms-table-container">
+                <table class="admin-table" id="searchTermsTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAllSearchTerms">
+                            </th>
+                            <th>Termo de Pesquisa</th>
+                            <th>Número de Pesquisas</th>
+                            <th>Resultados Encontrados</th>
+                            <th>Data da Última Pesquisa</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchTermsTableBody">
+                        <!-- Search terms data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Mostrando <span id="searchTermsShowing">1-20</span> de <span id="searchTermsTotal">15,234</span> termos
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn" id="searchTermsPrevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn" id="searchTermsNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Search Term Modal (if applicable) -->
+        <div id="addSearchTermModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Adicionar Termo de Pesquisa</h2>
+                <form id="addSearchTermForm">
+                    <div class="form-field">
+                        <label for="searchTermName">Termo</label>
+                        <input type="text" id="searchTermName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="searchTermRedirect">Redirecionar para (URL opcional)</label>
+                        <input type="url" id="searchTermRedirect">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeAddSearchTermModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Adicionar Termo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Edit Search Term Modal -->
+        <div id="editSearchTermModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Editar Termo de Pesquisa</h2>
+                <form id="editSearchTermForm">
+                    <input type="hidden" id="editSearchTermId">
+                    <div class="form-field">
+                        <label for="editSearchTermName">Termo</label>
+                        <input type="text" id="editSearchTermName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editSearchResultCount">Número de Pesquisas</label>
+                        <input type="number" id="editSearchResultCount" min="0">
+                    </div>
+                    <div class="form-field">
+                        <label for="editSearchRedirect">Redirecionar para (URL opcional)</label>
+                        <input type="url" id="editSearchRedirect">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeEditSearchTermModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <!-- Analytics Section -->
+        <section class="admin-section" id="analytics">
+            <div class="section-header">
+                <h1>Análises e Relatórios</h1>
+                <p>Visão geral e detalhamento de dados do sistema</p>
+                <div class="header-actions">
+                    <button class="primary-btn" onclick="exportAnalytics()">
+                        <i class="fas fa-download"></i>
+                        Exportar Relatórios
+                    </button>
+                    <button class="secondary-btn" onclick="generateCustomReport()">
+                        <i class="fas fa-chart-pie"></i>
+                        Gerar Relatório Personalizado
+                    </button>
+                </div>
+            </div>
+
+            <!-- Analytics Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="uniqueVisitors">12,345</h3>
+                        <p>Visitantes Únicos (30 dias)</p>
+                        <span class="stat-change positive">+15% vs mês anterior</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="uniqueVisitorsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="pageViews">56,789</h3>
+                        <p>Visualizações de Página (30 dias)</p>
+                        <span class="stat-change positive">+10% vs mês anterior</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="pageViewsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="avgSessionDuration">00:03:45</h3>
+                        <p>Duração Média da Sessão</p>
+                        <span class="stat-change neutral">Estável</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="avgSessionDurationChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="bounceRate">35%</h3>
+                        <p>Taxa de Rejeição</p>
+                        <span class="stat-change negative">+2% vs mês anterior</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="bounceRateChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Charts Section -->
+            <div class="charts-section">
+                <div class="chart-row">
+                    <!-- Traffic Sources -->
+                    <div class="dashboard-card large">
+                        <div class="card-header">
+                            <h3>Fontes de Tráfego</h3>
+                            <div class="chart-controls">
+                                <select id="trafficSourcePeriod" onchange="updateTrafficSourceChart()">
+                                    <option value="7">Últimos 7 dias</option>
+                                    <option value="30" selected>Últimos 30 dias</option>
+                                    <option value="90">Últimos 90 dias</option>
+                                    <option value="365">Último ano</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="trafficSourceChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Geographic Distribution -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Distribuição Geográfica</h3>
+                            <button class="info-btn" title="Origem geográfica dos visitantes">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="geographicDistributionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <!-- Device Usage -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Uso de Dispositivos</h3>
+                            <button class="info-btn" title="Distribuição de visitantes por tipo de dispositivo">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="deviceUsageChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Top Pages -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Páginas Mais Visitadas</h3>
+                            <button class="info-btn" title="As páginas mais populares do site">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="topPagesChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- User Flow -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Fluxo de Usuários</h3>
+                            <button class="info-btn" title="Caminho que os usuários percorrem no site">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userFlowChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity Log -->
+            <div class="dashboard-card full-width">
+                <div class="card-header">
+                    <h3>Log de Atividade Recente</h3>
+                    <button class="refresh-btn" onclick="refreshActivityLog()">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p>Visitante de <strong>São Paulo, Brasil</strong> acessou a página inicial</p>
+                            <span>5 minutos atrás</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p>Usuário móvel de <strong>Rio de Janeiro</strong> visualizou 
+
+o guia de cultivo de Rosas</p>
+                            <span>15 minutos atrás</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p>Usuário de <strong>Minas Gerais</strong> pesquisou por "plantas medicinais"</p>
+                            <span>30 minutos atrás</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Settings Section -->
+        <section class="admin-section" id="settings">
+            <div class="section-header">
+                <h1>Configurações do Sistema</h1>
+                <p>Gerencie as configurações gerais da plataforma Phytografia</p>
+            </div>
+
+            <div class="settings-grid">
+                <!-- General Settings -->
+                <div class="settings-card">
+                    <h3><i class="fas fa-globe"></i> Configurações Gerais</h3>
+                    <form class="settings-form">
+                        <div class="form-field">
+                            <label for="siteName">Nome do Site</label>
+                            <input type="text" id="siteName" value="Phytografia">
+                        </div>
+                        <div class="form-field">
+                            <label for="siteDescription">Descrição do Site</label>
+                            <textarea id="siteDescription" rows="3">Seu guia completo sobre o mundo das plantas.</textarea>
+                        </div>
+                        <div class="form-field">
+                            <label for="adminEmail">Email do Administrador</label>
+                            <input type="email" id="adminEmail" value="admin@phytografia.com">
+                        </div>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </form>
+                </div>
+
+                <!-- User Management Settings -->
+                <div class="settings-card">
+                    <h3><i class="fas fa-users-cog"></i> Gerenciamento de Usuários</h3>
+                    <form class="settings-form">
+                        <div class="form-field checkbox-field">
+                            <input type="checkbox" id="allowRegistration" checked>
+                            <label for="allowRegistration">Permitir novos cadastros</label>
+                        </div>
+                        <div class="form-field checkbox-field">
+                            <input type="checkbox" id="emailVerification">
+                            <label for="emailVerification">Exigir verificação de email</label>
+                        </div>
+                        <div class="form-field">
+                            <label for="defaultUserRole">Função padrão para novos usuários</label>
+                            <select id="defaultUserRole">
+                                <option value="user">Usuário</option>
+                                <option value="moderator">Moderador</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </form>
+                </div>
+
+                <!-- Content Settings -->
+                <div class="settings-card">
+                    <h3><i class="fas fa-file-alt"></i> Configurações de Conteúdo</h3>
+                    <form class="settings-form">
+                        <div class="form-field checkbox-field">
+                            <input type="checkbox" id="enableComments" checked>
+                            <label for="enableComments">Habilitar comentários em artigos</label>
+                        </div>
+                        <div class="form-field">
+                            <label for="postsPerPage">Artigos por página</label>
+                            <input type="number" id="postsPerPage" value="10" min="1">
+                        </div>
+                        <div class="form-field">
+                            <label for="defaultLanguage">Idioma Padrão</label>
+                            <select id="defaultLanguage">
+                                <option value="pt-BR">Português (Brasil)</option>
+                                <option value="en-US">English (US)</option>
+                                <option value="es-ES">Español (España)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </form>
+                </div>
+
+                <!-- SEO Settings -->
+                <div class="settings-card">
+                    <h3><i class="fas fa-search"></i> Configurações de SEO</h3>
+                    <form class="settings-form">
+                        <div class="form-field">
+                            <label for="metaTitle">Meta Título Padrão</label>
+                            <input type="text" id="metaTitle" value="Phytografia - Seu Guia de Plantas">
+                        </div>
+                        <div class="form-field">
+                            <label for="metaDescription">Meta Descrição Padrão</label>
+                            <textarea id="metaDescription" rows="3">Descubra o mundo das plantas com a Phytografia. Guias de cultivo, catálogo de espécies e muito mais.</textarea>
+                        </div>
+                        <div class="form-field">
+                            <label for="keywords">Palavras-chave (separadas por vírgula)</label>
+                            <input type="text" id="keywords" value="plantas, cultivo, jardinagem, espécies, botânica">
+                        </div>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </form>
+                </div>
+
+                <!-- Integrations -->
+                <div class="settings-card">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrações</h3>
+                    <form class="settings-form">
+                        <div class="form-field">
+                            <label for="googleAnalyticsId">ID do Google Analytics</label>
+                            <input type="text" id="googleAnalyticsId" placeholder="UA-XXXXX-Y">
+                        </div>
+                        <div class="form-field">
+                            <label for="socialMediaLinks">Links de Redes Sociais (JSON)</label>
+                            <textarea id="socialMediaLinks" rows="5">{
+    "facebook": "https://facebook.com/phytografia",
+    "instagram": "https://instagram.com/phytografia"
+}</textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </form>
+                </div>
+
+                <!-- Advanced Settings -->
+                <div class="settings-card">
+                    <h3><i class="fas fa-cogs"></i> Avançado</h3>
+                    <form class="settings-form">
+                        <div class="form-field checkbox-field">
+                            <input type="checkbox" id="maintenanceMode">
+                            <label for="maintenanceMode">Modo de Manutenção</label>
+                        </div>
+                        <div class="form-field">
+                            <label for="cacheDuration">Duração do Cache (minutos)</label>
+                            <input type="number" id="cacheDuration" value="60" min="0">
+                        </div>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Phytografia</span>
+                    </div>
+                    <p>Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="catalog.html">Catálogo</a></li>
+                        <li><a href="guides.html">Guia de Cultivo</a></li>
+                        <li><a href="about.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="guides.html">Guias de Cultivo</a></li>
+                        <li><a href="api.html">API</a></li>
+                        <li><a href="help.html">Ajuda</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@phytografia.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Phytografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>

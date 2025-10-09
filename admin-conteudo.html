@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Conteúdo - Phytografia Admin</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="guides.html" class="nav-link">Guia de Cultivo</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
+                            pelé
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="admin.html">Meu Perfil</a></li>
+                            <li><a href="#" onclick="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <nav class="sidebar-nav">
+            <ul class="sidebar-menu">
+                <li class="menu-item">
+                    <a href="../admin.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-usuarios.html">
+                        <i class="fas fa-users"></i>
+                        <span>Usuários</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-plantas.html">
+                        <i class="fas fa-seedling"></i>
+                        <span>Plantas</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-avaliacoes.html">
+                        <i class="fas fa-star"></i>
+                        <span>Avaliações</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-pesquisas.html">
+                        <i class="fas fa-search"></i>
+                        <span>Pesquisas</span>
+                    </a>
+                </li>
+                <li class="menu-item active">
+                    <a href="admin-conteudo.html">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Conteúdo</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-analytics.html">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Análises</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-configuracoes.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <section class="admin-section active">
+            <div class="section-header">
+                <h1>Gerenciar Conteúdo</h1>
+                <p>Criação, edição e moderação de artigos, guias e outras informações</p>
+                <div class="header-actions">
+                    <button class="primary-btn" onclick="openAddContentModal()">
+                        <i class="fas fa-plus"></i>
+                        Adicionar Novo Conteúdo
+                    </button>
+                    <button class="secondary-btn" onclick="exportContent()">
+                        <i class="fas fa-download"></i>
+                        Exportar Conteúdo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalContentCount">345</h3>
+                        <p>Total de Conteúdos</p>
+                        <span class="stat-change positive">+12 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="totalContentChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-plus-square"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="newContentCount">12</h3>
+                        <p>Conteúdos Adicionados (7 dias)</p>
+                        <span class="stat-change positive">+30% vs semana anterior</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="newContentChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="pendingContentCount">5</h3>
+                        <p>Conteúdos Pendentes</p>
+                        <span class="stat-change neutral">Aguardando revisão</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="pendingContentChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="mostViewedContent">Guia de Orquídeas</h3>
+                        <p>Conteúdo Mais Visualizado</p>
+                        <span class="stat-change positive">+1,200 visualizações</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="mostViewedContentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Charts Section -->
+            <div class="charts-section">
+                <div class="chart-row">
+                    <!-- Content Type Distribution -->
+                    <div class="dashboard-card large">
+                        <div class="card-header">
+                            <h3>Distribuição por Tipo de Conteúdo</h3>
+                            <div class="chart-controls">
+                                <select id="contentType" onchange="updateContentTypeChart()">
+                                    <option value="all">Todos</option>
+                                    <option value="article">Artigos</option>
+                                    <option value="guide">Guias</option>
+                                    <option value="news">Notícias</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="contentTypeChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Content Engagement -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Engajamento do Conteúdo</h3>
+                            <button class="info-btn" title="Média de tempo na página e interações">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="contentEngagementChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <!-- Content Views by Month -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Visualizações de Conteúdo por Mês</h3>
+                            <button class="info-btn" title="Tendência de visualizações ao longo do tempo">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="contentViewsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Content Authors -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Conteúdo por Autor</h3>
+                            <button class="info-btn" title="Distribuição de conteúdo por autor">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="contentAuthorsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Content Status Distribution -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Status do Conteúdo</h3>
+                            <button class="info-btn" title="Distribuição de conteúdo por status (publicado, rascunho, pendente)">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="contentStatusChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Management Table -->
+            <div class="content-filters">
+                <div class="filter-group">
+                    <input type="text" id="contentSearch" placeholder="Buscar conteúdo por título ou autor...">
+                    <select id="contentTypeFilter">
+                        <option value="">Todos os tipos</option>
+                        <option value="article">Artigo</option>
+                        <option value="guide">Guia</option>
+                        <option value="news">Notícia</option>
+                    </select>
+                    <select id="contentStatusFilter">
+                        <option value="">Todos os status</option>
+                        <option value="published">Publicado</option>
+                        <option value="draft">Rascunho</option>
+                        <option value="pending">Pendente</option>
+                        <option value="archived">Arquivado</option>
+                    </select>
+                    <input type="date" id="contentDateFrom" placeholder="Data de criação (de)">
+                    <input type="date" id="contentDateTo" placeholder="Data de criação (até)">
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button class="view-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="content-table-container">
+                <table class="admin-table" id="contentTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAllContent">
+                            </th>
+                            <th>Título</th>
+                            <th>Tipo</th>
+                            <th>Autor</th>
+                            <th>Status</th>
+                            <th>Visualizações</th>
+                            <th>Data de Publicação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contentTableBody">
+                        <!-- Content data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Mostrando <span id="contentShowing">1-20</span> de <span id="contentTotal">345</span> conteúdos
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn" id="contentPrevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn" id="contentNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Content Modal -->
+        <div id="addContentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Adicionar Novo Conteúdo</h2>
+                <form id="addContentForm">
+                    <div class="form-field">
+                        <label for="contentTitle">Título</label>
+                        <input type="text" id="contentTitle" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="contentTypeSelect">Tipo</label>
+                        <select id="contentTypeSelect">
+                            <option value="article">Artigo</option>
+                            <option value="guide">Guia</option>
+                            <option value="news">Notícia</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="contentAuthor">Autor</label>
+                        <input type="text" id="contentAuthor" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="contentSummary">Resumo</label>
+                        <textarea id="contentSummary" rows="3"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="contentBody">Corpo do Conteúdo</label>
+                        <textarea id="contentBody" rows="10" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="contentStatusSelect">Status</label>
+                        <select id="contentStatusSelect">
+                            <option value="draft">Rascunho</option>
+                            <option value="pending">Pendente</option>
+                            <option value="published">Publicado</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeAddContentModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Adicionar Conteúdo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Edit Content Modal -->
+        <div id="editContentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Editar Conteúdo</h2>
+                <form id="editContentForm">
+                    <input type="hidden" id="editContentId">
+                    <div class="form-field">
+                        <label for="editContentTitle">Título</label>
+                        <input type="text" id="editContentTitle" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editContentTypeSelect">Tipo</label>
+                        <select id="editContentTypeSelect">
+                            <option value="article">Artigo</option>
+                            <option value="guide">Guia</option>
+                            <option value="news">Notícia</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="editContentAuthor">Autor</label>
+                        <input type="text" id="editContentAuthor" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editContentSummary">Resumo</label>
+                        <textarea id="editContentSummary" rows="3"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="editContentBody">Corpo do Conteúdo</label>
+                        <textarea id="editContentBody" rows="10" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="editContentStatusSelect">Status</label>
+                        <select id="editContentStatusSelect">
+                            <option value="draft">Rascunho</option>
+                            <option value="pending">Pendente</option>
+                            <option value="published">Publicado</option>
+                            <option value="archived">Arquivado</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeEditContentModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Phytografia</span>
+                    </div>
+                    <p>Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="../catalog.html">Catálogo</a></li>
+                        <li><a href="../guides.html">Guia de Cultivo</a></li>
+                        <li><a href="../about.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="../guides.html">Guias de Cultivo</a></li>
+                        <li><a href="../api.html">API</a></li>
+                        <li><a href="../help.html">Ajuda</a></li>
+                        <li><a href="../contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@phytografia.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Phytografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../script.js"></script>
+    <script src="../admin.js"></script>
+    <script src="../admin-layout.js"></script>
+    <script src="admin-conteudo.js"></script>
+</body>
+</html>

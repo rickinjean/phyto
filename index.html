@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phytografia - Sistema de Pesquisa Botânica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="guides.html" class="nav-link">Guia de Cultivo</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
+                            pelé
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="admin.html">Meu Perfil</a></li>
+                            <li><a href="#" onclick="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Phytografia</h1>
+                <p class="hero-subtitle">Sistema de Pesquisa Botânica</p>
+                <p class="hero-description">
+                    O Phytografia é um sistema inovador que combina ciência, tecnologia e educação 
+                    para criar uma plataforma completa de conhecimento sobre plantas. Explore nossa 
+                    vasta biblioteca botânica, descubra novas espécies e aprenda sobre o fascinante 
+                    mundo das plantas.
+                </p>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <form id="mainSearchForm" action="catalog.html" method="GET">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Pesquise por plantas, cores ou características..." id="searchInput" name="query">
+                        <button type="submit" class="search-btn">Buscar</button>
+                    </div>
+                    <div class="search-suggestions" id="searchSuggestions">
+                        <div class="suggestion-item">Rosa (Rosa spp.)</div>
+                        <div class="suggestion-item">Girassol (Helianthus annuus)</div>
+                        <div class="suggestion-item">Plantas medicinais</div>
+                        <div class="suggestion-item">Plantas ornamentais</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access -->
+    <section class="quick-access">
+        <div class="container">
+            <h2>Acesso Rápido</h2>
+            <div class="quick-access-grid">
+                <div class="quick-access-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Explorar Catálogo</h3>
+                    <p>Navegue por nossa extensa coleção de plantas organizadas por categorias</p>
+                    <a href="catalog.html" class="card-btn">Explorar</a>
+                </div>
+                <div class="quick-access-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Guias de Cultivo</h3>
+                    <p>Aprenda como cultivar e cuidar de suas plantas favoritas</p>
+                    <a href="guides.html" class="card-btn">Aprender</a>
+                </div>
+                <div class="quick-access-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Meu Perfil</h3>
+                    <p>Acesse o seu perfil mais rapidamente</p>
+                    <a href="profile.html" class="card-btn">Ver Perfil</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Plants -->
+    <section id="featured" class="featured-plants">
+        <div class="container">
+            <h2>Plantas em Destaque</h2>
+            <div class="featured-tabs">
+                <button class="tab-btn active" data-tab="day">Planta do Dia</button>
+                <button class="tab-btn" data-tab="popular">Mais Pesquisadas</button>
+                <button class="tab-btn" data-tab="new">Recém Adicionadas</button>
+                <button class="tab-btn" data-tab="season">Plantas da Estação</button>
+            </div>
+            
+            <div class="featured-content">
+                <div class="tab-content active" id="day">
+                    <div class="plant-cards">
+                        <div class="plant-card">
+                            <div class="plant-image">
+                                <img src="imagens/rosavermelha.jpg" alt="Rosa">
+                                <div class="plant-overlay">
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-share"></i>
+                                </div>
+                            </div>
+                            <div class="plant-info">
+                                <h3>Rosa</h3>
+                                <p class="scientific-name">Rosa spp.</p>
+                                <p class="plant-description">Flor símbolo do amor e da beleza, com variedades em diversas cores e fragrâncias.</p>
+                                <div class="plant-tags">
+                                    <span class="tag">Ornamental</span>
+                                    <span class="tag">Perfumada</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="popular">
+                    <div class="plant-cards">
+                        <div class="plant-card">
+                            <div class="plant-image">
+                                <img src="imagens/girassol.webp" alt="Girassol">
+                                <div class="plant-overlay">
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-share"></i>
+                                </div>
+                            </div>
+                            <div class="plant-info">
+                                <h3>Girassol</h3>
+                                <p class="scientific-name">Helianthus annuus</p>
+                                <p class="plant-description">Planta que segue o movimento do sol, conhecida por suas sementes nutritivas.</p>
+                                <div class="plant-tags">
+                                    <span class="tag">Alimentícia</span>
+                                    <span class="tag">Ornamental</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plant-card">
+                            <div class="plant-image">
+                                <img src="imagens/lavanda.webp" alt="Lavanda">
+                                <div class="plant-overlay">
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-share"></i>
+                                </div>
+                            </div>
+                            <div class="plant-info">
+                                <h3>Lavanda</h3>
+                                <p class="scientific-name">Lavandula angustifolia</p>
+                                <p class="plant-description">Planta aromática conhecida por suas propriedades relaxantes e medicinais.</p>
+                                <div class="plant-tags">
+                                    <span class="tag">Medicinal</span>
+                                    <span class="tag">Aromática</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="new">
+                    <div class="plant-cards">
+                        <div class="plant-card">
+                            <div class="plant-image">
+                                <img src="imagens/orquideaazul.webp" alt="Orquídea">
+                                <div class="plant-overlay">
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-share"></i>
+                                </div>
+                            </div>
+                            <div class="plant-info">
+                                <h3>Orquídea</h3>
+                                <p class="scientific-name">Orchidaceae</p>
+                                <p class="plant-description">Família de plantas com flores exóticas e elegantes, muito apreciadas na decoração.</p>
+                                <div class="plant-tags">
+                                    <span class="tag">Ornamental</span>
+                                    <span class="tag">Exótica</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="season">
+                    <div class="plant-cards">
+                        <div class="plant-card">
+                            <div class="plant-image">
+                                <img src="imagens/ipêamarelin.webp" alt="Ipê">
+                                <div class="plant-overlay">
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-share"></i>
+                                </div>
+                            </div>
+                            <div class="plant-info">
+                                <h3>Ipê Amarelo</h3>
+                                <p class="scientific-name">Handroanthus albus</p>
+                                <p class="plant-description">Árvore brasileira que floresce no inverno, símbolo da chegada da primavera.</p>
+                                <div class="plant-tags">
+                                    <span class="tag">Nativa</span>
+                                    <span class="tag">Ornamental</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Dashboard -->
+    <section class="stats-dashboard">
+        <div class="container">
+            <h2>Estatísticas do Sistema</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-number" data-target="15847">0</h3>
+                        <p>Plantas Cadastradas</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-number" data-target="2341">0</h3>
+                        <p>Pesquisas Hoje</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-number" data-target="8923">0</h3>
+                        <p>Usuários Ativos</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-number" data-target="127">0</h3>
+                        <p>Adições Recentes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Phytografia</span>
+                    </div>
+                    <p>Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="catalog.html">Catálogo</a></li>
+                        <li><a href="guides.html">Guia de Cultivo</a></li>
+                        <li><a href="about.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="guides.html">Guias de Cultivo</a></li>
+                        <li><a href="api.html">API</a></li>
+                        <li><a href="help.html">Ajuda</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@phytografia.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Phytografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

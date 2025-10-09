@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Plantas - Phytografia Admin</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="guides.html" class="nav-link">Guia de Cultivo</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
+                            pelé
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="admin.html">Meu Perfil</a></li>
+                            <li><a href="#" onclick="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <nav class="sidebar-nav">
+            <ul class="sidebar-menu">
+                <li class="menu-item">
+                    <a href="../admin.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-usuarios.html">
+                        <i class="fas fa-users"></i>
+                        <span>Usuários</span>
+                    </a>
+                </li>
+                <li class="menu-item active">
+                    <a href="admin-plantas.html">
+                        <i class="fas fa-seedling"></i>
+                        <span>Plantas</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-avaliacoes.html">
+                        <i class="fas fa-star"></i>
+                        <span>Avaliações</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-pesquisas.html">
+                        <i class="fas fa-search"></i>
+                        <span>Pesquisas</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-conteudo.html">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Conteúdo</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-analytics.html">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Análises</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-configuracoes.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <section class="admin-section active">
+            <div class="section-header">
+                <h1>Gerenciar Plantas</h1>
+                <p>Análise detalhada e gerenciamento de plantas do sistema</p>
+                <div class="header-actions">
+                    <button class="primary-btn" onclick="openAddPlantModal()">
+                        <i class="fas fa-plus"></i>
+                        Adicionar Nova Planta
+                    </button>
+                    <button class="secondary-btn" onclick="exportPlants()">
+                        <i class="fas fa-download"></i>
+                        Exportar Plantas
+                    </button>
+                </div>
+            </div>
+
+            <!-- Plant Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalPlantsCount">1,234</h3>
+                        <p>Total de Plantas</p>
+                        <span class="stat-change positive">+56 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="totalPlantsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-plus-square"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="newPlantsCount">56</h3>
+                        <p>Plantas Adicionadas (7 dias)</p>
+                        <span class="stat-change positive">+15% vs semana anterior</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="newPlantsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="topRatedPlant">Orquídea Phalaenopsis</h3>
+                        <p>Planta Mais Avaliada</p>
+                        <span class="stat-change neutral">Média 4.8 estrelas</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="topRatedPlantChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="trendingPlant">Costela-de-Adão</h3>
+                        <p>Planta em Tendência</p>
+                        <span class="stat-change positive">+25% buscas esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="trendingPlantChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Charts Section -->
+            <div class="charts-section">
+                <div class="chart-row">
+                    <!-- Plant Category Distribution -->
+                    <div class="dashboard-card large">
+                        <div class="card-header">
+                            <h3>Distribuição de Plantas por Categoria</h3>
+                            <div class="chart-controls">
+                                <select id="plantCategory" onchange="updatePlantCategoryChart()">
+                                    <option value="all">Todas</option>
+                                    <option value="ornamental">Ornamentais</option>
+                                    <option value="medicinal">Medicinais</option>
+                                    <option value="frutifera">Frutíferas</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="plantCategoryChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Plant Growth Trends -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Tendências de Crescimento de Plantas</h3>
+                            <button class="info-btn" title="Número de novas plantas adicionadas ao longo do tempo">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="plantGrowthChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <!-- Plant Popularity -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Popularidade das Plantas (Visualizações)</h3>
+                            <button class="info-btn" title="Plantas mais visualizadas">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="plantPopularityChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Plant Health Status -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Status de Saúde das Plantas</h3>
+                            <button class="info-btn" title="Distribuição de plantas por status de saúde (saudável, com pragas, doente)">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="plantHealthChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Plant Origin -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Origem das Plantas</h3>
+                            <button class="info-btn" title="Distribuição de plantas por região de origem">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="plantOriginChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plant Management Table -->
+            <div class="content-filters">
+                <div class="filter-group">
+                    <input type="text" id="plantSearch" placeholder="Buscar plantas por nome ou espécie...">
+                    <select id="plantCategoryFilter">
+                        <option value="">Todas as categorias</option>
+                        <option value="ornamental">Ornamental</option>
+                        <option value="medicinal">Medicinal</option>
+                        <option value="frutifera">Frutífera</option>
+                        <option value="hortalica">Hortaliça</option>
+                    </select>
+                    <select id="plantStatusFilter">
+                        <option value="">Todos os status</option>
+                        <option value="available">Disponível</option>
+                        <option value="unavailable">Indisponível</option>
+                        <option value="pending">Pendente</option>
+                    </select>
+                    <input type="date" id="plantAddedDateFrom" placeholder="Data de adição (de)">
+                    <input type="date" id="plantAddedDateTo" placeholder="Data de adição (até)">
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button class="view-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="plants-table-container">
+                <table class="admin-table" id="plantsTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAllPlants">
+                            </th>
+                            <th>Imagem</th>
+                            <th>Nome Popular</th>
+                            <th>Nome Científico</th>
+                            <th>Categoria</th>
+                            <th>Status</th>
+                            <th>Avaliação Média</th>
+                            <th>Adicionado em</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="plantsTableBody">
+                        <!-- Plants data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Mostrando <span id="plantsShowing">1-20</span> de <span id="plantsTotal">1,234</span> plantas
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn" id="plantsPrevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn" id="plantsNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Plant Modal -->
+        <div id="addPlantModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Adicionar Nova Planta</h2>
+                <form id="addPlantForm">
+                    <div class="form-field">
+                        <label for="plantName">Nome Popular</label>
+                        <input type="text" id="plantName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="scientificName">Nome Científico</label>
+                        <input type="text" id="scientificName">
+                    </div>
+                    <div class="form-field">
+                        <label for="plantCategorySelect">Categoria</label>
+                        <select id="plantCategorySelect">
+                            <option value="ornamental">Ornamental</option>
+                            <option value="medicinal">Medicinal</option>
+                            <option value="frutifera">Frutífera</option>
+                            <option value="hortalica">Hortaliça</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="plantDescription">Descrição</label>
+                        <textarea id="plantDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="plantCareInstructions">Instruções de Cuidado</label>
+                        <textarea id="plantCareInstructions" rows="3"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="plantImage">Imagem da Planta</label>
+                        <input type="file" id="plantImage" accept="image/*">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeAddPlantModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Adicionar Planta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Edit Plant Modal -->
+        <div id="editPlantModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Editar Planta</h2>
+                <form id="editPlantForm">
+                    <input type="hidden" id="editPlantId">
+                    <div class="form-field">
+                        <label for="editPlantName">Nome Popular</label>
+                        <input type="text" id="editPlantName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editScientificName">Nome Científico</label>
+                        <input type="text" id="editScientificName">
+                    </div>
+                    <div class="form-field">
+                        <label for="editPlantCategory">Categoria</label>
+                        <select id="editPlantCategory">
+                            <option value="ornamental">Ornamental</option>
+                            <option value="medicinal">Medicinal</option>
+                            <option value="frutifera">Frutífera</option>
+                            <option value="hortalica">Hortaliça</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="editPlantDescription">Descrição</label>
+                        <textarea id="editPlantDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="editPlantCareInstructions">Instruções de Cuidado</label>
+                        <textarea id="editPlantCareInstructions" rows="3"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="editPlantImage">Imagem da Planta</label>
+                        <input type="file" id="editPlantImage" accept="image/*">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeEditPlantModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Phytografia</span>
+                    </div>
+                    <p>Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="../catalog.html">Catálogo</a></li>
+                        <li><a href="../guides.html">Guia de Cultivo</a></li>
+                        <li><a href="../about.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="../guides.html">Guias de Cultivo</a></li>
+                        <li><a href="../api.html">API</a></li>
+                        <li><a href="../help.html">Ajuda</a></li>
+                        <li><a href="../contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@phytografia.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Phytografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../script.js"></script>
+    <script src="../admin.js"></script>
+    <script src="../admin-layout.js"></script>
+    <script src="admin-plantas.js"></script>
+</body>
+</html>

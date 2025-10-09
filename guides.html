@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guias de Cultivo - Phytografia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="guides.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="guides.html" class="nav-link active">Guia de Cultivo</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
+                            pelé
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="admin.html">Meu Perfil</a></li>
+                            <li><a href="#" onclick="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section for Guides -->
+    <section class="hero-guides">
+        <div class="container">
+            <h1>Guias de Cultivo</h1>
+            <p>Aprenda tudo sobre o cuidado e cultivo de suas plantas favoritas com nossos guias detalhados.</p>
+            <div class="search-bar">
+                <input type="text" id="guideSearchInput" placeholder="Buscar guias por tipo de planta, dificuldade, etc.">
+                <button id="guideSearchBtn"><i class="fas fa-search"></i> Buscar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guides List -->
+    <section class="guides-list-section">
+        <div class="container">
+            <div class="guide-filters">
+                <select id="guideCategoryFilter">
+                    <option value="all">Todas as Categorias</option>
+                    <option value="perenes">Plantas Perenes</option>
+                    <option value="pequeno-porte">Pequeno Porte</option>
+                    <option value="medicinais">Plantas Medicinais</option>
+                    <option value="ornamentais">Plantas Ornamentais</option>
+                    <option value="hortalicas">Hortaliças</option>
+                </select>
+                <select id="guideDifficultyFilter">
+                    <option value="all">Todas as Dificuldades</option>
+                    <option value="iniciante">Iniciante</option>
+                    <option value="intermediario">Intermediário</option>
+                    <option value="avancado">Avançado</option>
+                </select>
+            </div>
+            <div class="guides-grid" id="guidesGrid">
+                <!-- Guides will be loaded here by JavaScript -->
+                <div class="guide-card">
+                    <img src="https://via.placeholder.com/300x200/8B4513/FFFFFF?text=Plantas+Perenes" alt="Plantas Perenes">
+                    <div class="guide-card-content">
+                        <h3>Cultivo de Plantas Perenes</h3>
+                        <p>Descubra as melhores práticas para cuidar de plantas que vivem por mais de dois anos.</p>
+                        <div class="guide-meta">
+                            <span><i class="fas fa-layer-group"></i> Perenes</span>
+                            <span><i class="fas fa-star"></i> Iniciante</span>
+                        </div>
+                        <a href="#" class="btn primary">Ler Guia</a>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <img src="https://via.placeholder.com/300x200/4A2C2A/FFFFFF?text=Pequeno+Porte" alt="Plantas de Pequeno Porte">
+                    <div class="guide-card-content">
+                        <h3>Plantas de Pequeno Porte para Apartamentos</h3>
+                        <p>Guia completo para escolher e cuidar de plantas ideais para espaços pequenos.</p>
+                        <div class="guide-meta">
+                            <span><i class="fas fa-layer-group"></i> Pequeno Porte</span>
+                            <span><i class="fas fa-star"></i> Iniciante</span>
+                        </div>
+                        <a href="#" class="btn primary">Ler Guia</a>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <img src="https://via.placeholder.com/300x200/556B2F/FFFFFF?text=Hortaliças" alt="Hortaliças em Casa">
+                    <div class="guide-card-content">
+                        <h3>Como Cultivar Hortaliças em Casa</h3>
+                        <p>Passo a passo para ter sua própria horta orgânica, mesmo em pequenos espaços.</p>
+                        <div class="guide-meta">
+                            <span><i class="fas fa-layer-group"></i> Hortaliças</span>
+                            <span><i class="fas fa-star"></i> Intermediário</span>
+                        </div>
+                        <a href="#" class="btn primary">Ler Guia</a>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <img src="https://via.placeholder.com/300x200/8B4513/FFFFFF?text=Orquídeas" alt="Cuidado com Orquídeas">
+                    <div class="guide-card-content">
+                        <h3>Cuidado Essencial com Orquídeas</h3>
+                        <p>Dicas e truques para manter suas orquídeas saudáveis e florindo o ano todo.</p>
+                        <div class="guide-meta">
+                            <span><i class="fas fa-layer-group"></i> Ornamentais</span>
+                            <span><i class="fas fa-star"></i> Avançado</span>
+                        </div>
+                        <a href="#" class="btn primary">Ler Guia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Phytografia</span>
+                    </div>
+                    <p>Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="catalog.html">Catálogo</a></li>
+                        <li><a href="guides.html">Guia de Cultivo</a></li>
+                        <li><a href="about.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="guides.html">Guias de Cultivo</a></li>
+                        <li><a href="api.html">API</a></li>
+                        <li><a href="help.html">Ajuda</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@phytografia.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Phytografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="guides.js"></script>
+</body>
+</html>
+

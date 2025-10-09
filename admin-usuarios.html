@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Usuários - Phytografia Admin</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="guides.html" class="nav-link">Guia de Cultivo</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
+                            pelé
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="admin.html">Meu Perfil</a></li>
+                            <li><a href="#" onclick="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <nav class="sidebar-nav">
+            <ul class="sidebar-menu">
+                <li class="menu-item">
+                    <a href="../admin.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item active">
+                    <a href="admin-usuarios.html">
+                        <i class="fas fa-users"></i>
+                        <span>Usuários</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-plantas.html">
+                        <i class="fas fa-seedling"></i>
+                        <span>Plantas</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-avaliacoes.html">
+                        <i class="fas fa-star"></i>
+                        <span>Avaliações</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-pesquisas.html">
+                        <i class="fas fa-search"></i>
+                        <span>Pesquisas</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-conteudo.html">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Conteúdo</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-analytics.html">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Análises</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-configuracoes.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <section class="admin-section active">
+            <div class="section-header">
+                <h1>Gerenciar Usuários</h1>
+                <p>Análise detalhada e gerenciamento de usuários do sistema</p>
+                <div class="header-actions">
+                    <button class="primary-btn" onclick="exportUsers()">
+                        <i class="fas fa-download"></i>
+                        Exportar Usuários
+                    </button>
+                    <button class="secondary-btn" onclick="openAddUserModal()">
+                        <i class="fas fa-user-plus"></i>
+                        Adicionar Usuário
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalUsersCount">4,127</h3>
+                        <p>Total de Usuários</p>
+                        <span class="stat-change positive">+186 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="totalUsersChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="newUsersCount">186</h3>
+                        <p>Contas Criadas (7 dias)</p>
+                        <span class="stat-change positive">+23% vs semana anterior</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="newUsersChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-minus"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="deletedUsersCount">12</h3>
+                        <p>Contas Excluídas (7 dias)</p>
+                        <span class="stat-change negative">+8 esta semana</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="deletedUsersChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="activeUsersCount">3,892</h3>
+                        <p>Usuários Ativos</p>
+                        <span class="stat-change positive">+156 este mês</span>
+                    </div>
+                    <div class="stat-chart">
+                        <canvas id="activeUsersChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Charts Section -->
+            <div class="charts-section">
+                <div class="chart-row">
+                    <!-- User Registration Trends -->
+                    <div class="dashboard-card large">
+                        <div class="card-header">
+                            <h3>Tendências de Cadastro de Usuários</h3>
+                            <div class="chart-controls">
+                                <select id="registrationPeriod" onchange="updateRegistrationChart()">
+                                    <option value="7">Últimos 7 dias</option>
+                                    <option value="30" selected>Últimos 30 dias</option>
+                                    <option value="90">Últimos 90 dias</option>
+                                    <option value="365">Último ano</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userRegistrationChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- User Activity Heatmap -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Atividade por Hora do Dia</h3>
+                            <button class="info-btn" title="Mostra quando os usuários são mais ativos">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userActivityHeatmap"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <!-- User Demographics -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Demografia dos Usuários</h3>
+                            <div class="chart-controls">
+                                <select id="demographicType" onchange="updateDemographicChart()">
+                                    <option value="age">Por Idade</option>
+                                    <option value="location">Por Localização</option>
+                                    <option value="device">Por Dispositivo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userDemographicsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- User Engagement -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Engajamento dos Usuários</h3>
+                            <button class="info-btn" title="Frequência de uso da plataforma">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userEngagementChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- User Retention -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Retenção de Usuários</h3>
+                            <button class="info-btn" title="Percentual de usuários que retornam">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userRetentionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Management Table -->
+            <div class="content-filters">
+                <div class="filter-group">
+                    <input type="text" id="userSearch" placeholder="Buscar usuários por nome ou email...">
+                    <select id="userRole">
+                        <option value="">Todas as funções</option>
+                        <option value="user">Usuário</option>
+                        <option value="moderator">Moderador</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                    <select id="userStatus">
+                        <option value="">Todos os status</option>
+                        <option value="active">Ativo</option>
+                        <option value="inactive">Inativo</option>
+                        <option value="suspended">Suspenso</option>
+                        <option value="banned">Banido</option>
+                    </select>
+                    <input type="date" id="registrationDateFrom" placeholder="Data de cadastro (de)">
+                    <input type="date" id="registrationDateTo" placeholder="Data de cadastro (até)">
+                </div>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button class="view-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="users-table-container">
+                <table class="admin-table" id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAllUsers">
+                            </th>
+                            <th>Avatar</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Função</th>
+                            <th>Status</th>
+                            <th>Plantas Favoritas</th>
+                            <th>Último Acesso</th>
+                            <th>Cadastrado em</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <!-- Users data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Mostrando <span id="usersShowing">1-20</span> de <span id="usersTotal">4,127</span> usuários
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn" id="usersPrevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn" id="usersNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add User Modal -->
+        <div id="addUserModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Adicionar Novo Usuário</h2>
+                <form id="addUserForm">
+                    <div class="form-field">
+                        <label for="userName">Nome</label>
+                        <input type="text" id="userName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userPassword">Senha</label>
+                        <input type="password" id="userPassword" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userRoleSelect">Função</label>
+                        <select id="userRoleSelect">
+                            <option value="user">Usuário</option>
+                            <option value="moderator">Moderador</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeAddUserModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Adicionar Usuário</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Edit User Modal -->
+        <div id="editUserModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Editar Usuário</h2>
+                <form id="editUserForm">
+                    <input type="hidden" id="editUserId">
+                    <div class="form-field">
+                        <label for="editUserName">Nome</label>
+                        <input type="text" id="editUserName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editUserEmail">Email</label>
+                        <input type="email" id="editUserEmail" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="editUserRole">Função</label>
+                        <select id="editUserRole">
+                            <option value="user">Usuário</option>
+                            <option value="moderator">Moderador</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="editUserStatus">Status</label>
+                        <select id="editUserStatus">
+                            <option value="active">Ativo</option>
+                            <option value="inactive">Inativo</option>
+                            <option value="suspended">Suspenso</option>
+                            <option value="banned">Banido</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeEditUserModal()">Cancelar</button>
+                        <button type="submit" class="btn primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Phytografia</span>
+                    </div>
+                    <p>Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="../catalog.html">Catálogo</a></li>
+                        <li><a href="../guides.html">Guia de Cultivo</a></li>
+                        <li><a href="../about.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="../guides.html">Guias de Cultivo</a></li>
+                        <li><a href="../api.html">API</a></li>
+                        <li><a href="../help.html">Ajuda</a></li>
+                        <li><a href="../contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@phytografia.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Phytografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../script.js"></script>
+    <script src="../admin.js"></script>
+    <script src="../admin-layout.js"></script>
+    <script src="admin-usuarios.js"></script>
+</body>
+</html>

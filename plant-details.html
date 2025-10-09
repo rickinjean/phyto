@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosa - Detalhes da Planta - Phytografia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="plant-details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="guides.html" class="nav-link">Guias de Cultivo</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <img src="/phytografia/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
+                            pelé
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="profile.html">Meu Perfil</a></li>
+                            <li><a href="#" onclick="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Início</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="catalog.html">Catálogo</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="plantName">Rosa</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Plant Header -->
+    <section class="plant-header">
+        <div class="container">
+            <div class="plant-header-content">
+                <div class="plant-gallery">
+                    <div class="main-image">
+                        <img id="mainImage" src="imagens/Rosa_04.jpeg" alt="Rosa">
+                        <div class="image-overlay">
+                            <button class="zoom-btn" onclick="openImageModal()">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                            <button class="share-btn" onclick="sharePlant()">
+                                <i class="fas fa-share"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <img src="" alt="Rosa 1" class="thumbnail active" onclick="changeMainImage(this)">
+                        <img src="" alt="Rosa 2" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="" alt="Rosa 3" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="" alt="Rosa 4" class="thumbnail" onclick="changeMainImage(this)">
+                    </div>
+                </div>
+                
+                <div class="plant-info">
+                    <div class="plant-title">
+                        <h1 id="plantTitle">Rosa</h1>
+                        <p class="scientific-name" id="scientificName">Rosa spp.</p>
+                        <div class="plant-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.2 (127 avaliações)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="plant-tags">
+                        <span class="tag ornamental">Ornamental</span>
+                        <span class="tag perfumada">Perfumada</span>
+                        <span class="tag moderado">Cultivo Moderado</span>
+                    </div>
+                    
+                    <div class="plant-description">
+                        <p id="plantDescription">
+                            A rosa é uma das flores mais populares e simbólicas do mundo, conhecida por sua beleza, fragrância e variedade de cores. 
+                            Pertencente à família Rosaceae, esta planta perene é cultivada há milhares de anos tanto para fins ornamentais quanto medicinais.
+                        </p>
+                    </div>
+                    
+                    <div class="plant-actions">
+                        <button class="action-btn primary" onclick="addToGarden()">
+                            <i class="fas fa-plus"></i>
+                            Adicionar ao Meu Jardim
+                        </button>
+                        <button class="action-btn secondary" onclick="toggleFavorite()">
+                            <i class="far fa-heart"></i>
+                            Favoritar
+                        </button>
+                        <button class="action-btn secondary" onclick="addToCompare()">
+                            <i class="fas fa-balance-scale"></i>
+                            Comparar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plant Details Tabs -->
+    <section class="plant-details">
+        <div class="container">
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="overview">Visão Geral</button>
+                    <button class="tab-btn" data-tab="care">Cuidados</button>
+                    <button class="tab-btn" data-tab="cultivation">Cultivo</button>
+                    <button class="tab-btn" data-tab="uses">Usos</button>
+                    <button class="tab-btn" data-tab="recipes">Receitas</button>
+                    <button class="tab-btn" data-tab="gallery">Galeria</button>
+                    <button class="tab-btn" data-tab="reviews">Avaliações</button>
+                </div>
+                
+                <div class="tabs-content">
+                    <!-- Overview Tab -->
+                    <div class="tab-content active" id="overview">
+                        <div class="overview-grid">
+                            <div class="characteristics-card">
+                                <h3>Características Físicas</h3>
+                                <div class="char-grid">
+                                    <div class="char-item">
+                                        <i class="fas fa-ruler-vertical"></i>
+                                        <span class="char-label">Altura</span>
+                                        <span class="char-value">0.5 - 2.0m</span>
+                                    </div>
+                                    <div class="char-item">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="char-label">Cor das Flores</span>
+                                        <span class="char-value">Variada</span>
+                                    </div>
+                                    <div class="char-item">
+                                        <i class="fas fa-leaf"></i>
+                                        <span class="char-label">Folhagem</span>
+                                        <span class="char-value">Caduca</span>
+                                    </div>
+                                    <div class="char-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span class="char-label">Floração</span>
+                                        <span class="char-value">Primavera/Verão</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="requirements-card">
+                                <h3>Necessidades Ambientais</h3>
+                                <div class="req-grid">
+                                    <div class="req-item">
+                                        <i class="fas fa-sun"></i>
+                                        <span class="req-label">Luminosidade</span>
+                                        <div class="req-bar">
+                                            <div class="req-fill" style="width: 90%;"></div>
+                                        </div>
+                                        <span class="req-text">Sol Pleno</span>
+                                    </div>
+                                    <div class="req-item">
+                                        <i class="fas fa-tint"></i>
+                                        <span class="req-label">Água</span>
+                                        <div class="req-bar">
+                                            <div class="req-fill" style="width: 70%;"></div>
+                                        </div>
+                                        <span class="req-text">Moderada</span>
+                                    </div>
+                                    <div class="req-item">
+                                        <i class="fas fa-thermometer-half"></i>
+                                        <span class="req-label">Temperatura</span>
+                                        <div class="req-bar">
+                                            <div class="req-fill" style="width: 60%;"></div>
+                                        </div>
+                                        <span class="req-text">15-25°C</span>
+                                    </div>
+                                    <div class="req-item">
+                                        <i class="fas fa-mountain"></i>
+                                        <span class="req-label">Solo</span>
+                                        <div class="req-bar">
+                                            <div class="req-fill" style="width: 80%;"></div>
+                                        </div>
+                                        <span class="req-text">Bem Drenado</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="botanical-info">
+                            <h3>Informações Botânicas</h3>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <strong>Fruto:</strong>
+                                    <span>Falso-fruto</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Origem:</strong>
+                                    <span>Ásia, Europa, América do Norte</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Tipo:</strong>
+                                    <span>Arbusto perene</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Propagação:</strong>
+                                    <span>Estacas, enxertia</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Toxicidade:</strong>
+                                    <span>Não tóxica</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Dificuldade:</strong>
+                                    <span>Moderada</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="botanical-info">
+                            <h3>Informações Taxonômicas</h3>
+                            <div class="grid">
+                                <div class="info-item">
+                                    <strong>Filo:</strong>
+                                    <span>Arbusto perene</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Classe:</strong>
+                                    <span>Estacas, enxertia</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Ordem:</strong>
+                                    <span>Não tóxica</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Familia:</strong>
+                                    <span>Moderada</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Gênero:</strong>
+                                    <span>Moderada</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Espécie:</strong>
+                                    <span>Moderada</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Care Tab -->
+                    <div class="tab-content" id="care">
+                        <div class="care-guide">
+                            <div class="care-section">
+                                <h3><i class="fas fa-tint"></i> Rega</h3>
+                                <p>Regue profundamente 2-3 vezes por semana, permitindo que o solo seque ligeiramente entre as regas. Evite molhar as folhas para prevenir doenças fúngicas.</p>
+                                <div class="care-tips">
+                                    <div class="tip">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Melhor horário: manhã cedo</span>
+                                    </div>
+                                    <div class="tip">
+                                        <i class="fas fa-droplet"></i>
+                                        <span>Quantidade: 2-3L por planta adulta</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="care-section">
+                                <h3><i class="fas fa-seedling"></i> Fertilização</h3>
+                                <p>Aplique fertilizante rico em fósforo na primavera e fertilizante balanceado mensalmente durante a estação de crescimento.</p>
+                                <div class="care-tips">
+                                    <div class="tip">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>Frequência: mensal (primavera/verão)</span>
+                                    </div>
+                                    <div class="tip">
+                                        <i class="fas fa-flask"></i>
+                                        <span>NPK recomendado: 10-10-10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="care-section">
+                                <h3><i class="fas fa-cut"></i> Poda</h3>
+                                <p>Pode no final do inverno, removendo galhos mortos, doentes e fracos. Corte em ângulo de 45° acima de uma gema voltada para fora.</p>
+                                <div class="care-tips">
+                                    <div class="tip">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>Época: final do inverno</span>
+                                    </div>
+                                    <div class="tip">
+                                        <i class="fas fa-tools"></i>
+                                        <span>Ferramentas: tesoura de poda limpa</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="care-section">
+                                <h3><i class="fas fa-bug"></i> Pragas e Doenças</h3>
+                                <p>Principais problemas: pulgões, ácaros, oídio e ferrugem. Mantenha boa circulação de ar e monitore regularmente.</p>
+                                <div class="care-tips">
+                                    <div class="tip">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Prevenção: fungicida preventivo</span>
+                                    </div>
+                                    <div class="tip">
+                                        <i class="fas fa-eye"></i>
+                                        <span>Monitoramento: semanal</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cultivation Tab -->
+                    <div class="tab-content" id="cultivation">
+                        <div class="cultivation-guide">
+                            <div class="cultivation-section">
+                                <h3><i class="fas fa-seedling"></i> Plantio</h3>
+                                <p>Plante em solo bem drenado e rico em matéria orgânica. Escolha um local com pelo menos 6 horas de sol direto por dia.</p>
+                                <div class="cultivation-tips">
+                                    <div class="tip">
+                                        <i class="fas fa-calendar-day"></i>
+                                        <span>Melhor época: outono ou primavera</span>
+                                    </div>
+                                    <div class="tip">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        <span>Espaçamento: 60-90 cm entre plantas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cultivation-section">
+                                <h3><i class="fas fa-wrench"></i> Manutenção</h3>
+                                <p>Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.</p>
+                                <div class="cultivation-tips">
+                                    <div class="tip">
+                                        <i class="fas fa-snowflake"></i>
+                                        <span>Proteção: cobertura morta no inverno</span>
+                                    </div>
+                                    <div class="tip">
+                                        <i class="fas fa-spray-can"></i>
+                                        <span>Controle: inspeção regular</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cultivation-section">
+                                <h3><i class="fas fa-sun"></i> Exposição Solar</h3>
+                                <p>Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.</p>
+                                <div class="cultivation-tips">
+                                    <div class="tip">
+                                        <i class="fas fa-cloud-sun"></i>
+                                        <span>Ideal: 6-8 horas de sol</span>
+                                    </div>
+                                    <div class="tip">
+                                        <i class="fas fa-temperature-high"></i>
+                                        <span>Tolerância: alta ao calor</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Uses Tab -->
+                    <div class="tab-content" id="uses">
+                        <div class="uses-section">
+                            <h3><i class="fas fa-palette"></i> Uso Ornamental</h3>
+                            <p>Amplamente utilizada em jardins, canteiros e vasos devido à beleza de suas flores e fragrância. Ideal para criar bordas, maciços e como flor de corte.</p>
+                        </div>
+                        <div class="uses-section">
+                            <h3><i class="fas fa-mortar-pestle"></i> Uso Medicinal</h3>
+                            <p>Pétalas de rosa são usadas em chás e óleos essenciais com propriedades calmantes, anti-inflamatórias e adstringentes. Ajuda a aliviar o estresse e irritações na pele.</p>
+                        </div>
+                        <div class="uses-section">
+                            <h3><i class="fas fa-utensils"></i> Uso Culinário</h3>
+                            <p>Pétalas comestíveis podem ser usadas em saladas, geleias, xaropes e sobremesas, adicionando um toque floral e sabor delicado.</p>
+                        </div>
+                        <div class="uses-section">
+                            <h3><i class="fas fa-flask"></i> Uso Cosmético</h3>
+                            <p>O óleo essencial de rosa e a água de rosas são ingredientes populares em produtos de beleza, conhecidos por suas propriedades hidratantes, tonificantes e rejuvenescedoras para a pele.</p>
+                        </div>
+                    </div>
+
+                    <!-- Recipes Tab -->
+                    <div class="tab-content" id="recipes">
+                        <div class="recipes-list">
+                            <h3>Receitas com Rosa</h3>
+                            <div class="recipe-card">
+                                <h4>Chá de Pétalas de Rosa</h4>
+                                <p>Um chá calmante e aromático, perfeito para relaxar. Rico em antioxidantes.</p>
+                                <ul>
+                                    <li>1 xícara de pétalas de rosa frescas</li>
+                                    <li>2 xícaras de água fervente</li>
+                                    <li>Mel a gosto (opcional)</li>
+                                </ul>
+                                <p><strong>Modo de Preparo:</strong> Lave bem as pétalas. Coloque-as em uma xícara e adicione a água fervente. Deixe em infusão por 5-10 minutos. Coe, adoce com mel se desejar e sirva quente.</p>
+                            </div>
+                            <div class="recipe-card">
+                                <h4>Geleia de Rosas</h4>
+                                <p>Uma geleia delicada e perfumada, ideal para torradas ou acompanhamento de queijos.</p>
+                                <ul>
+                                    <li>2 xícaras de pétalas de rosa frescas</li>
+                                    <li>1 xícara de açúcar</li>
+                                    <li>1 xícara de água</li>
+                                    <li>Suco de 1/2 limão</li>
+                                </ul>
+                                <p><strong>Modo de Preparo:</strong> Lave as pétalas. Em uma panela, misture açúcar e água, leve ao fogo até dissolver o açúcar. Adicione as pétalas e o suco de limão. Cozinhe em fogo baixo por 20-30 minutos, mexendo ocasionalmente, até a geleia atingir a consistência desejada. Despeje em potes esterilizados.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Tab -->
+                    <div class="tab-content" id="gallery">
+                        <div class="gallery-grid">
+                            <img src="" alt="Rosa 1">
+                            <img src="" alt="Rosa 2">
+                            <img src="" alt="Rosa 3">
+                            <img src="" alt="Rosa 4">
+                            <img src="" alt="Rosa 5">
+                            <img src="" alt="Rosa 6">
+                        </div>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div class="tab-content" id="reviews">
+                        <div class="reviews-section">
+                            <h3>Avaliações dos Usuários</h3>
+                            <div class="review-summary">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="average-rating">4.2 de 5 estrelas</span>
+                                <span class="total-reviews">(127 avaliações)</span>
+                            </div>
+                            <div class="review-list">
+                                <div class="user-review">
+                                    <div class="review-header">
+                                        <span class="user-name">Ana Paula</span>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="review-date">15 de Setembro, 2024</span>
+                                    </div>
+                                    <p class="review-text">"Minhas rosas estão lindas e saudáveis seguindo as dicas de cultivo do site! Recomendo."</p>
+                                </div>
+                                <div class="user-review">
+                                    <div class="review-header">
+                                        <span class="user-name">Carlos Eduardo</span>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span class="review-date">10 de Setembro, 2024</span>
+                                    </div>
+                                    <p class="review-text">"Sempre tive dificuldade com rosas, mas com este guia, consegui fazer as minhas florescerem como nunca!"</p>
+                                </div>
+                            </div>
+                            <button class="btn primary load-more-reviews">Carregar Mais Avaliações</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content image-modal-content">
+            <span class="close-modal">&times;</span>
+            <img class="modal-image" id="img01">
+            <div id="caption"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Phytografia</span>
+                    </div>
+                    <p>Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="catalog.html">Catálogo</a></li>
+                        <li><a href="guides.html">Guia de Cultivo</a></li>
+                        <li><a href="about.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="guides.html">Guias de Cultivo</a></li>
+                        <li><a href="recipes.html">Receitas</a></li>
+                        <li><a href="api.html">API</a></li>
+                        <li><a href="help.html">Ajuda</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@phytografia.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Phytografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="plant-details.js"></script>
+</body>
+</html>
+

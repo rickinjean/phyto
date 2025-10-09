@@ -1,0 +1,1347 @@
+/* Plant Details Page Styles */
+
+/* Breadcrumb */
+.breadcrumb {
+    background: var(--light-gray);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light-beige);
+}
+
+.breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-nav a {
+    color: var(--medium-brown);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-nav a:hover {
+    color: var(--primary-brown);
+}
+
+.breadcrumb-nav i {
+    color: var(--dark-gray);
+    font-size: 0.8rem;
+}
+
+.breadcrumb-nav span {
+    color: var(--primary-brown);
+    font-weight: 500;
+}
+
+/* Plant Header */
+.plant-header {
+    padding: 3rem 0;
+    background: var(--white);
+}
+
+.plant-header-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* Plant Gallery */
+.plant-gallery {
+    position: sticky;
+    top: 100px;
+}
+
+.main-image {
+    position: relative;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.main-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.main-image:hover .image-overlay {
+    opacity: 1;
+}
+
+.main-image:hover img {
+    transform: scale(1.05);
+}
+
+.zoom-btn,
+.share-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-brown);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.zoom-btn:hover,
+.share-btn:hover {
+    background: var(--primary-brown);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.thumbnail-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+    border-color: var(--moss-green);
+    transform: scale(1.05);
+}
+
+/* Plant Info */
+.plant-title h1 {
+    font-size: 3rem;
+    color: var(--primary-brown);
+    margin-bottom: 0.5rem;
+}
+
+.scientific-name {
+    font-style: italic;
+    color: var(--medium-brown);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.plant-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stars {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.stars i {
+    color: #ffd700;
+    font-size: 1.2rem;
+}
+
+.rating-text {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+.plant-tags {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.tag {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 2px solid;
+}
+
+.tag.ornamental {
+    background: rgba(139, 69, 19, 0.1);
+    color: var(--medium-brown);
+    border-color: var(--medium-brown);
+}
+
+.tag.perfumada {
+    background: rgba(85, 107, 47, 0.1);
+    color: var(--moss-green);
+    border-color: var(--moss-green);
+}
+
+.tag.moderado {
+    background: rgba(74, 44, 42, 0.1);
+    color: var(--primary-brown);
+    border-color: var(--primary-brown);
+}
+
+.plant-description {
+    margin-bottom: 2rem;
+}
+
+.plant-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--dark-gray);
+}
+
+.plant-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.action-btn.primary {
+    background: linear-gradient(135deg, var(--moss-green) 0%, var(--primary-brown) 100%);
+    color: var(--white);
+}
+
+.action-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(85, 107, 47, 0.3);
+}
+
+.action-btn.secondary {
+    background: var(--white);
+    color: var(--primary-brown);
+    border: 2px solid var(--primary-brown);
+}
+
+.action-btn.secondary:hover {
+    background: var(--primary-brown);
+    color: var(--white);
+}
+
+/* Plant Details Tabs */
+.plant-details {
+    padding: 3rem 0;
+    background: var(--light-gray);
+}
+
+.tabs-container {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px var(--shadow);
+}
+
+.tabs-nav {
+    display: flex;
+    background: var(--light-beige);
+    border-bottom: 1px solid var(--light-beige);
+    overflow-x: auto;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    background: none;
+    border: none;
+    color: var(--dark-gray);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    color: var(--primary-brown);
+    background: var(--white);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--moss-green);
+}
+
+.tabs-content {
+    padding: 3rem;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Overview Tab */
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.characteristics-card,
+.requirements-card {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.characteristics-card h3,
+.requirements-card h3 {
+    color: var(--primary-brown);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.char-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.char-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 10px;
+}
+
+.char-item i {
+    font-size: 2rem;
+    color: var(--moss-green);
+    margin-bottom: 0.5rem;
+}
+
+.char-label {
+    font-weight: 600;
+    color: var(--primary-brown);
+    margin-bottom: 0.3rem;
+}
+
+.char-value {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+.req-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.req-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.req-item i {
+    font-size: 1.5rem;
+    color: var(--moss-green);
+    width: 30px;
+    text-align: center;
+}
+
+.req-label {
+    font-weight: 600;
+    color: var(--primary-brown);
+    min-width: 100px;
+}
+
+.req-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--light-beige);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.req-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--moss-green) 0%, var(--primary-brown) 100%);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.req-text {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    min-width: 80px;
+    text-align: right;
+}
+
+.botanical-info {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.botanical-info h3 {
+    color: var(--primary-brown);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.info-grid,
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    background: var(--white);
+    border-radius: 8px;
+}
+
+.info-item strong {
+    color: var(--primary-brown);
+}
+
+.info-item span {
+    color: var(--dark-gray);
+}
+
+/* Care Tab */
+.care-guide {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.care-section {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.care-section h3 {
+    color: var(--primary-brown);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.care-section h3 i {
+    color: var(--moss-green);
+}
+
+.care-section p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.care-tips {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.tip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--white);
+    padding: 0.8rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.tip i {
+    color: var(--moss-green);
+}
+
+/* Cultivation Tab */
+.cultivation-guide {
+    margin-bottom: 3rem;
+}
+
+.cultivation-step {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: var(--light-gray);
+    border-radius: 15px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--moss-green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    color: var(--primary-brown);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.step-content p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.cultivation-calendar {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.cultivation-calendar h3 {
+    color: var(--primary-brown);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+}
+
+.month-item {
+    text-align: center;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 10px;
+}
+
+.month {
+    font-weight: bold;
+    color: var(--primary-brown);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.activities {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.activity {
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.activity.watering {
+    background: rgba(85, 107, 47, 0.2);
+    color: var(--moss-green);
+}
+
+.activity.fertilizing {
+    background: rgba(139, 69, 19, 0.2);
+    color: var(--medium-brown);
+}
+
+.activity.pruning {
+    background: rgba(74, 44, 42, 0.2);
+    color: var(--primary-brown);
+}
+
+.activity.planting {
+    background: rgba(245, 222, 179, 0.5);
+    color: var(--primary-brown);
+}
+
+.activity.flowering {
+    background: rgba(255, 215, 0, 0.3);
+    color: #b8860b;
+}
+
+/* Uses Tab */
+.uses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.use-card {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.use-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.use-card i {
+    font-size: 3rem;
+    color: var(--moss-green);
+    margin-bottom: 1rem;
+}
+
+.use-card h4 {
+    color: var(--primary-brown);
+    margin-bottom: 1rem;
+}
+
+.use-card p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.recipes-section {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.recipes-section h3 {
+    color: var(--primary-brown);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.recipe-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.recipe-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.recipe-card h4 {
+    color: var(--primary-brown);
+    margin-bottom: 0.5rem;
+}
+
+.recipe-card p {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.recipe-btn {
+    background: var(--moss-green);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.recipe-btn:hover {
+    background: var(--primary-brown);
+    transform: translateY(-1px);
+}
+
+/* Gallery Tab */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(74, 44, 42, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay i {
+    color: var(--white);
+    font-size: 2rem;
+}
+
+/* Reviews Tab */
+.reviews-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.rating-overview {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.overall-rating {
+    text-align: center;
+}
+
+.rating-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-brown);
+    display: block;
+}
+
+.overall-rating .stars {
+    margin: 0.5rem 0;
+    justify-content: center;
+}
+
+.total-reviews {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+.rating-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 200px;
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.rating-bar span:first-child {
+    min-width: 70px;
+    color: var(--dark-gray);
+}
+
+.rating-bar .bar {
+    flex: 1;
+    height: 6px;
+    background: var(--light-beige);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.rating-bar .fill {
+    height: 100%;
+    background: #ffd700;
+    border-radius: 3px;
+}
+
+.rating-bar span:last-child {
+    min-width: 30px;
+    text-align: right;
+    color: var(--dark-gray);
+}
+
+.write-review-btn {
+    background: var(--moss-green);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.write-review-btn:hover {
+    background: var(--primary-brown);
+    transform: translateY(-2px);
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.review-item {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.reviewer-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reviewer-info h5 {
+    color: var(--primary-brown);
+    margin-bottom: 0.2rem;
+}
+
+.review-date {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+.review-rating {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.review-text {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.review-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.review-action-btn {
+    background: none;
+    border: 1px solid var(--light-beige);
+    color: var(--dark-gray);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.review-action-btn:hover {
+    border-color: var(--moss-green);
+    color: var(--moss-green);
+}
+
+.load-more-reviews {
+    background: var(--moss-green);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.load-more-reviews:hover {
+    background: var(--primary-brown);
+    transform: translateY(-2px);
+}
+
+/* Related Plants */
+.related-plants {
+    padding: 3rem 0;
+    background: var(--white);
+}
+
+.related-plants h2 {
+    color: var(--primary-brown);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.related-card {
+    background: var(--light-gray);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.related-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.related-card h4 {
+    color: var(--primary-brown);
+    margin: 1rem 0 0.5rem;
+    padding: 0 1rem;
+}
+
+.related-card p {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+.related-btn {
+    background: var(--moss-green);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.related-btn:hover {
+    background: var(--primary-brown);
+    transform: translateY(-1px);
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+    background: var(--white);
+    border-radius: 15px;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-modal {
+    max-width: 90vw;
+    max-height: 90vh;
+    background: transparent;
+}
+
+.image-modal img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.review-modal {
+    max-width: 600px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid var(--light-beige);
+}
+
+.modal-header h3 {
+    color: var(--primary-brown);
+    margin: 0;
+}
+
+.modal-header .close-modal {
+    position: static;
+    color: var(--dark-gray);
+    background: none;
+    width: auto;
+    height: auto;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.rating-input {
+    margin-bottom: 1.5rem;
+}
+
+.rating-input label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-brown);
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.star-rating i {
+    font-size: 1.5rem;
+    color: var(--light-beige);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.star-rating i:hover,
+.star-rating i.active {
+    color: #ffd700;
+}
+
+.form-field {
+    margin-bottom: 1.5rem;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-brown);
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--light-beige);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--moss-green);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn.primary {
+    background: var(--moss-green);
+    color: var(--white);
+}
+
+.btn.primary:hover {
+    background: var(--primary-brown);
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    background: var(--white);
+    color: var(--primary-brown);
+    border: 2px solid var(--primary-brown);
+}
+
+.btn.secondary:hover {
+    background: var(--primary-brown);
+    color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .plant-header-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .plant-gallery {
+        position: static;
+    }
+    
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .char-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tabs-nav {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        flex: none;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .plant-title h1 {
+        font-size: 2rem;
+    }
+    
+    .plant-rating {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .plant-actions {
+        flex-direction: column;
+    }
+    
+    .action-btn {
+        justify-content: center;
+    }
+    
+    .tabs-content {
+        padding: 2rem;
+    }
+    
+    .cultivation-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .uses-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reviews-summary {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .rating-overview {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .breadcrumb-nav {
+        font-size: 0.8rem;
+    }
+    
+    .plant-header {
+        padding: 2rem 0;
+    }
+    
+    .plant-title h1 {
+        font-size: 1.8rem;
+    }
+    
+    .thumbnail-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tabs-content {
+        padding: 1.5rem;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .recipe-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+}
+

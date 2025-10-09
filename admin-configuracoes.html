@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - Painel Administrativo - Phytografia</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="guides.html" class="nav-link">Guia de Cultivo</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
+                            pelé
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="admin.html">Meu Perfil</a></li>
+                            <li><a href="#" onclick="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <nav class="sidebar-nav">
+            <ul class="sidebar-menu">
+                <li class="menu-item">
+                    <a href="../admin.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-usuarios.html">
+                        <i class="fas fa-users"></i>
+                        <span>Usuários</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-plantas.html">
+                        <i class="fas fa-seedling"></i>
+                        <span>Plantas</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-avaliacoes.html">
+                        <i class="fas fa-star"></i>
+                        <span>Avaliações</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-pesquisas.html">
+                        <i class="fas fa-search"></i>
+                        <span>Pesquisas</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-conteudo.html">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Conteúdo</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="admin-analytics.html">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Análises</span>
+                    </a>
+                </li>
+                <li class="menu-item active">
+                    <a href="admin-configuracoes.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <section class="admin-section active">
+            <div class="section-header">
+                <div>
+                    <h1>Configurações do Sistema</h1>
+                    <p>Gerencie configurações gerais, segurança e preferências do sistema</p>
+                </div>
+                <div class="header-actions">
+                    <button class="secondary-btn" onclick="resetToDefaults()">
+                        <i class="fas fa-undo"></i>
+                        Restaurar Padrões
+                    </button>
+                    <button class="primary-btn" onclick="saveAllSettings()">
+                        <i class="fas fa-save"></i>
+                        Salvar Alterações
+                    </button>
+                </div>
+            </div>
+
+            <!-- Settings Tabs -->
+            <div class="content-tabs">
+                <button class="content-tab active" data-tab="general">
+                    <i class="fas fa-cog"></i>
+                    Geral
+                </button>
+                <button class="content-tab" data-tab="security">
+                    <i class="fas fa-shield-alt"></i>
+                    Segurança
+                </button>
+                <button class="content-tab" data-tab="email">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </button>
+                <button class="content-tab" data-tab="backup">
+                    <i class="fas fa-database"></i>
+                    Backup
+                </button>
+                <button class="content-tab" data-tab="integrations">
+                    <i class="fas fa-plug"></i>
+                    Integrações
+                </button>
+                <button class="content-tab" data-tab="advanced">
+                    <i class="fas fa-code"></i>
+                    Avançado
+                </button>
+            </div>
+
+            <!-- General Settings Tab -->
+            <div class="content-tab-content active" id="general-content">
+                <div class="settings-section">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Configurações Gerais do Site</h3>
+                            <span class="status-badge active">Ativo</span>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label for="siteName">Nome do Site</label>
+                                <input type="text" id="siteName" value="Phytografia" placeholder="Nome do seu site">
+                            </div>
+                            <div class="form-group">
+                                <label for="siteDescription">Descrição do Site</label>
+                                <textarea id="siteDescription" rows="3" placeholder="Descrição do seu site">Sua plataforma completa para identificação e cuidado de plantas</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="siteUrl">URL do Site</label>
+                                <input type="url" id="siteUrl" value="https://phytografia.com" placeholder="https://seusite.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="adminEmail">Email do Administrador</label>
+                                <input type="email" id="adminEmail" value="admin@phytografia.com" placeholder="admin@seusite.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="timezone">Fuso Horário</label>
+                                <select id="timezone">
+                                    <option value="America/Sao_Paulo" selected>América/São Paulo (UTC-3)</option>
+                                    <option value="America/New_York">América/Nova York (UTC-5)</option>
+                                    <option value="Europe/London">Europa/Londres (UTC+0)</option>
+                                    <option value="Asia/Tokyo">Ásia/Tóquio (UTC+9)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="language">Idioma Padrão</label>
+                                <select id="language">
+                                    <option value="pt-BR" selected>Português (Brasil)</option>
+                                    <option value="en-US">English (US)</option>
+                                    <option value="es-ES">Español</option>
+                                    <option value="fr-FR">Français</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Configurações de Usuário</h3>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="allowRegistration" checked>
+                                    Permitir registro de novos usuários
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="requireEmailVerification" checked>
+                                    Exigir verificação de email
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="enableUserProfiles">
+                                    Permitir perfis públicos de usuários
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="defaultUserRole">Função padrão para novos usuários</label>
+                                <select id="defaultUserRole">
+                                    <option value="user" selected>Usuário</option>
+                                    <option value="contributor">Colaborador</option>
+                                    <option value="moderator">Moderador</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Configurações de Conteúdo</h3>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="moderateContent" checked>
+                                    Moderar novo conteúdo antes da publicação
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="allowComments" checked>
+                                    Permitir comentários em plantas
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="enableRatings" checked>
+                                    Permitir avaliações de plantas
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="maxFileSize">Tamanho máximo de arquivo (MB)</label>
+                                <input type="number" id="maxFileSize" value="10" min="1" max="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Settings Tab -->
+            <div class="content-tab-content" id="security-content">
+                <div class="settings-section">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Configurações de Segurança</h3>
+                            <span class="status-badge active">Protegido</span>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="enableTwoFactor" checked>
+                                    Exigir autenticação de dois fatores para administradores
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="enableCaptcha" checked>
+                                    Ativar CAPTCHA em formulários
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="enableSSL" checked>
+                                    Forçar conexões HTTPS
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="sessionTimeout">Timeout de sessão (minutos)</label>
+                                <input type="number" id="sessionTimeout" value="60" min="15" max="480">
+                            </div>
+                            <div class="form-group">
+                                <label for="maxLoginAttempts">Máximo de tentativas de login</label>
+                                <input type="number" id="maxLoginAttempts" value="5" min="3" max="10">
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordMinLength">Comprimento mínimo da senha</label>
+                                <input type="number" id="passwordMinLength" value="8" min="6" max="20">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Logs de Segurança</h3>
+                            <button class="refresh-btn" onclick="refreshSecurityLogs()">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                        <div class="table-container">
+                            <table class="analytics-table">
+                                <thead>
+                                    <tr>
+                                        <th>Data/Hora</th>
+                                        <th>Evento</th>
+                                        <th>Usuário</th>
+                                        <th>IP</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="securityLogsTable">
+                                    <tr>
+                                        <td>2023-10-26 14:30:00</td>
+                                        <td>Tentativa de login falha</td>
+                                        <td>john.doe</td>
+                                        <td>192.168.1.10</td>
+                                        <td class="status-failed">Falha</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2023-10-26 14:25:00</td>
+                                        <td>Login bem-sucedido</td>
+                                        <td>admin</td>
+                                        <td>203.0.113.45</td>
+                                        <td class="status-success">Sucesso</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2023-10-26 14:20:00</td>
+                                        <td>Alteração de configuração</td>
+                                        <td>admin</td>
+                                        <td>203.0.113.45</td>
+                                        <td class="status-success">Sucesso</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Settings Tab -->
+            <div class="content-tab-content" id="email-content">
+                <div class="settings-section">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Configurações de Servidor de Email (SMTP)</h3>
+                            <span class="status-badge active">Conectado</span>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label for="smtpHost">Host SMTP</label>
+                                <input type="text" id="smtpHost" value="smtp.seuservidor.com" placeholder="smtp.seuservidor.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="smtpPort">Porta SMTP</label>
+                                <input type="number" id="smtpPort" value="587" placeholder="587">
+                            </div>
+                            <div class="form-group">
+                                <label for="smtpUsername">Usuário SMTP</label>
+                                <input type="text" id="smtpUsername" value="seuemail@seuservidor.com" placeholder="seuemail@seuservidor.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="smtpPassword">Senha SMTP</label>
+                                <input type="password" id="smtpPassword" value="" placeholder="********">
+                            </div>
+                            <div class="form-group">
+                                <label for="smtpEncryption">Criptografia</label>
+                                <select id="smtpEncryption">
+                                    <option value="tls" selected>TLS</option>
+                                    <option value="ssl">SSL</option>
+                                    <option value="none">Nenhuma</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fromEmail">Email de Remetente</label>
+                                <input type="email" id="fromEmail" value="noreply@phytografia.com" placeholder="noreply@seusite.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="fromName">Nome de Remetente</label>
+                                <input type="text" id="fromName" value="Phytografia" placeholder="Nome da sua aplicação">
+                            </div>
+                            <button class="secondary-btn" onclick="testEmailSettings()">
+                                <i class="fas fa-paper-plane"></i>
+                                Testar Configurações de Email
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Modelos de Email</h3>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label for="welcomeEmailTemplate">Modelo de Email de Boas-Vindas</label>
+                                <select id="welcomeEmailTemplate">
+                                    <option value="default" selected>Padrão</option>
+                                    <option value="custom1">Personalizado 1</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="resetPasswordEmailTemplate">Modelo de Email de Redefinição de Senha</label>
+                                <select id="resetPasswordEmailTemplate">
+                                    <option value="default" selected>Padrão</option>
+                                    <option value="custom1">Personalizado 1</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="notificationEmailTemplate">Modelo de Email de Notificação</label>
+                                <select id="notificationEmailTemplate">
+                                    <option value="default" selected>Padrão</option>
+                                    <option value="custom1">Personalizado 1</option>
+                                </select>
+                            </div>
+                            <button class="secondary-btn" onclick="editEmailTemplates()">
+                                <i class="fas fa-edit"></i>
+                                Editar Modelos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backup Settings Tab -->
+            <div class="content-tab-content" id="backup-content">
+                <div class="settings-section">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Configurações de Backup</h3>
+                            <span class="status-badge active">Automático</span>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label for="backupFrequency">Frequência de Backup</label>
+                                <select id="backupFrequency">
+                                    <option value="daily" selected>Diário</option>
+                                    <option value="weekly">Semanal</option>
+                                    <option value="monthly">Mensal</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="backupTime">Horário do Backup</label>
+                                <input type="time" id="backupTime" value="02:00">
+                            </div>
+                            <div class="form-group">
+                                <label for="backupLocation">Local de Armazenamento</label>
+                                <select id="backupLocation">
+                                    <option value="local" selected>Servidor Local</option>
+                                    <option value="s3">Amazon S3</option>
+                                    <option value="dropbox">Dropbox</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="retentionPolicy">Política de Retenção (dias)</label>
+                                <input type="number" id="retentionPolicy" value="30" min="7" max="365">
+                            </div>
+                            <button class="primary-btn" onclick="runBackupNow()">
+                                <i class="fas fa-hdd"></i>
+                                Fazer Backup Agora
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Histórico de Backups</h3>
+                            <button class="refresh-btn" onclick="refreshBackupHistory()">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                        <div class="table-container">
+                            <table class="analytics-table">
+                                <thead>
+                                    <tr>
+                                        <th>Data/Hora</th>
+                                        <th>Tipo</th>
+                                        <th>Tamanho</th>
+                                        <th>Status</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="backupHistoryTable">
+                                    <tr>
+                                        <td>2023-10-26 02:00:00</td>
+                                        <td>Completo</td>
+                                        <td>1.2 GB</td>
+                                        <td class="status-success">Sucesso</td>
+                                        <td>
+                                            <button class="icon-btn" title="Download"><i class="fas fa-download"></i></button>
+                                            <button class="icon-btn" title="Restaurar"><i class="fas fa-history"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2023-10-25 02:00:00</td>
+                                        <td>Completo</td>
+                                        <td>1.1 GB</td>
+                                        <td class="status-success">Sucesso</td>
+                                        <td>
+                                            <button class="icon-btn" title="Download"><i class="fas fa-download"></i></button>
+                                            <button class="icon-btn" title="Restaurar"><i class="fas fa-history"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrations Settings Tab -->
+            <div class="content-tab-content" id="integrations-content">
+                <div class="settings-section">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Integrações de Mídias Sociais</h3>
+                            <span class="status-badge active">Ativo</span>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label for="facebookAppId">Facebook App ID</label>
+                                <input type="text" id="facebookAppId" value="" placeholder="Seu Facebook App ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="twitterApiKey">Twitter API Key</label>
+                                <input type="text" id="twitterApiKey" value="" placeholder="Sua Twitter API Key">
+                            </div>
+                            <div class="form-group">
+                                <label for="instagramClientId">Instagram Client ID</label>
+                                <input type="text" id="instagramClientId" value="" placeholder="Seu Instagram Client ID">
+                            </div>
+                            <button class="primary-btn" onclick="saveSocialIntegrations()">
+                                <i class="fas fa-link"></i>
+                                Conectar Mídias Sociais
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Integrações de Análise</h3>
+                            <span class="status-badge active">Conectado</span>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label for="googleAnalyticsId">Google Analytics Tracking ID</label>
+                                <input type="text" id="googleAnalyticsId" value="UA-XXXXX-Y" placeholder="UA-XXXXX-Y">
+                            </div>
+                            <div class="form-group">
+                                <label for="mixpanelToken">Mixpanel Project Token</label>
+                                <input type="text" id="mixpanelToken" value="" placeholder="Seu Mixpanel Project Token">
+                            </div>
+                            <button class="primary-btn" onclick="saveAnalyticsIntegrations()">
+                                <i class="fas fa-chart-line"></i>
+                                Conectar Análises
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Settings Tab -->
+            <div class="content-tab-content" id="advanced-content">
+                <div class="settings-section">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Configurações de Cache</h3>
+                            <span class="status-badge active">Ativo</span>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label for="cacheDuration">Duração do Cache (minutos)</label>
+                                <input type="number" id="cacheDuration" value="60" min="5" max="1440">
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="enableCDN" checked>
+                                    Ativar CDN para ativos estáticos
+                                </label>
+                            </div>
+                            <button class="secondary-btn" onclick="clearCache()">
+                                <i class="fas fa-broom"></i>
+                                Limpar Cache
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Gerenciamento de API</h3>
+                            <span class="status-badge active">Ativo</span>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label for="apiKey">Chave de API</label>
+                                <input type="text" id="apiKey" value="YOUR_API_KEY_HERE" readonly>
+                                <button class="secondary-btn" onclick="generateNewApiKey()">
+                                    <i class="fas fa-sync-alt"></i>
+                                    Gerar Nova Chave
+                                </button>
+                            </div>
+                            <div class="form-group">
+                                <label for="apiRateLimit">Limite de Requisições (por minuto)</label>
+                                <input type="number" id="apiRateLimit" value="100" min="10" max="1000">
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="enableApiLogging" checked>
+                                    Registrar todas as requisições de API
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Modo de Manutenção</h3>
+                            <span class="status-badge inactive">Inativo</span>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="maintenanceMode">
+                                    Ativar Modo de Manutenção
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="maintenanceMessage">Mensagem de Manutenção</label>
+                                <textarea id="maintenanceMessage" rows="3">O site está em manutenção. Voltaremos em breve!</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="allowedIpAddresses">IPs Permitidos (separados por vírgula)</label>
+                                <input type="text" id="allowedIpAddresses" placeholder="192.168.1.1, 10.0.0.5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Phytografia</span>
+                    </div>
+                    <p>Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="../catalog.html">Catálogo</a></li>
+                        <li><a href="../guides.html">Guia de Cultivo</a></li>
+                        <li><a href="../about.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="../guides.html">Guias de Cultivo</a></li>
+                        <li><a href="../api.html">API</a></li>
+                        <li><a href="../help.html">Ajuda</a></li>
+                        <li><a href="../contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@phytografia.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Phytografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../script.js"></script>
+    <script src="../admin.js"></script>
+    <script src="../admin-layout.js"></script>
+    <script src="admin-configuracoes.js"></script>
+</body>
+</html>

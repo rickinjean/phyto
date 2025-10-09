@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Phytografia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="guides.html" class="nav-link">Guia de Cultivo</a></li>
+                    <li><a href="about.html" class="nav-link active">Sobre</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
+                            pelé
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="admin.html">Meu Perfil</a></li>
+                            <li><a href="#" onclick="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Sobre o Phytografia</h1>
+                    <p class="hero-subtitle">Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação para aproximar as pessoas do mundo das plantas.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">1,247</span>
+                            <span class="stat-label">Plantas Catalogadas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3,892</span>
+                            <span class="stat-label">Usuários Ativos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">8,743</span>
+                            <span class="stat-label">Avaliações</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://via.placeholder.com/500x400/556B2F/FFFFFF?text=Phytografia" alt="Phytografia">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossa Missão</h2>
+                <p>Democratizar o conhecimento botânico através da tecnologia</p>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Educação Botânica</h3>
+                    <p>Tornar o conhecimento sobre plantas acessível a todos, desde iniciantes até especialistas, através de conteúdo científico de qualidade.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Pesquisa Avançada</h3>
+                    <p>Oferecer ferramentas de pesquisa sofisticadas que permitem encontrar plantas específicas baseadas em características detalhadas.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Comunidade</h3>
+                    <p>Conectar entusiastas, jardineiros e botânicos em uma comunidade colaborativa de compartilhamento de conhecimento.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Conservação</h3>
+                    <p>Promover a conscientização sobre a importância da biodiversidade e conservação das espécies vegetais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Nossa História</h2>
+                    <p>O Phytografia nasceu da paixão pela botânica e da necessidade de democratizar o conhecimento sobre plantas. Fundado em 2023 por uma equipe multidisciplinar de botânicos, desenvolvedores e designers, o projeto começou como uma simples ideia: criar uma plataforma que tornasse a identificação e o estudo de plantas mais acessível e envolvente.</p>
+                    
+                    <p>Inspirados pela rica biodiversidade brasileira e pela crescente necessidade de educação ambiental, desenvolvemos um sistema que combina rigor científico com interface intuitiva. Cada planta em nosso catálogo é cuidadosamente documentada por especialistas, garantindo informações precisas e confiáveis.</p>
+                    
+                    <p>Hoje, o Phytografia é mais do que uma base de dados - é uma comunidade vibrante onde conhecimento científico encontra paixão pela natureza, onde iniciantes aprendem com especialistas, e onde a tecnologia serve à preservação da biodiversidade.</p>
+                    
+                    <div class="story-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Fundado em 2023</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-globe-americas"></i>
+                            <span>Foco na flora brasileira</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-microscope"></i>
+                            <span>Base científica sólida</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="https://via.placeholder.com/400x500/8B4513/FFFFFF?text=Nossa+História" alt="Nossa História">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recursos do Sistema</h2>
+                <p>Ferramentas avançadas para explorar o mundo das plantas</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Catálogo Extenso</h3>
+                    <p>Mais de 1.200 espécies catalogadas com informações detalhadas sobre características, cultivo e usos.</p>
+                    <ul class="feature-list">
+                        <li>Fichas técnicas completas</li>
+                        <li>Imagens de alta qualidade</li>
+                        <li>Informações de cultivo</li>
+                        <li>Dados científicos verificados</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3>Busca Inteligente</h3>
+                    <p>Sistema de pesquisa avançado com múltiplos filtros para encontrar plantas específicas rapidamente.</p>
+                    <ul class="feature-list">
+                        <li>Filtros por características físicas</li>
+                        <li>Busca por condições ambientais</li>
+                        <li>Pesquisa por uso e finalidade</li>
+                        <li>Filtros geográficos</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Perfil Personalizado</h3>
+                    <p>Crie seu jardim virtual, salve favoritos e acompanhe seu progresso no cultivo.</p>
+                    <ul class="feature-list">
+                        <li>Jardim virtual personalizado</li>
+                        <li>Lista de plantas favoritas</li>
+                        <li>Histórico de atividades</li>
+                        <li>Sistema de conquistas</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Comunidade Ativa</h3>
+                    <p>Compartilhe experiências, avalie plantas e aprenda com outros entusiastas da botânica.</p>
+                    <ul class="feature-list">
+                        <li>Sistema de avaliações</li>
+                        <li>Compartilhamento de experiências</li>
+                        <li>Dicas de cultivo</li>
+                        <li>Fórum de discussões</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Acesso Multiplataforma</h3>
+                    <p>Interface responsiva que funciona perfeitamente em computadores, tablets e smartphones.</p>
+                    <ul class="feature-list">
+                        <li>Design responsivo</li>
+                        <li>Otimizado para mobile</li>
+                        <li>Sincronização entre dispositivos</li>
+                        <li>Acesso offline limitado</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Análises e Relatórios</h3>
+                    <p>Acompanhe estatísticas do seu jardim e receba insights sobre suas plantas.</p>
+                    <ul class="feature-list">
+                        <li>Estatísticas do jardim</li>
+                        <li>Relatórios de crescimento</li>
+                        <li>Lembretes de cuidados</li>
+                        <li>Análise de tendências</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossa Equipe</h2>
+                <p>Profissionais dedicados à excelência em botânica e tecnologia</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://via.placeholder.com/200x200/4A2C2A/FFFFFF?text=Dr.+Silva" alt="Dr. Carlos Silva">
+                    </div>
+                    <div class="member-info">
+                        <h3>Dr. Carlos Silva</h3>
+                        <p class="member-role">Botânico Chefe</p>
+                        <p class="member-bio">PhD em Botânica pela USP, especialista em taxonomia vegetal com mais de 15 anos de experiência em pesquisa.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://via.placeholder.com/200x200/556B2F/FFFFFF?text=Ana+Costa" alt="Ana Costa">
+                    </div>
+                    <div class="member-info">
+                        <h3>Ana Costa</h3>
+                        <p class="member-role">Desenvolvedora Full-Stack</p>
+                        <p class="member-bio">Engenheira de Software especializada em aplicações web, responsável pela arquitetura e desenvolvimento do sistema.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://via.placeholder.com/200x200/8B4513/FFFFFF?text=M.+Santos" alt="Maria Santos">
+                    </div>
+                    <div class="member-info">
+                        <h3>Maria Santos</h3>
+                        <p class="member-role">Designer UX/UI</p>
+                        <p class="member-bio">Designer com foco em experiência do usuário, criando interfaces intuitivas e acessíveis para todos os públicos.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://via.placeholder.com/200x200/F5DEB3/4A2C2A?text=P.+Lima" alt="Pedro Lima">
+                    </div>
+                    <div class="member-info">
+                        <h3>Pedro Lima</h3>
+                        <p class="member-role">Especialista em Dados</p>
+                        <p class="member-bio">Cientista de dados responsável pela curadoria e organização das informações botânicas do sistema.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-kaggle"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Valores</h2>
+                <p>Os princípios que guiam nosso trabalho</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Rigor Científico</h3>
+                    <p>Todas as informações são baseadas em pesquisas científicas e validadas por especialistas qualificados.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h3>Acessibilidade</h3>
+                    <p>Conhecimento botânico deve estar disponível para todos, independentemente do nível de experiência.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Sustentabilidade</h3>
+                    <p>Promovemos práticas de cultivo sustentáveis e conscientização ambiental.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Colaboração</h3>
+                    <p>Acreditamos no poder da comunidade para expandir e enriquecer o conhecimento coletivo.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Inovação</h3>
+                    <p>Utilizamos tecnologia de ponta para criar soluções inovadoras em educação botânica.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Paixão</h3>
+                    <p>Nossa paixão pela natureza e pelas plantas é o que nos motiva a melhorar constantemente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Entre em Contato</h2>
+                    <p>Tem dúvidas, sugestões ou quer colaborar conosco? Estamos sempre abertos ao diálogo!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>contato@phytografia.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Telefone</h4>
+                                <p>(11) 9999-9999</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Localização</h4>
+                                <p>São Paulo, SP - Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="duvida">Dúvida</option>
+                                <option value="sugestao">Sugestão</option>
+                                <option value="colaboracao">Colaboração</option>
+                                <option value="bug">Reportar Bug</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Phytografia</span>
+                    </div>
+                    <p>Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="catalog.html">Catálogo</a></li>
+                        <li><a href="guides.html">Guia de Cultivo</a></li>
+                        <li><a href="about.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="guides.html">Guias de Cultivo</a></li>
+                        <li><a href="api.html">API</a></li>
+                        <li><a href="help.html">Ajuda</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@phytografia.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Phytografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="about.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Phytografia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
+                            pelé
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="profile.html" class="active">Meu Perfil</a></li>
+                            <li><a href="#" onclick="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Profile Header -->
+    <section class="profile-header">
+        <div class="container">
+            <div class="profile-banner">
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Maria Silva" id="profileImage">
+                        <button class="change-avatar-btn" onclick="changeAvatar()">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="profile-details">
+                        <h1 id="userName">Messi</h1>
+                        <p class="user-title">Entusiasta de Jardinagem</p>
+                        <p class="user-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            São Paulo, SP
+                        </p>
+                        <p class="member-since">
+                            <i class="fas fa-calendar"></i>
+                            Membro desde março de 2024
+                        </p>
+                    </div>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="plantsInGardenCount">47</span>
+                        <span class="stat-label">Plantas no Jardim</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="favoritesCount">23</span>
+                        <span class="stat-label">Favoritas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="searchedPlantsCount">150</span>
+                        <span class="stat-label">Plantas Pesquisadas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="reviewsCount">15</span>
+                        <span class="stat-label">Avaliações</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="achievementsCount">8</span>
+                        <span class="stat-label">Conquistas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Navigation -->
+    <section class="profile-nav">
+        <div class="container">
+            <nav class="profile-tabs">
+                <button class="profile-tab active" data-tab="overview">Visão Geral</button>
+                <button class="profile-tab" data-tab="garden">Meu Jardim</button>
+                <button class="profile-tab" data-tab="favorites">Favoritas</button>
+                <button class="profile-tab" data-tab="searched">Pesquisadas</button>
+                <button class="profile-tab" data-tab="reviews">Avaliações</button>
+                <button class="profile-tab" data-tab="achievements">Conquistas</button>
+                <button class="profile-tab" data-tab="settings">Configurações</button>
+                <button class="profile-tab" data-tab="delete-account">Excluir Conta</button>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="profile-content">
+        <div class="container">
+            <!-- Overview Tab -->
+            <div class="tab-content active" id="overview">
+                <div class="overview-grid">
+                    <!-- Recent Activity -->
+                    <div class="activity-card">
+                        <h3>Atividade Recente</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p>Adicionou <strong>Lavanda</strong> aos favoritos</p>
+                                    <span class="activity-time">2 horas atrás</span>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p>Avaliou <strong>Rosa</strong> com 5 estrelas</p>
+                                    <span class="activity-time">1 dia atrás</span>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p>Adicionou <strong>Girassol</strong> ao jardim</p>
+                                    <span class="activity-time">3 dias atrás</span>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p>Conquistou o badge <strong>Jardineiro Iniciante</strong></p>
+                                    <span class="activity-time">1 semana atrás</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="view-all-btn">Ver Toda Atividade</button>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="stats-card">
+                        <h3>Estatísticas</h3>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <i class="fas fa-seedling"></i>
+                                <div>
+                                    <span class="stat-value">47</span>
+                                    <span class="stat-desc">Plantas Cultivadas</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-box">
+                                <i class="fas fa-calendar-check"></i>
+                                <div>
+                                    <span class="stat-value">156</span>
+                                    <span class="stat-desc">Dias Consecutivos</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-box">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <span class="stat-value">89%</span>
+                                    <span class="stat-desc">Taxa de Sucesso</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-box">
+                                <i class="fas fa-medal"></i>
+                                <div>
+                                    <span class="stat-value">8</span>
+                                    <span class="stat-desc">Conquistas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Garden Progress -->
+                <div class="progress-section">
+                    <h3>Progresso do Jardim</h3>
+                    <div class="progress-cards">
+                        <div class="progress-card">
+                            <div class="progress-header">
+                                <h4>Plantas em Floração</h4>
+                                <span class="progress-value">12/47</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 25.5%;"></div>
+                            </div>
+                            <p>25% das suas plantas estão florindo</p>
+                        </div>
+                        
+                        <div class="progress-card">
+                            <div class="progress-header">
+                                <h4>Cuidados Pendentes</h4>
+                                <span class="progress-value">3</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill warning" style="width: 15%;"></div>
+                            </div>
+                            <p>3 plantas precisam de atenção</p>
+                        </div>
+                        
+                        <div class="progress-card">
+                            <div class="progress-header">
+                                <h4>Variedades Cultivadas</h4>
+                                <span class="progress-value">23</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill success" style="width: 76%;"></div>
+                            </div>
+                            <p>Excelente diversidade!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Garden Tab -->
+            <div class="tab-content" id="garden">
+                <div class="garden-header">
+                    <h3>Meu Jardim Virtual</h3>
+                    <div class="garden-actions">
+                        <button class="garden-btn" onclick="addPlantToGarden()">
+                            <i class="fas fa-plus"></i>
+                            Adicionar Planta
+                        </button>
+                        <button class="garden-btn secondary" onclick="exportGarden()">
+                            <i class="fas fa-download"></i>
+                            Exportar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="garden-filters">
+                    <select id="gardenFilter">
+                        <option value="all">Todas as Plantas</option>
+                        <option value="flowering">Em Floração</option>
+                        <option value="needs-care">Precisa de Cuidados</option>
+                        <option value="recently-added">Recém Adicionadas</option>
+                    </select>
+                    
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="garden-grid" id="gardenGrid">
+                    <!-- Garden plants will be populated by JavaScript -->
+                    <p class="empty-state">Nenhuma planta adicionada ao seu jardim ainda. Comece a adicionar suas plantas favoritas!</p>
+                </div>
+            </div>
+            
+            <!-- Favorites Tab -->
+            <div class="tab-content" id="favorites">
+                <div class="favorites-header">
+                    <h3>Plantas Favoritas</h3>
+                    <p>Suas plantas preferidas para referência rápida</p>
+                </div>
+                
+                <div class="favorites-grid" id="favoritesGrid">
+                    <!-- Favorite plants will be populated by JavaScript -->
+                    <p class="empty-state">Nenhuma planta favorita ainda. Explore o catálogo e adicione suas preferidas!</p>
+                </div>
+            </div>
+
+            <!-- Searched Plants Tab -->
+            <div class="tab-content" id="searched">
+                <div class="searched-header">
+                    <h3>Plantas Pesquisadas Recentemente</h3>
+                    <p>Histórico das plantas que você pesquisou</p>
+                </div>
+                <div class="searched-list" id="searchedPlantsList">
+                    <!-- Searched plants will be populated by JavaScript -->
+                    <p class="empty-state">Nenhuma planta pesquisada recentemente.</p>
+                </div>
+            </div>
+            
+            <!-- Reviews Tab -->
+            <div class="tab-content" id="reviews">
+                <div class="reviews-header">
+                    <h3>Minhas Avaliações</h3>
+                    <div class="reviews-stats">
+                        <div class="review-stat">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Avaliações</span>
+                        </div>
+                        <div class="review-stat">
+                            <span class="stat-number">4.6</span>
+                            <span class="stat-label">Média</span>
+                        </div>
+                        <div class="review-stat">
+                            <span class="stat-number">89</span>
+                            <span class="stat-label">Curtidas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reviews-list" id="userReviewsList">
+                    <!-- User reviews will be populated by JavaScript -->
+                    <p class="empty-state">Você ainda não fez nenhuma avaliação.</p>
+                </div>
+            </div>
+            
+            <!-- Achievements Tab -->
+            <div class="tab-content" id="achievements">
+                <div class="achievements-header">
+                    <h3>Conquistas</h3>
+                    <p>Seus marcos e realizações no Phytografia</p>
+                </div>
+                
+                <div class="achievements-grid" id="achievementsGrid">
+                    <!-- Achievements will be populated by JavaScript -->
+                    <p class="empty-state">Nenhuma conquista desbloqueada ainda. Continue explorando e cultivando!</p>
+                </div>
+            </div>
+            
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings">
+                <div class="settings-sections">
+                    <!-- Personal Information -->
+                    <div class="settings-section">
+                        <h3>Informações Pessoais</h3>
+                        <form class="settings-form" id="personalInfoForm">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="firstName">Nome</label>
+                                    <input type="text" id="firstName" value="Maria">
+                                </div>
+                                <div class="form-field">
+                                    <label for="lastName">Sobrenome</label>
+                                    <input type="text" id="lastName" value="Silva">
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" value="maria.silva@example.com">
+                            </div>
+                            <div class="form-field">
+                                <label for="location">Localização</label>
+                                <input type="text" id="location" value="São Paulo, SP">
+                            </div>
+                            <div class="form-field">
+                                <label for="bio">Biografia</label>
+                                <textarea id="bio" rows="4">Entusiasta de jardinagem com paixão por orquídeas e plantas medicinais.</textarea>
+                            </div>
+                            <button type="submit" class="btn primary">Salvar Alterações</button>
+                        </form>
+                    </div>
+
+                    <!-- Password Change -->
+                    <div class="settings-section">
+                        <h3>Alterar Senha</h3>
+                        <form class="settings-form" id="passwordChangeForm">
+                            <div class="form-field">
+                                <label for="currentPassword">Senha Atual</label>
+                                <input type="password" id="currentPassword">
+                            </div>
+                            <div class="form-field">
+                                <label for="newPassword">Nova Senha</label>
+                                <input type="password" id="newPassword">
+                            </div>
+                            <div class="form-field">
+                                <label for="confirmNewPassword">Confirmar Nova Senha</label>
+                                <input type="password" id="confirmNewPassword">
+                            </div>
+                            <button type="submit" class="btn primary">Alterar Senha</button>
+                        </form>
+                    </div>
+
+                    <!-- Notification Settings -->
+                    <div class="settings-section">
+                        <h3>Preferências de Notificação</h3>
+                        <form class="settings-form" id="notificationSettingsForm">
+                            <div class="form-field">
+                                <input type="checkbox" id="emailNotifications" checked>
+                                <label for="emailNotifications">Receber notificações por e-mail</label>
+                            </div>
+                            <div class="form-field">
+                                <input type="checkbox" id="pushNotifications">
+                                <label for="pushNotifications">Receber notificações push</label>
+                            </div>
+                            <button type="submit" class="btn primary">Salvar Preferências</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delete Account Tab -->
+            <div class="tab-content" id="delete-account">
+                <div class="delete-account-section">
+                    <h3>Excluir Conta</h3>
+                    <p>A exclusão da sua conta é uma ação permanente e não pode ser desfeita. Todos os seus dados, incluindo plantas no jardim, favoritos, avaliações e conquistas, serão removidos.</p>
+                    <p>Por favor, digite sua senha para confirmar a exclusão da conta.</p>
+                    <form class="delete-account-form" id="deleteAccountForm">
+                        <div class="form-field">
+                            <label for="deletePassword">Senha</label>
+                            <input type="password" id="deletePassword" required>
+                        </div>
+                        <button type="submit" class="btn delete-btn">Excluir Minha Conta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Phytografia</span>
+                    </div>
+                    <p>Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="catalog.html">Catálogo</a></li>
+                        <li><a href="guides.html">Guia de Cultivo</a></li>
+                        <li><a href="about.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="guides.html">Guias de Cultivo</a></li>
+                        <li><a href="api.html">API</a></li>
+                        <li><a href="help.html">Ajuda</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@phytografia.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Phytografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
+

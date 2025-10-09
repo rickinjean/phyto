@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Phytografia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catalog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Phytografia</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="catalog.html" class="nav-link active">Catálogo</a></li>
+                    <li><a href="guides.html" class="nav-link">Guia de Cultivo</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <img src="imagens/cristiano_de_bicicretaaaaaaaa.webp" alt="Usuário" class="user-avatar">
+                            pelé
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="admin.html">Meu Perfil</a></li>
+                            <li><a href="#" onclick="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Catalog Header -->
+    <section class="catalog-header">
+        <div class="container">
+            <h1>Catálogo de Plantas</h1>
+            <p>Explore nossa extensa coleção de plantas organizadas por categorias</p>
+            
+            <!-- Quick Search -->
+            <div class="quick-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar no catálogo..." id="catalogSearch">
+                    <button class="search-btn">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Controls -->
+    <section class="catalog-controls">
+        <div class="container">
+            <div class="controls-row">
+                <!-- View Toggle -->
+                <div class="view-toggle">
+                    <button class="view-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                        Grade
+                    </button>
+                    <button class="view-btn active" data-view="mosaic">
+                        <i class="fas fa-th-large"></i>
+                        Mosaico
+                    </button>
+                </div>
+
+                <!-- Sort Options -->
+                <div class="sort-options">
+                    <label for="sortSelect">Ordenar por:</label>
+                    <select id="sortSelect">
+                        <option value="name">Nome (A-Z)</option>
+                        <option value="name-desc">Nome (Z-A)</option>
+                        <option value="popularity">Popularidade</option>
+                        <option value="date">Recém Adicionadas</option>
+                        <option value="family">Família</option>
+                    </select>
+                </div>
+
+                <!-- Results Count -->
+                <div class="results-count">
+                    <span id="resultsCount">Mostrando 0 plantas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="catalog-main">
+        <div class="container">
+            <div class="catalog-layout">
+                <!-- Sidebar Filters -->
+                <aside class="catalog-sidebar">
+                    <div class="filter-section">
+                        <h3>Filtros</h3>
+                        <button class="clear-filters">Limpar Filtros</button>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <h4>Categorias</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="ornamental">
+                                <span>Ornamentais</span>
+                                <span class="count">(0)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="medicinal">
+                                <span>Medicinais</span>
+                                <span class="count">(0)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="alimenticia">
+                                <span>Alimentícias</span>
+                                <span class="count">(0)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="aromatica">
+                                <span>Aromáticas</span>
+                                <span class="count">(0)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="nativa">
+                                <span>Nativas</span>
+                                <span class="count">(0)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Size Filter -->
+                    <div class="filter-group">
+                        <h4>Tamanho</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="pequeno">
+                                <span>Pequeno (até 50cm)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="medio">
+                                <span>Médio (50cm - 2m)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="grande">
+                                <span>Grande (acima de 2m)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Light Requirements -->
+                    <div class="filter-group">
+                        <h4>Luminosidade</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="sol-pleno">
+                                <span>Sol Pleno</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="meia-sombra">
+                                <span>Meia Sombra</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="sombra">
+                                <span>Sombra</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Water Requirements -->
+                    <div class="filter-group">
+                        <h4>Necessidade Hídrica</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="baixa">
+                                <span>Baixa</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="moderada">
+                                <span>Moderada</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="alta">
+                                <span>Alta</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Difficulty Level -->
+                    <div class="filter-group">
+                        <h4>Dificuldade de Cultivo</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="facil">
+                                <span>Fácil</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="moderado">
+                                <span>Moderado</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="dificil">
+                                <span>Difícil</span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Plants Grid -->
+                <main class="catalog-content">
+                    <div class="plants-container" id="plantsContainer">
+                        <!-- Plant Cards gerados via JS -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn" id="prevPage" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                            Anterior
+                        </button>
+                        
+                        <div class="page-numbers"></div>
+                        
+                        <button class="page-btn" id="nextPage">
+                            Próximo
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compare Modal -->
+    <div id="compareModal" class="compare-modal" style="display:none;">
+        <div class="compare-grid" id="compareGrid"></div>
+        <div style="margin-top:1rem; text-align:center;">
+            <button class="close-modal">Fechar</button>
+            <button id="startComparisonBtn">Comparar</button>
+            <button id="clearComparisonBtn">Limpar</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Phytografia</span>
+                    </div>
+                    <p>Sistema completo de pesquisa botânica que combina ciência, tecnologia e educação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="catalog.html">Catálogo</a></li>
+                        <li><a href="guides.html">Guia de Cultivo</a></li>
+                        <li><a href="about.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="guides.html">Guias de Cultivo</a></li>
+                        <li><a href="api.html">API</a></li>
+                        <li><a href="help.html">Ajuda</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@phytografia.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Phytografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (catalog.js primeiro) -->
+    <script src="catalog.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
