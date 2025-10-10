@@ -117,48 +117,76 @@ document.addEventListener("DOMContentLoaded", () => {
 // Event Listeners
 function setupEventListeners() {
     // Sidebar navigation
-    document.querySelectorAll(".sidebar-menu .menu-item a").forEach(item => {
-        item.addEventListener("click", (e) => {
-            e.preventDefault(); // Prevent default link behavior
-            const sectionId = item.closest(".menu-item").dataset.section;
-            showSection(sectionId);
+    const sidebarMenuAnchors = document.querySelectorAll(".sidebar-menu .menu-item a");
+    if (sidebarMenuAnchors && sidebarMenuAnchors.length) {
+        sidebarMenuAnchors.forEach(item => {
+            item.addEventListener("click", (e) => {
+                e.preventDefault(); // Prevent default link behavior
+                const menuItem = item.closest(".menu-item");
+                const sectionId = menuItem ? menuItem.dataset.section : null;
+                if (sectionId) showSection(sectionId);
+            });
         });
-    });
+    }
 
     // Notification dropdown
-    document.querySelector(".notification-btn").addEventListener("click", () => {
-        document.getElementById("notificationsDropdown").classList.toggle("active");
-    });
+    // Notification dropdown (if present)
+    const notificationBtn = document.querySelector(".notification-btn");
+    if (notificationBtn) {
+        notificationBtn.addEventListener("click", () => {
+            const nd = document.getElementById("notificationsDropdown");
+            if (nd) nd.classList.toggle("active");
+        });
+    }
 
-    // User menu dropdown
-    document.querySelector(".user-menu-btn").addEventListener("click", () => {
-        document.getElementById("userMenuDropdown").classList.toggle("active");
-    });
+    // User menu dropdown (if present)
+    const userMenuBtn = document.querySelector(".user-menu-btn");
+    if (userMenuBtn) {
+        userMenuBtn.addEventListener("click", () => {
+            const um = document.getElementById("userMenuDropdown");
+            if (um) um.classList.toggle("active");
+        });
+    }
 
     // Close dropdowns when clicking outside
+    // Close dropdowns when clicking outside (only if dropdowns exist)
     document.addEventListener("click", (e) => {
-        if (!e.target.closest(".admin-notifications")) {
-            document.getElementById("notificationsDropdown").classList.remove("active");
+        const notifDropdown = document.getElementById("notificationsDropdown");
+        const userDropdown = document.getElementById("userMenuDropdown");
+        if (notifDropdown && !e.target.closest(".admin-notifications")) {
+            notifDropdown.classList.remove("active");
         }
-        if (!e.target.closest(".admin-user-menu")) {
-            document.getElementById("userMenuDropdown").classList.remove("active");
+        if (userDropdown && !e.target.closest(".admin-user-menu")) {
+            userDropdown.classList.remove("active");
         }
     });
 
     // Add Plant Modal
-    document.querySelector(".admin-section#plants .primary-btn").addEventListener("click", openAddPlantModal);
-    document.querySelector("#addPlantModal .close-modal").addEventListener("click", closeAddPlantModal);
-    document.getElementById("addPlantForm").addEventListener("submit", handleAddPlantSubmit);
-    document.getElementById("plantImages").addEventListener("change", handleImageUpload);
+    // Add Plant Modal (if present on this page)
+    const addPlantTrigger = document.querySelector(".admin-section#plants .primary-btn");
+    if (addPlantTrigger) addPlantTrigger.addEventListener("click", openAddPlantModal);
+
+    const addPlantModalClose = document.querySelector("#addPlantModal .close-modal");
+    if (addPlantModalClose) addPlantModalClose.addEventListener("click", closeAddPlantModal);
+
+    const addPlantForm = document.getElementById("addPlantForm");
+    if (addPlantForm) addPlantForm.addEventListener("submit", handleAddPlantSubmit);
+
+    const plantImagesInput = document.getElementById("plantImages");
+    if (plantImagesInput) plantImagesInput.addEventListener("change", handleImageUpload);
 
     // Content tabs
-    document.querySelectorAll(".content-tab").forEach(tab => {
-        tab.addEventListener("click", (e) => {
-            e.preventDefault();
-            const tabName = e.target.dataset.tab;
-            switchContentTab(tabName);
+    // Content tabs (if present)
+    const contentTabs = document.querySelectorAll(".content-tab");
+    if (contentTabs && contentTabs.length) {
+        contentTabs.forEach(tab => {
+            tab.addEventListener("click", (e) => {
+                e.preventDefault();
+                const tabName = e.target.dataset.tab;
+                if (tabName) switchContentTab(tabName);
+            });
         });
-    });
+    }
 }
 
 // Section switching
