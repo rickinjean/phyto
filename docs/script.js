@@ -226,3 +226,45 @@ function logout() {
     showNotification("Você foi desconectado.", "info");
     setTimeout(() => window.location.href = "login.html", 1500);
 }
+
+// Global image fallback: replace broken images with a placeholder
+function applyImageFallback(img) {
+    if (!img) return;
+    // Avoid double-handling
+    if (img.dataset.fallbackApplied) return;
+    img.dataset.fallbackApplied = "true";
+
+    // If src uses ../imagens/, keep it (relative to current docs pages). We only ensure a graceful fallback.
+    img.addEventListener('error', () => {
+        try {
+            const placeholder = 'imagens/placeholder.svg';
+            if (img.src && img.src.includes('placeholder.svg')) return;
+            img.src = placeholder;
+            img.classList.add('image-placeholder');
+        } catch (e) {
+            // swallow
+        }
+    });
+}
+
+// Apply to existing images and observe for dynamically added ones
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('img').forEach(applyImageFallback);
+
+    const observer = new MutationObserver(mutations => {
+        for (const m of mutations) {
+            if (m.type === 'childList') {
+                m.addedNodes.forEach(node => {
+                    if (node.nodeType !== 1) return;
+                    if (node.tagName === 'IMG') applyImageFallback(node);
+                    node.querySelectorAll && node.querySelectorAll('img').forEach(applyImageFallback);
+                });
+            }
+            if (m.type === 'attributes' && m.target && m.target.tagName === 'IMG' && m.attributeName === 'src') {
+                applyImageFallback(m.target);
+            }
+        }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+});
