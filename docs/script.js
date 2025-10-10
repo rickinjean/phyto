@@ -8,6 +8,9 @@ if (hamburger && navMenu) {
     hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
+        // Also toggle admin sidebar on small screens
+        const adminSidebar = document.querySelector('.admin-sidebar');
+        if (adminSidebar) adminSidebar.classList.toggle('open');
     });
 }
 
