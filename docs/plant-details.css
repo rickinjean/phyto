@@ -458,20 +458,20 @@
     color: var(--dark-gray);
 }
 
-/* Care Tab */
-.care-guide {
+/* Care/cultivation Tab */
+.care-guide, .cultivation-guide {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.care-section {
+.care-section, .cultivation-section {
     background: var(--light-gray);
     padding: 2rem;
     border-radius: 15px;
 }
 
-.care-section h3 {
+.care-section h3, .cultivation-section h3 {
     color: var(--primary-brown);
     margin-bottom: 1rem;
     display: flex;
@@ -480,17 +480,17 @@
     font-size: 1.3rem;
 }
 
-.care-section h3 i {
+.care-section h3 i, .cultivation-section h3 i {
     color: var(--moss-green);
 }
 
-.care-section p {
+.care-section p, .cultivation-section p {
     color: var(--dark-gray);
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
 
-.care-tips {
+.care-tips, .cultivation-tips {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;

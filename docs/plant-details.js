@@ -39,6 +39,26 @@ const plantsData = [
                 pruning: "Pode no final do inverno, removendo galhos mortos, doentes e fracos. Corte em ângulo de 45° acima de uma gema voltada para fora.",
                 pests: "Principais problemas: pulgões, ácaros, oídio e ferrugem. Mantenha boa circulação de ar e monitore regularmente."
             },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+            },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Amplamente utilizada em jardins, canteiros e vasos devido à beleza de suas flores e fragrância." },
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "Pétalas de rosa são usadas em chás e óleos essenciais com propriedades calmantes e anti-inflamatórias." },
@@ -90,6 +110,26 @@ const plantsData = [
                 pruning: "Não necessita de poda. Remova as folhas secas ou amareladas para manter a aparência.",
                 pests: "Pode ser atacado por pássaros (sementes), lesmas e caracóis quando jovem."
             },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+            },
             uses: [
                 { name: "Alimentício", icon: "fas fa-utensils", text: "Suas sementes são consumidas torradas ou usadas para extração de óleo comestível." },
                 { name: "Ornamental", icon: "fas fa-palette", text: "Muito usado em jardins e como flor de corte para arranjos." },
@@ -139,6 +179,26 @@ const plantsData = [
                 fertilizing: "Não exige muita fertilização. Um composto orgânico leve na primavera é suficiente.",
                 pruning: "Pode após a floração para manter a forma e estimular novos crescimentos. Remova flores murchas.",
                 pests: "Geralmente resistente a pragas, mas pode ser afetada por pulgões em condições de estresse." 
+            },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "Usada em chás e óleos essenciais para aliviar estresse, ansiedade e insônia." },
@@ -190,6 +250,26 @@ const plantsData = [
                 pruning: "Remova hastes florais secas e folhas amareladas. Não corte raízes aéreas saudáveis.",
                 pests: "Cochonilhas e pulgões são comuns. Mantenha boa ventilação e umidade adequada." 
             },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+            },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Muito valorizada como planta de interior e para arranjos florais devido à sua beleza única." }
             ],
@@ -237,6 +317,26 @@ const plantsData = [
                 fertilizing: "Adubação anual com composto orgânico para estimular o crescimento e floração.",
                 pruning: "Poda de formação nos primeiros anos e remoção de galhos secos ou doentes.",
                 pests: "Geralmente resistente, mas pode ser atacado por pulgões e cochonilhas em casos isolados." 
+            },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Paisagismo", icon: "fas fa-tree", text: "Muito utilizada em arborização urbana e paisagismo devido à sua espetacular floração." },
@@ -287,6 +387,26 @@ const plantsData = [
                 pruning: "Pode as pontas regularmente para estimular o crescimento e evitar a floração precoce.",
                 pests: "Pulgões e lesmas podem atacar. Use defensivos naturais se necessário." 
             },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+            },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Ingrediente essencial em molhos, saladas, pizzas e pratos italianos." },
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "Usado para aliviar problemas digestivos e como anti-inflamatório." }
@@ -335,6 +455,26 @@ const plantsData = [
                 fertilizing: "Adube a cada 2-3 meses com fertilizante líquido diluído durante a primavera e verão.",
                 pruning: "Remova folhas secas ou danificadas para manter a planta saudável e bonita.",
                 pests: "Cochonilhas e ácaros podem ser um problema. Aumente a umidade para prevenir." 
+            },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Excelente para decoração de interiores, especialmente em vasos suspensos." },
@@ -385,6 +525,26 @@ const plantsData = [
                 pruning: "Remova folhas secas ou danificadas na base. Colha as folhas externas quando necessário.",
                 pests: "Geralmente livre de pragas, mas pode ter cochonilhas em ambientes úmidos." 
             },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+            },
             uses: [
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "O gel das folhas é usado para tratar queimaduras, feridas e irritações na pele." },
                 { name: "Cosmético", icon: "fas fa-flask", text: "Ingrediente comum em produtos para cabelo, pele e protetores solares." }
@@ -433,6 +593,26 @@ const plantsData = [
                 fertilizing: "Fertilize com um produto específico para cactos e suculentas, diluído, na primavera e verão.",
                 pruning: "Remova partes secas ou danificadas com cuidado. Use luvas grossas.",
                 pests: "Cochonilhas e ácaros podem aparecer. Mantenha boa ventilação." 
+            },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Popular em jardins de pedras, vasos e como elemento decorativo de baixa manutenção." },
@@ -483,6 +663,26 @@ const plantsData = [
                 pruning: "Pode regularmente para controlar o crescimento e estimular a produção de folhas.",
                 pests: "Pulgões e ácaros podem ser um problema. Mantenha a planta vigorosa." 
             },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+            },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Usada em chás, sucos, sobremesas, molhos e para temperar carnes." },
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "Ajuda na digestão, alivia náuseas e tem propriedades antissépticas." }
@@ -532,6 +732,26 @@ const plantsData = [
                 pruning: "Remova brotos laterais (ladrões) para direcionar a energia para os frutos. Estaqueie a planta.",
                 pests: "Pulgões, mosca branca e ácaros são comuns. Monitore e use controle biológico." 
             },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+            },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Ideal para saladas, molhos, aperitivos e como lanche saudável." }
             ],
@@ -579,6 +799,26 @@ const plantsData = [
                 fertilizing: "Adube a cada 2-4 semanas na primavera e verão com fertilizante líquido diluído.",
                 pruning: "Pode para controlar o tamanho e estimular o adensamento. Remova folhas amareladas.",
                 pests: "Cochonilhas e ácaros podem ocorrer. Limpe as folhas regularmente." 
+            },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Excelente para decoração de interiores, em vasos suspensos ou como trepadeira." },
@@ -629,6 +869,26 @@ const plantsData = [
                 pruning: "Poda de formação e limpeza para remover galhos secos ou doentes.",
                 pests: "Mosca-das-frutas pode ser um problema. Monitore e use armadilhas." 
             },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+            },
             uses: [
                 { name: "Alimentício", icon: "fas fa-utensils", text: "Os frutos são consumidos in natura, em sucos, geleias e doces." },
                 { name: "Paisagismo", icon: "fas fa-tree", text: "Ideal para jardins e pomares, atraindo pássaros e abelhas." }
@@ -677,6 +937,26 @@ const plantsData = [
                 fertilizing: "Não exige muita adubação. Um composto orgânico leve na primavera é suficiente.",
                 pruning: "Remova flores murchas para estimular novas florações.",
                 pests: "Pulgões podem ser um problema. Use sabão inseticida se necessário." 
+            },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "Usada para chás com propriedades calmantes, anti-inflamatórias e digestivas." },
@@ -727,6 +1007,26 @@ const plantsData = [
                 pruning: "Remova folhas amareladas ou danificadas na base. Não necessita de poda regular.",
                 pests: "Geralmente livre de pragas. O maior problema é o excesso de água." 
             },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+            },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Ideal para ambientes internos com pouca luz, como escritórios e salas." },
                 { name: "Decoração", icon: "fas fa-home", text: "Sua folhagem brilhante e resistente a torna uma planta decorativa popular." }
@@ -766,15 +1066,35 @@ const plantsData = [
             flowerColor: "Azul/Roxo",
             foliage: "Perene",
             flowering: "Primavera/Verão",
-            lightLevel: 95,
-            waterLevel: 40,
-            tempLevel: 70,
-            soilLevel: 85,
+            lightLevel: 50,
+            waterLevel: 2,
+            tempLevel: 7,
+            soilLevel: 100,
             care: {
                 watering: "Regue moderadamente, permitindo que o solo seque entre as regas. Tolera seca.",
                 fertilizing: "Não exige muita adubação. Um composto orgânico leve na primavera é suficiente.",
                 pruning: "Pode após a floração para manter a forma e estimular o crescimento. Colha os ramos jovens.",
                 pests: "Geralmente resistente, mas pode ter pulgões em condições de estresse." 
+            },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Usado para temperar carnes, batatas, pães e azeites." },
@@ -825,6 +1145,26 @@ const plantsData = [
                 pruning: "Remova folhas secas ou danificadas. Após a floração, a planta mãe morre e os filhotes crescem.",
                 pests: "Cochonilhas e ácaros podem atacar. Mantenha boa umidade e ventilação." 
             },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+            },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Muito utilizada em decoração de interiores e jardins tropicais devido às suas cores vibrantes." }
             ],
@@ -872,6 +1212,26 @@ const plantsData = [
                 fertilizing: "Adubação regular com composto orgânico e fertilizante NPK para frutíferas.",
                 pruning: "Poda de formação e limpeza para remover galhos secos ou doentes. Pode ser podada para controle de tamanho.",
                 pests: "Pulgões e cochonilhas podem atacar. Monitore e use controle biológico." 
+            },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Alimentício", icon: "fas fa-utensils", text: "Os frutos são consumidos in natura, em geleias, sucos e licores." },
@@ -922,6 +1282,26 @@ const plantsData = [
                 pruning: "Remova folhas amareladas ou danificadas. Pode para controlar o tamanho e formato.",
                 pests: "Cochonilhas e ácaros podem ocorrer. Limpe as folhas regularmente." 
             },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+            },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Muito popular em decoração de interiores devido às suas folhas grandes e exóticas." },
                 { name: "Paisagismo", icon: "fas fa-tree", text: "Em climas tropicais, pode ser usada em jardins como planta de destaque." }
@@ -970,6 +1350,26 @@ const plantsData = [
                 fertilizing: "Adube a cada 2 semanas com fertilizante rico em potássio durante a frutificação.",
                 pruning: "Pode para estimular o crescimento e a produção de frutos. Remova folhas e galhos secos.",
                 pests: "Pulgões, mosca branca e ácaros são comuns. Use defensivos naturais." 
+            },
+            caretips: {
+                manha: "Melhor horário: manhã cedo",
+                quantidade: "Quantidade: 2-3L por planta adulta",
+                frequencia: "Frequência: mensal (primavera/verão)",
+                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
+                epoca: "Época: final do inverno",
+                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                prevenção: "Prevenção: fungicida preventivo na primavera",
+                monitoramento: "Monitoramento: semanal"
+            },
+            cultivationtips: {
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                estação: "Melhor época: primavera",
+                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                proteção: "Proteção: cobertura morta para conservar umidade",
+                controle: "Controle: inspeção semanal para pragas",
+                ideal: "Temperatura ideal: 15-25°C",
+                tolerancia: "Tolerância: não tolera geadas severas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Usada para dar sabor e picância a diversos pratos da culinária mundial." }
@@ -1073,10 +1473,69 @@ function populatePlantDetails(plant) {
         // --- Care Tab ---
         document.getElementById("care").innerHTML = `
             <div class="care-guide">
-                <div class="care-section"><h3><i class="fas fa-tint"></i> Rega</h3><p>${details.care.watering || "Informação não disponível."}</p></div>
-                <div class="care-section"><h3><i class="fas fa-seedling"></i> Fertilização</h3><p>${details.care.fertilizing || "Informação não disponível."}</p></div>
-                <div class="care-section"><h3><i class="fas fa-cut"></i> Poda</h3><p>${details.care.pruning || "Informação não disponível."}</p></div>
-                <div class="care-section"><h3><i class="fas fa-bug"></i> Pragas e Doenças</h3><p>${details.care.pests || "Informação não disponível."}</p></div>
+            <div class="care-section">
+            <h3><i class="fas fa-tint"></i> Rega</h3>
+            <p>${details.care.watering || "Informação não disponível."}</p>
+            <div class="care-tips">
+            <div class="tip"><i class="fas fa-clock"></i><span>${details.caretips.manha || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-droplet"></i><span>${details.caretips.quantidade || "Informação não disponível."}</span></div>
+            </div>
+            </div>
+            <div class="care-section">
+            <h3><i class="fas fa-seedling"></i> Fertilização</h3>
+            <p>${details.care.fertilizing || "Informação não disponível."}</p>
+            <div class="care-tips">
+            <div class="tip"><i class="fas fa-calendar"></i><span>${details.caretips.frequencia || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-flask"></i><span>${details.caretips.NPK || "Informação não disponível."}</span></div>
+            </div>
+            </div>
+            <div class="care-section">
+            <h3><i class="fas fa-cut"></i> Poda</h3>
+            <p>${details.care.pruning || "Informação não disponível."}</p>
+            <div class="care-tips">
+            <div class="tip"><i class="fas fa-calendar-alt"></i><span>${details.caretips.epoca || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-tools"></i><span>${details.caretips.ferramentas || "Informação não disponível."}</span></div>
+            </div>
+            </div>
+            <div class="care-section">
+            <h3><i class="fas fa-bug"></i> Pragas e Doenças</h3>
+            <p>${details.care.pests || "Informação não disponível."}</p>
+            <div class="care-tips">
+            <div class="tip"><i class="fas fa-shield-alt"></i><span>${details.caretips.prevenção || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-eye"></i><span>${details.caretips.monitoramento || "Informação não disponível."}</span></div>
+            </div>
+            </div>
+            </div>
+        `;
+
+        // --- Cultivation Tab ---
+        document.getElementById("cultivation").innerHTML = `
+            <div class="cultivation-guide">
+            <div class="cultivation-section">
+            <h3><i class="fas fa-seedling"></i> Plantio</h3>
+            <p>${details.cultivationtips.manutenção || "Informação não disponível."}</p>
+            <div class="cultivation-tips">
+            <div class="tip"><i class="fas fa-calendar-alt"></i><span>${details.cultivationtips.estação || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-spa"></i><span>${details.cultivationtips.espaçamento || "Informação não disponível."}</span></div>
+            </div>
+            </div>
+            <div class="cultivation-section">
+            <h3><i class="fas fa-sun"></i> Exposição Solar</h3>
+            <p>${details.cultivationtips.luz || "Informação não disponível."}</p>
+            <div class="cultivation-tips">
+            <div class="tip"><i class="fas fa-sun"></i><span>Luz: ${plant.light.replace("-", " ")}</span></div>
+            <div class="tip"><i class="fas fa-thermometer-half"></i><span>${details.cultivationtips.proteção || "Informação não disponível."}</span></div>
+            </div>
+            </div>
+            <div class="cultivation-section">
+            <h3><i class="fas fa-water"></i> Manutenção</h3>
+            <p>${details.cultivationtips.manutenção || "Informação não disponível."}</p>
+            <div class="cultivation-tips">
+            <div class="tip"><i class="fas fa-clock"></i><span>${details.cultivationtips.ideal || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-droplet"></i><span>${details.cultivationtips.tolerancia || "Informação não disponível."}</span></div>
+            </div>
+            </div>
+            </div>
             </div>
         `;
 
