@@ -33,6 +33,7 @@ const plantsData = [
             waterLevel: 70,
             tempLevel: 60,
             soilLevel: 80,
+            soil: "Areno-Argiloso",
             care: {
                 watering: "Regue profundamente 2-3 vezes por semana, permitindo que o solo seque ligeiramente entre as regas. Evite molhar as folhas para prevenir doenças fúngicas.",
                 fertilizing: "Aplique fertilizante rico em fósforo na primavera e fertilizante balanceado mensalmente durante a estação de crescimento.",
@@ -57,7 +58,7 @@ const plantsData = [
             },
             cultivationtips: {
                 estação: "primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                espaçamento: "30-60cm entre plantas",
                 luz: "Mínimo de 6 horas de sol direto.",
                 proteção: "cobertura morta para conservar umidade",
                 ideal: "15-25°C",
@@ -1529,7 +1530,7 @@ function populatePlantDetails(plant) {
             <div class="req-item"><i class="fas fa-sun"></i><span class="char-label">Luminosidade</span><div class="req-bar"><div class="req-fill" style="width: ${details.lightLevel || 0}%;"></div></div><span class="char-value">${plant.light.replace("-", " ")}</span></div>
             <div class="req-item"><i class="fas fa-tint"></i><span class="char-label">Água</span><div class="req-bar"><div class="req-fill" style="width: ${details.waterLevel || 0}%;"></div></div><span class="char-value">${plant.water}</span></div>
             <div class="req-item"><i class="fas fa-thermometer-half"></i><span class="char-label">Temperatura</span><div class="req-bar"><div class="req-fill" style="width: ${details.tempLevel || 0}%;"></div></div><span class="char-value">${details.cultivationtips.ideal}</span></div>
-            <div class="req-item"><i class="fas fa-mountain"></i><span class="char-label">Solo</span><div class="req-bar"><div class="req-fill" style="width: ${details.soilLevel || 0}%;"></div></div><span class="char-value">${plant.water}</span></div>
+            <div class="req-item"><i class="fas fa-mountain"></i><span class="char-label">Solo</span><div class="req-bar"><div class="req-fill" style="width: ${details.soilLevel || 0}%;"></div></div><span class="char-value">${plant.soil}</span></div>
         `;
         // Botanical Info
         document.querySelector(".info-grid").innerHTML = `
