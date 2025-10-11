@@ -40,24 +40,28 @@ const plantsData = [
                 pests: "Principais problemas: pulgões, ácaros, oídio e ferrugem. Mantenha boa circulação de ar e monitore regularmente."
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "N10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
+            },
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
+                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
             },
             cultivationtips: {
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
-                estação: "Melhor época: primavera",
+                estação: "primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
+                luz: "Mínimo de 6 horas de sol direto.",
+                proteção: "cobertura morta para conservar umidade",
+                ideal: "15-25°C",
+                tolerancia: "não tolera geadas severas",
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Amplamente utilizada em jardins, canteiros e vasos devido à beleza de suas flores e fragrância." },
@@ -105,7 +109,7 @@ const plantsData = [
             tempLevel: 75,
             soilLevel: 70,
             care: {
-                watering: "Necessita de regas regulares, especialmente durante o crescimento e floração. Mantenha o solo úmido, mas não encharcado.",
+                watering: "",
                 fertilizing: "Prefere solos ricos. Um fertilizante balanceado pode ser aplicado no início do crescimento.",
                 pruning: "Não necessita de poda. Remova as folhas secas ou amareladas para manter a aparência.",
                 pests: "Pode ser atacado por pássaros (sementes), lesmas e caracóis quando jovem."
@@ -120,15 +124,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Cultivado a partir de sementes diretamente no solo ou a partir de mudas. Prefere solo bem drenado, fértil e sol pleno.",
+                exposição: "Para flores grandes e saudáveis, deve receber pelo menos 6 a 8 horas de luz direta diariamente. Evitar locais sombreados e proteger do vento forte ajuda no crescimento do caule e das flores.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
+                
+            },
+            cultivationtips: {
+                estação: "Primavera e início do verão.",
+                espaçamento: "30-50 cm entre plantas, 60-90 cm entre fileiras.",
+                luz: "6-8 horas de luz solar direta por dia.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
-                ideal: "Temperatura ideal: 15-25°C",
+                ideal: "15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Alimentício", icon: "fas fa-utensils", text: "Suas sementes são consumidas torradas ou usadas para extração de óleo comestível." },
@@ -190,15 +198,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "Usada em chás e óleos essenciais para aliviar estresse, ansiedade e insônia." },
@@ -260,15 +272,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Muito valorizada como planta de interior e para arranjos florais devido à sua beleza única." }
@@ -328,15 +344,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Paisagismo", icon: "fas fa-tree", text: "Muito utilizada em arborização urbana e paisagismo devido à sua espetacular floração." },
@@ -397,15 +417,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Ingrediente essencial em molhos, saladas, pizzas e pratos italianos." },
@@ -466,15 +490,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Excelente para decoração de interiores, especialmente em vasos suspensos." },
@@ -535,15 +563,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "O gel das folhas é usado para tratar queimaduras, feridas e irritações na pele." },
@@ -604,15 +636,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Popular em jardins de pedras, vasos e como elemento decorativo de baixa manutenção." },
@@ -673,15 +709,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Usada em chás, sucos, sobremesas, molhos e para temperar carnes." },
@@ -742,15 +782,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Ideal para saladas, molhos, aperitivos e como lanche saudável." }
@@ -810,15 +854,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Excelente para decoração de interiores, em vasos suspensos ou como trepadeira." },
@@ -879,15 +927,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Alimentício", icon: "fas fa-utensils", text: "Os frutos são consumidos in natura, em sucos, geleias e doces." },
@@ -948,15 +1000,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "Usada para chás com propriedades calmantes, anti-inflamatórias e digestivas." },
@@ -1017,15 +1073,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Ideal para ambientes internos com pouca luz, como escritórios e salas." },
@@ -1086,15 +1146,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Usado para temperar carnes, batatas, pães e azeites." },
@@ -1155,15 +1219,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Muito utilizada em decoração de interiores e jardins tropicais devido às suas cores vibrantes." }
@@ -1223,15 +1291,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Alimentício", icon: "fas fa-utensils", text: "Os frutos são consumidos in natura, em geleias, sucos e licores." },
@@ -1292,15 +1364,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Muito popular em decoração de interiores devido às suas folhas grandes e exóticas." },
@@ -1361,15 +1437,19 @@ const plantsData = [
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
-            cultivationtips: {
+            cultivation:{
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                
+            },
+            cultivationtips: {
                 estação: "Melhor época: primavera",
                 espaçamento: "Espaçamento: 30-60cm entre plantas",
+                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
-                controle: "Controle: inspeção semanal para pragas",
                 ideal: "Temperatura ideal: 15-25°C",
                 tolerancia: "Tolerância: não tolera geadas severas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto."
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Usada para dar sabor e picância a diversos pratos da culinária mundial." }
@@ -1448,8 +1528,8 @@ function populatePlantDetails(plant) {
         document.querySelector(".req-grid").innerHTML = `
             <div class="req-item"><i class="fas fa-sun"></i><span class="char-label">Luminosidade</span><div class="req-bar"><div class="req-fill" style="width: ${details.lightLevel || 0}%;"></div></div><span class="char-value">${plant.light.replace("-", " ")}</span></div>
             <div class="req-item"><i class="fas fa-tint"></i><span class="char-label">Água</span><div class="req-bar"><div class="req-fill" style="width: ${details.waterLevel || 0}%;"></div></div><span class="char-value">${plant.water}</span></div>
-            <div class="req-item"><i class="fas fa-thermometer-half"></i><span class="char-label">Temperatura</span><div class="req-bar"><div class="req-fill" style="width: ${details.tempLevel || 0}%;"></div></div><span class="char-value">15-25°C</span></div>
-            <div class="req-item"><i class="fas fa-mountain"></i><span class="char-label">Solo</span><div class="req-bar"><div class="req-fill" style="width: ${details.soilLevel || 0}%;"></div></div><span class="char-value">Bem Drenado</span></div>
+            <div class="req-item"><i class="fas fa-thermometer-half"></i><span class="char-label">Temperatura</span><div class="req-bar"><div class="req-fill" style="width: ${details.tempLevel || 0}%;"></div></div><span class="char-value">${details.cultivationtips.ideal}</span></div>
+            <div class="req-item"><i class="fas fa-mountain"></i><span class="char-label">Solo</span><div class="req-bar"><div class="req-fill" style="width: ${details.soilLevel || 0}%;"></div></div><span class="char-value">${plant.water}</span></div>
         `;
         // Botanical Info
         document.querySelector(".info-grid").innerHTML = `
@@ -1477,32 +1557,32 @@ function populatePlantDetails(plant) {
             <h3><i class="fas fa-tint"></i> Rega</h3>
             <p>${details.care.watering || "Informação não disponível."}</p>
             <div class="care-tips">
-            <div class="tip"><i class="fas fa-clock"></i><span>${details.caretips.manha || "Informação não disponível."}</span></div>
-            <div class="tip"><i class="fas fa-droplet"></i><span>${details.caretips.quantidade || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-clock"></i><span>Melhor horário: ${details.caretips.manha || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-droplet"></i><span>Quantidade: ${details.caretips.quantidade || "Informação não disponível."}</span></div>
             </div>
             </div>
             <div class="care-section">
             <h3><i class="fas fa-seedling"></i> Fertilização</h3>
             <p>${details.care.fertilizing || "Informação não disponível."}</p>
             <div class="care-tips">
-            <div class="tip"><i class="fas fa-calendar"></i><span>${details.caretips.frequencia || "Informação não disponível."}</span></div>
-            <div class="tip"><i class="fas fa-flask"></i><span>${details.caretips.NPK || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-calendar"></i><span>Frequência: ${details.caretips.frequencia || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-flask"></i><span>NPK recomendado: ${details.caretips.NPK || "Informação não disponível."}</span></div>
             </div>
             </div>
             <div class="care-section">
             <h3><i class="fas fa-cut"></i> Poda</h3>
             <p>${details.care.pruning || "Informação não disponível."}</p>
             <div class="care-tips">
-            <div class="tip"><i class="fas fa-calendar-alt"></i><span>${details.caretips.epoca || "Informação não disponível."}</span></div>
-            <div class="tip"><i class="fas fa-tools"></i><span>${details.caretips.ferramentas || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-calendar-alt"></i><span>Época: ${details.caretips.epoca || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-tools"></i><span>Ferramentas: ${details.caretips.ferramentas || "Informação não disponível."}</span></div>
             </div>
             </div>
             <div class="care-section">
             <h3><i class="fas fa-bug"></i> Pragas e Doenças</h3>
             <p>${details.care.pests || "Informação não disponível."}</p>
             <div class="care-tips">
-            <div class="tip"><i class="fas fa-shield-alt"></i><span>${details.caretips.prevenção || "Informação não disponível."}</span></div>
-            <div class="tip"><i class="fas fa-eye"></i><span>${details.caretips.monitoramento || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-shield-alt"></i><span>Prevenção: ${details.caretips.prevenção || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-eye"></i><span>Monitoramento: ${details.caretips.monitoramento || "Informação não disponível."}</span></div>
             </div>
             </div>
             </div>
@@ -1513,26 +1593,26 @@ function populatePlantDetails(plant) {
             <div class="cultivation-guide">
             <div class="cultivation-section">
             <h3><i class="fas fa-seedling"></i> Plantio</h3>
-            <p>${details.cultivationtips.manutenção || "Informação não disponível."}</p>
+            <p>${details.cultivation.plantio || "Informação não disponível."}</p>
             <div class="cultivation-tips">
-            <div class="tip"><i class="fas fa-calendar-alt"></i><span>${details.cultivationtips.estação || "Informação não disponível."}</span></div>
-            <div class="tip"><i class="fas fa-spa"></i><span>${details.cultivationtips.espaçamento || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-calendar-alt"></i><span>Estação: ${details.cultivationtips.estação || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-spa"></i><span>Espaçamento entre mudas: ${details.cultivationtips.espaçamento || "Informação não disponível."}</span></div>
             </div>
             </div>
             <div class="cultivation-section">
             <h3><i class="fas fa-sun"></i> Exposição Solar</h3>
-            <p>${details.cultivationtips.luz || "Informação não disponível."}</p>
+            <p>${details.cultivation.exposição || "Informação não disponível."}</p>
             <div class="cultivation-tips">
-            <div class="tip"><i class="fas fa-sun"></i><span>Luz: ${plant.light.replace("-", " ")}</span></div>
-            <div class="tip"><i class="fas fa-thermometer-half"></i><span>${details.cultivationtips.proteção || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-sun"></i><span>Sol diário: ${details.cultivationtips.luz || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-thermometer-half"></i><span>Proteção: ${details.cultivationtips.proteção || "Informação não disponível."}</span></div>
             </div>
             </div>
             <div class="cultivation-section">
             <h3><i class="fas fa-water"></i> Manutenção</h3>
-            <p>${details.cultivationtips.manutenção || "Informação não disponível."}</p>
+            <p>${details.cultivation.manutenção || "Informação não disponível."}</p>
             <div class="cultivation-tips">
-            <div class="tip"><i class="fas fa-clock"></i><span>${details.cultivationtips.ideal || "Informação não disponível."}</span></div>
-            <div class="tip"><i class="fas fa-droplet"></i><span>${details.cultivationtips.tolerancia || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-clock"></i><span>Temperatura ideal: ${details.cultivationtips.ideal || "Informação não disponível."}</span></div>
+            <div class="tip"><i class="fas fa-droplet"></i><span>Tolerância: ${details.cultivationtips.tolerancia || "Informação não disponível."}</span></div>
             </div>
             </div>
             </div>
@@ -1569,7 +1649,7 @@ function populatePlantDetails(plant) {
     const galleryGrid = document.querySelector("#gallery .gallery-grid");
     if (galleryGrid && plant.images && plant.images.length > 0) {
         galleryGrid.innerHTML = plant.images.map(imgSrc => `
-            <div class="gallery-item" onclick="openImageModal(\'${imgSrc}\')">
+            <div class="gallery-item" onclick="openImageModal('${imgSrc}')">
                 <img src="${imgSrc}" alt="${plant.name}">
                 <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
             </div>
@@ -1606,6 +1686,12 @@ function changeMainImage(thumbnailElement) {
 function openImageModal(src) {
     const imageModal = document.getElementById("imageModal");
     const modalImage = document.getElementById("img01");
-    modalImage.src = src;
+    // If no src provided, fallback to main image
+    if (!src) {
+        const mainImage = document.getElementById("mainImage");
+        src = mainImage ? mainImage.src : '';
+    }
+    if (!imageModal || !modalImage) return;
+    modalImage.src = src || '';
     imageModal.style.display = "block";
 }
