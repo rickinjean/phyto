@@ -345,20 +345,5 @@ function initParallaxEffect() {
 // Initialize parallax effect
 document.addEventListener('DOMContentLoaded', initParallaxEffect);
 
-// Add loading animation for images
-function initImageLoading() {
-    const images = document.querySelectorAll('img');
-    
-    images.forEach(img => {
-        img.addEventListener('load', () => {
-            img.style.opacity = '1';
-        });
-        
-        // Add loading placeholder
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s ease';
-    });
-}
-
 document.addEventListener('DOMContentLoaded', initImageLoading);
 
