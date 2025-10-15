@@ -69,6 +69,10 @@ const plantsData = [
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "Pétalas de rosa são usadas em chás e óleos essenciais com propriedades calmantes e anti-inflamatórias." },
                 { name: "Cosmético", icon: "fas fa-flask", text: "O óleo essencial de rosa e a água de rosas são ingredientes populares em produtos de beleza." }
             ],
+            recipes: [
+                { name: "Chá de Rosas", description: "Uma infusão suave e aromática, perfeita para relaxar.", ingredients: "1 xícara de pétalas de rosa frescas <br> 2 xícaras de água <br> Mel a gosto", instructions: " Lave bem as pétalas. <br> Coloque-as em uma xícara e adicione a água fervente. <br> Deixe em infusão por 5-10 minutos. <br> Coe, adoce com mel se desejar e sirva quente." },
+                { name: "Geleia de Rosas", description: "Uma geleia delicada e perfumada, ideal para torradas ou acompanhamento de queijos.", ingredients: "1 xícara de pétalas de rosa frescas <br> 2 xícaras de água <br> Mel a gosto", instructions: "Lave as pétalas. <br> Em uma panela, misture açúcar e água, leve ao fogo até dissolver o açúcar. <br> Adicione as pétalas e o suco de limão. <br> Cozinhe em fogo baixo por 20-30 minutos, mexendo ocasionalmente, até a geleia atingir a consistência desejada. <br> Despeje em potes esterilizados." }
+            ],
             reviews: [
                 { user: "Ana Paula", rating: 5, text: "Minhas rosas estão lindas e saudáveis seguindo as dicas de cultivo do site! Recomendo." },
                 { user: "Carlos Eduardo", rating: 4, text: "Sempre tive dificuldade com rosas, mas com este guia, consegui fazer as minhas florescerem como nunca!" }
@@ -947,7 +951,7 @@ const plantsData = [
                 { name: "Paisagismo", icon: "fas fa-tree", text: "Ideal para jardins e pomares, atraindo pássaros e abelhas." }
             ],
             reviews: [
-                { user: "Renato L.", rating: 5, text: "Adoro ter pitanga fresca no quintal!" }
+                { user: "Renata M.", rating: 5, text: "As pitangas são deliciosas e a árvore é linda!" }
             ]
         }
     },
@@ -1293,7 +1297,7 @@ const plantsData = [
                 monitoramento: "Monitoramento: semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e  7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
                 exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
                 manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
                 
@@ -1630,11 +1634,21 @@ function populatePlantDetails(plant) {
                 </div>
             `).join("")}</div>`;
         }
+
+        if (details.recipes && details.recipes.length > 0) {
+            document.getElementById("recipes").innerHTML = `<div class="recipes-grid">${details.recipes.map(recipes => `
+    <div class="recipe-card">
+        <h4>${recipes.name}</h4>
+        <p>${recipes.description}</p>
+        <p class="sim">${recipes.ingredients}</p>
+        <p class="forte"><strong>Modo de Preparo:</strong> ${recipes.instructions}</p>
+    </div>
+`).join("")}</div>`;
+        }
         
         // --- Reviews Tab ---
         const reviewsContainer = document.querySelector("#reviews .reviews-list");
-        if (reviewsContainer && details.reviews && details.reviews.length > 0) {
-            reviewsContainer.innerHTML = details.reviews.map(review => `
+        reviewsContainer.innerHTML = details.reviews.map(review => `
                 <div class="user-review">
                     <div class="review-header">
                         <span class="user-name">${review.user}</span>
@@ -1643,18 +1657,17 @@ function populatePlantDetails(plant) {
                     <p class="review-text">"${review.text}"</p>
                 </div>
             `).join("");
-        }
     }
     
     // --- Gallery Tab ---
     const galleryGrid = document.querySelector("#gallery .gallery-grid");
     if (galleryGrid && plant.images && plant.images.length > 0) {
         galleryGrid.innerHTML = plant.images.map(imgSrc => `
-            <div class="gallery-item" onclick="openImageModal('${imgSrc}')">
-                <img src="${imgSrc}" alt="${plant.name}">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-            </div>
-        `).join("");
+    <div class="gallery-item" onclick="openImageModal('${imgSrc}')">
+        <img src="${imgSrc}" alt="${plant.name}">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+    </div>
+`).join("");
     }
 }
 
@@ -1675,6 +1688,14 @@ function setupEventListeners(plant) {
     const imageModal = document.getElementById("imageModal");
     const closeModalBtn = imageModal.querySelector(".close-modal");
     if (closeModalBtn) closeModalBtn.onclick = () => imageModal.style.display = "none";
+
+    document.getElementById('toggleDarkMode').onclick = function() {
+        document.body.classList.toggle('dark-mode');
+        // Opcional: troca ícone
+        const icon = this.querySelector('i');
+        icon.classList.toggle('fa-moon');
+        icon.classList.toggle('fa-sun');
+    };
 }
 
 function changeMainImage(thumbnailElement) {
@@ -1696,3 +1717,9 @@ function openImageModal(src) {
     modalImage.src = src || '';
     imageModal.style.display = "block";
 }
+
+function addToGarden() { alert("Adicionado ao jardim!"); }
+function toggleFavorite() { alert("Favoritado!"); }
+function addToCompare() { alert("Adicionado à comparação!"); }
+function sharePlant() { alert("Compartilhar!"); }
+function logout() { alert("Logout!"); }

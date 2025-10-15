@@ -24,22 +24,22 @@
                     <li><a href="guides.html" class="nav-link">Guias de Cultivo</a></li>
                     <li><a href="about.html" class="nav-link">Sobre</a></li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">
+                        <a href="#" class="nav-link dropdown-toggle" onclick="document.querySelector('.dropdown-menu').classList.toggle('show'); return false;">
                             <img src="imagens/cristiano_de_bicicretaaaaaaaa1.webp" alt="Usuário" class="user-avatar">
                             pelé
                             <i class="fas fa-chevron-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="profile.html">Meu Perfil</a></li>
-                            <li><a href="#" onclick="logout()">Sair</a></li>
+                            <li><a class="dropdown-item" href="profile.html">Meu Perfil</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">Sair</a></li>
                         </ul>
                     </li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" type="button" aria-label="Menu" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
@@ -52,7 +52,7 @@
                 <i class="fas fa-chevron-right"></i>
                 <a href="catalog.html">Catálogo</a>
                 <i class="fas fa-chevron-right"></i>
-                <span id="plantName">Rosa</span>
+                <span id="plantName"></span>
             </nav>
         </div>
     </section>
@@ -73,12 +73,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="thumbnail-gallery">
-                        <img src="" alt="Rosa 1" class="thumbnail active" onclick="changeMainImage(this)">
-                        <img src="" alt="Rosa 2" class="thumbnail" onclick="changeMainImage(this)">
-                        <img src="" alt="Rosa 3" class="thumbnail" onclick="changeMainImage(this)">
-                        <img src="" alt="Rosa 4" class="thumbnail" onclick="changeMainImage(this)">
-                    </div>
+                    <div class="thumbnail-gallery"></div>
                 </div>
                 
                 <div class="plant-info">
@@ -86,22 +81,12 @@
                         <h1 id="plantTitle"></h1>
                         <p class="scientific-name" id="scientificName"></p>
                         <div class="plant-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <span class="rating-text">4.2 (127 avaliações)</span>
+                            <div class="stars" id="plantStars"></div>
+                            <span class="rating-text" id="plantRating"></span>
                         </div>
                     </div>
                     
-                    <div class="plant-tags">
-                        <span class="tag ornamental">Ornamental</span>
-                        <span class="tag perfumada">Perfumada</span>
-                        <span class="tag moderado">Cultivo Moderado</span>
-                    </div>
+                    <div class="plant-tags"></div>
                     
                     <div class="plant-description">
                         <p id="plantDescription"></p>
@@ -146,347 +131,46 @@
                         <div class="overview-grid">
                             <div class="characteristics-card">
                                 <h3>Características Físicas</h3>
-                                <div class="char-grid">
-                                    <div class="char-item">
-                                        <i class="fas fa-ruler-vertical"></i>
-                                        <span class="char-label">Altura</span>
-                                        <span class="char-value"></span>
-                                    </div>
-                                    <div class="char-item">
-                                        <i class="fas fa-palette"></i>
-                                        <span class="char-label">Cor das Flores</span>
-                                        <span class="char-value"></span>
-                                    </div>
-                                    <div class="char-item">
-                                        <i class="fas fa-leaf"></i>
-                                        <span class="char-label">Folhagem</span>
-                                        <span class="char-value"></span>
-                                    </div>
-                                    <div class="char-item">
-                                        <i class="fas fa-clock"></i>
-                                        <span class="char-label">Floração</span>
-                                        <span class="char-value"></span>
-                                    </div>
-                                </div>
+                                <div class="char-grid"></div>
                             </div>
                             
                             <div class="requirements-card">
                                 <h3>Necessidades Ambientais</h3>
-                                <div class="req-grid">
-                                    <div class="req-item">
-                                        <i class="fas fa-sun"></i>
-                                        <span class="req-label">Luminosidade</span>
-                                        <div class="req-bar">
-                                            <div class="req-fill"></div>
-                                        </div>
-                                        <span class="req-text">Sol Pleno</span>
-                                    </div>
-                                    <div class="req-item">
-                                        <i class="fas fa-tint"></i>
-                                        <span class="req-label">Água</span>
-                                        <div class="req-bar">
-                                            <div class="req-fill"></div>
-                                        </div>
-                                        <span class="req-text">Moderada</span>
-                                    </div>
-                                    <div class="req-item">
-                                        <i class="fas fa-thermometer-half"></i>
-                                        <span class="req-label">Temperatura</span>
-                                        <div class="req-bar">
-                                            <div class="req-fill"></div>
-                                        </div>
-                                        <span class="req-text">15-25°C</span>
-                                    </div>
-                                    <div class="req-item">
-                                        <i class="fas fa-mountain"></i>
-                                        <span class="req-label">Solo</span>
-                                        <div class="req-bar">
-                                            <div class="req-fill"></div>
-                                        </div>
-                                        <span class="req-text">Bem Drenado</span>
-                                    </div>
-                                </div>
+                                <div class="req-grid"></div>
                             </div>
                         </div>
                         
                         <div class="botanical-info">
                             <h3>Informações Botânicas</h3>
-                            <div class="info-grid">
-                                <div class="info-item">
-                                    <strong>Fruto:</strong>
-                                    <span></span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Origem:</strong>
-                                    <span></span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Tipo:</strong>
-                                    <span></span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Propagação:</strong>
-                                    <span></span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Toxicidade:</strong>
-                                    <span></span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Dificuldade:</strong>
-                                    <span></span>
-                                </div>
-                            </div>
+                            <div class="info-grid"></div>
                         </div>
 
                         <div class="botanical-info">
                             <h3>Informações Taxonômicas</h3>
-                            <div class="grid">
-                                <div class="info-item">
-                                    <strong>Filo:</strong>
-                                    <span></span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Classe:</strong>
-                                    <span></span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Ordem:</strong>
-                                    <span></span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Familia:</strong>
-                                    <span></span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Gênero:</strong>
-                                    <span></span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Espécie:</strong>
-                                    <span></span>
-                                </div>
-                            </div>
+                            <div class="grid"></div>
                         </div>
                     </div>
                     
                     <!-- Care Tab -->
-                    <div class="tab-content" id="care">
-                        <div class="care-guide">
-                            <div class="care-section">
-                                <h3><i class="fas fa-tint"></i> Rega</h3>
-                                <p></p>
-                                <div class="care-tips">
-                                    <div class="tip">
-                                        <i class="fas fa-clock"></i>
-                                        <span></span>
-                                    </div>
-                                    <div class="tip">
-                                        <i class="fas fa-droplet"></i>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="care-section">
-                                <h3><i class="fas fa-seedling"></i> Fertilização</h3>
-                                <p></p>
-                                <div class="care-tips">
-                                    <div class="tip">
-                                        <i class="fas fa-calendar"></i>
-                                        <span></span>
-                                    </div>
-                                    <div class="tip">
-                                        <i class="fas fa-flask"></i>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="care-section">
-                                <h3><i class="fas fa-cut"></i> Poda</h3>
-                                <p></p>
-                                <div class="care-tips">
-                                    <div class="tip">
-                                        <i class="fas fa-calendar-alt"></i>
-                                        <span></span>
-                                    </div>
-                                    <div class="tip">
-                                        <i class="fas fa-tools"></i>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="care-section">
-                                <h3><i class="fas fa-bug"></i> Pragas e Doenças</h3>
-                                <p></p>
-                                <div class="care-tips">
-                                    <div class="tip">
-                                        <i class="fas fa-shield-alt"></i>
-                                        <span></span>
-                                    </div>
-                                    <div class="tip">
-                                        <i class="fas fa-eye"></i>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="tab-content" id="care"></div>
 
                     <!-- Cultivation Tab -->
-                    <div class="tab-content" id="cultivation">
-                        <div class="cultivation-guide">
-                            <div class="cultivation-section">
-                                <h3><i class="fas fa-seedling"></i> Plantio</h3>
-                                <p></p>
-                                <div class="cultivation-tips">
-                                    <div class="tip">
-                                        <i class="fas fa-calendar-day"></i>
-                                        <span></span>
-                                    </div>
-                                    <div class="tip">
-                                        <i class="fas fa-ruler-combined"></i>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cultivation-section">
-                                <h3><i class="fas fa-wrench"></i> Manutenção</h3>
-                                <p></p>
-                                <div class="cultivation-tips">
-                                    <div class="tip">
-                                        <i class="fas fa-snowflake"></i>
-                                        <span></span>
-                                    </div>
-                                    <div class="tip">
-                                        <i class="fas fa-spray-can"></i>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cultivation-section">
-                                <h3><i class="fas fa-sun"></i> Exposição Solar</h3>
-                                <p></p>
-                                <div class="cultivation-tips">
-                                    <div class="tip">
-                                        <i class="fas fa-cloud-sun"></i>
-                                        <span></span>
-                                    </div>
-                                    <div class="tip">
-                                        <i class="fas fa-temperature-high"></i>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="tab-content" id="cultivation"></div>
 
                     <!-- Uses Tab -->
-                    <div class="tab-content" id="uses">
-                        <div class="uses-section">
-                            <h3><i class="fas fa-palette"></i></h3>
-                            <p></p>
-                        </div>
-                        <div class="uses-section">
-                            <h3><i class="fas fa-mortar-pestle"></i></h3>
-                            <p></p>
-                        </div>
-                        <div class="uses-section">
-                            <h3><i class="fas fa-utensils"></i></h3>
-                            <p></p>
-                        </div>
-                        <div class="uses-section">
-                            <h3><i class="fas fa-flask"></i></h3>
-                            <p></p>
-                        </div>
-                    </div>
+                    <div class="tab-content" id="uses"></div>
 
                     <!-- Recipes Tab -->
-                    <div class="tab-content" id="recipes">
-                        <div class="recipe-card">
-                            <h4>Chá de Rosas</h4>
-                            <p>Uma infusão suave e aromática, perfeita para relaxar.</p>
-                            <ul>
-                                <li>1 xícara de pétalas de rosa frescas</li>
-                                <li>2 xícaras de água</li>
-                                <li>Mel a gosto</li>
-                            </ul>
-                            <p><strong>Modo de Preparo:</strong> Lave bem as pétalas. Coloque-as em uma xícara e adicione a água fervente. Deixe em infusão por 5-10 minutos. Coe, adoce com mel se desejar e sirva quente.</p>
-                        </div>
-                        <div class="recipe-card">
-                            <h4>Geleia de Rosas</h4>
-                            <p>Uma geleia delicada e perfumada, ideal para torradas ou acompanhamento de queijos.</p>
-                                <ul>
-                                    <li>2 xícaras de pétalas de rosa frescas</li>
-                                    <li>1 xícara de açúcar</li>
-                                    <li>1 xícara de água</li>
-                                    <li>Suco de 1/2 limão</li>
-                                </ul>
-                                <p><strong>Modo de Preparo:</strong> Lave as pétalas. Em uma panela, misture açúcar e água, leve ao fogo até dissolver o açúcar. Adicione as pétalas e o suco de limão. Cozinhe em fogo baixo por 20-30 minutos, mexendo ocasionalmente, até a geleia atingir a consistência desejada. Despeje em potes esterilizados.</p>
-                            </div>
-                    </div>
+                    <div class="tab-content" id="recipes"></div>
 
                     <!-- Gallery Tab -->
                     <div class="tab-content" id="gallery">
-                        <div class="gallery-grid">
-                            <img src="" alt="Rosa 1">
-                            <img src="" alt="Rosa 2">
-                            <img src="" alt="Rosa 3">
-                            <img src="" alt="Rosa 4">
-                            <img src="" alt="Rosa 5">
-                            <img src="" alt="Rosa 6">
-                        </div>
+                        <div class="gallery-grid"></div>
                     </div>
 
                     <!-- Reviews Tab -->
                     <div class="tab-content" id="reviews">
-                        <div class="reviews-section">
-                            <h3>Avaliações dos Usuários</h3>
-                            <div class="review-summary">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                                <span class="average-rating">4.2 de 5 estrelas</span>
-                                <span class="total-reviews">(127 avaliações)</span>
-                            </div>
-                            <div class="review-list">
-                                <div class="user-review">
-                                    <div class="review-header">
-                                        <span class="user-name">Ana Paula</span>
-                                        <div class="stars">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <span class="review-date">15 de Setembro, 2024</span>
-                                    </div>
-                                    <p class="review-text">"Minhas rosas estão lindas e saudáveis seguindo as dicas de cultivo do site! Recomendo."</p>
-                                </div>
-                                <div class="user-review">
-                                    <div class="review-header">
-                                        <span class="user-name">Carlos Eduardo</span>
-                                        <div class="stars">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
-                                        <span class="review-date">10 de Setembro, 2024</span>
-                                    </div>
-                                    <p class="review-text">"Sempre tive dificuldade com rosas, mas com este guia, consegui fazer as minhas florescerem como nunca!"</p>
-                                </div>
-                            </div>
-                            <button class="btn primary load-more-reviews">Carregar Mais Avaliações</button>
-                        </div>
+                        <div class="reviews-list"></div>
                     </div>
                 </div>
             </div>
