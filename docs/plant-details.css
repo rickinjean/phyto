@@ -661,7 +661,7 @@
 /* Recipe Cards */
 .recipes {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     padding: 2rem;
 }
@@ -677,118 +677,6 @@
 .recipe-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.recipe-header {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--light-beige);
-}
-
-.recipe-header i {
-    font-size: 2.5rem;
-    color: var(--moss-green);
-    background: rgba(85, 107, 47, 0.1);
-    padding: 1rem;
-    border-radius: 50%;
-}
-
-.recipe-header h4 {
-    color: var(--primary-brown);
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.recipe-desc {
-    color: var(--dark-gray);
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-}
-
-.recipe-ingredients {
-    background: var(--light-gray);
-    padding: 2rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-}
-
-.recipe-ingredients h5 {
-    color: var(--primary-brown);
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.recipe-ingredients h5:before {
-    content: "🌿";
-    font-size: 1.4rem;
-}
-
-.recipe-ingredients ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.recipe-ingredients li {
-    color: var(--dark-gray);
-    padding: 0.8rem 0;
-    border-bottom: 1px dashed var(--light-beige);
-    display: flex;
-    align-items: center;
-    font-size: 1.1rem;
-}
-
-.recipe-ingredients li:before {
-    content: "•";
-    color: var(--moss-green);
-    margin-right: 1rem;
-    font-size: 1.4em;
-}
-
-.recipe-ingredients li:last-child {
-    border-bottom: none;
-}
-
-.recipe-instructions {
-    background: var(--light-gray);
-    padding: 2rem;
-    border-radius: 12px;
-}
-
-.recipe-instructions h5 {
-    color: var(--primary-brown);
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.recipe-instructions h5:before {
-    content: "📝";
-    font-size: 1.4rem;
-}
-
-.recipe-instructions p {
-    color: var(--dark-gray);
-    line-height: 1.8;
-    margin: 0;
-    font-size: 1.1rem;
-    white-space: pre-line;
-}
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
 }
 
 .recipe-btn:hover {
@@ -1408,10 +1296,12 @@
     }
     
     .recipe-cards {
-        grid-template-columns: 1fr;
+        max-width: 100px;
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .gallery-grid {
+        
         grid-template-columns: 1fr;
     }
     

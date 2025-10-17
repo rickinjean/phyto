@@ -71,7 +71,7 @@ const plantsData = [
             ],
             recipes: [
                 { name: "Chá de Rosas", description: "Uma infusão suave e aromática, perfeita para relaxar.", ingredients: "1 xícara de pétalas de rosa frescas <br> 2 xícaras de água <br> Mel a gosto", instructions: " Lave bem as pétalas. <br> Coloque-as em uma xícara e adicione a água fervente. <br> Deixe em infusão por 5-10 minutos. <br> Coe, adoce com mel se desejar e sirva quente." },
-                { name: "Geleia de Rosas", description: "Uma geleia delicada e perfumada, ideal para torradas ou acompanhamento de queijos.", ingredients: "1 xícara de pétalas de rosa frescas <br> 2 xícaras de água <br> Mel a gosto", instructions: "Lave as pétalas. <br> Em uma panela, misture açúcar e água, leve ao fogo até dissolver o açúcar. <br> Adicione as pétalas e o suco de limão. <br> Cozinhe em fogo baixo por 20-30 minutos, mexendo ocasionalmente, até a geleia atingir a consistência desejada. <br> Despeje em potes esterilizados." }
+                { name: "Geleia de Rosas", description: "Uma geleia delicada e perfumada, ideal para torradas ou acompanhamento de queijos.", ingredients: "1 xícara de pétalas de rosa frescas <br> 2 xícaras de água <br> Mel a gosto", instructions: "Lave as pétalas. <br> Em uma panela, misture açúcar e água, leve ao fogo até dissolver o açúcar. <br> Adicione as pétalas e o suco de limão. <br> Cozinhe em fogo baixo por 20-30 minutos <br> mexendo ocasionalmente, até a geleia atingir a consistência desejada. <br> Despeje em potes esterilizados." }
             ],
             reviews: [
                 { user: "Ana Paula", rating: 5, text: "Minhas rosas estão lindas e saudáveis seguindo as dicas de cultivo do site! Recomendo." },
@@ -114,20 +114,20 @@ const plantsData = [
             tempLevel: 75,
             soilLevel: 70,
             care: {
-                watering: "",
-                fertilizing: "Prefere solos ricos. Um fertilizante balanceado pode ser aplicado no início do crescimento.",
-                pruning: "Não necessita de poda. Remova as folhas secas ou amareladas para manter a aparência.",
-                pests: "Pode ser atacado por pássaros (sementes), lesmas e caracóis quando jovem."
+                watering: "Regue quando o solo estiver seco, principalmente durante o crescimento ativo e a floração. Evite encharcar, mas garanta uma boa umidade do solo.",
+                fertilizing: "Use fertilizante balanceado durante o crescimento e um mais rico em fósforo na fase de floração. A adubação regular ajuda a produzir flores maiores e mais saudáveis.",
+                pruning: "Remova flores secas para estimular novas florações e folhas danificadas. A poda não é essencial, mas ajuda na aparência e saúde da planta.",
+                pests: "Girassóis podem ser atacados por pulgões, lagartas e fungos em condições úmidas. Prefira cultivar em local bem ventilado e ensolarado."
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã/final da tarde",
+                quantidade: "2 a 4 litros de água por semana",
+                frequencia: "a cada 15 a 20 dias",
+                NPK: "10-10-10 ou 20-10-10",
+                epoca: "Pós-floração",
+                ferramentas: "Tesoura de poda limpa e afiada",
+                prevenção: "Fungicida preventivo na primavera",
+                monitoramento: "Verificar folhas e caule regularmente"
             },
             cultivation:{
                 plantio: "Cultivado a partir de sementes diretamente no solo ou a partir de mudas. Prefere solo bem drenado, fértil e sol pleno.",
@@ -188,20 +188,20 @@ const plantsData = [
             tempLevel: 70,
             soilLevel: 85,
             care: {
-                watering: "Regue moderadamente, permitindo que o solo seque completamente entre as regas. É tolerante à seca.",
-                fertilizing: "Não exige muita fertilização. Um composto orgânico leve na primavera é suficiente.",
-                pruning: "Pode após a floração para manter a forma e estimular novos crescimentos. Remova flores murchas.",
-                pests: "Geralmente resistente a pragas, mas pode ser afetada por pulgões em condições de estresse." 
+                watering: "Regue quando o solo estiver completamente seco, pois a lavanda prefere clima seco e solo bem drenado. Evite excesso de água para prevenir apodrecimento das raízes.",
+                fertilizing: "Use fertilizante equilibrado e de liberação lenta, com moderação. Evite excesso de nitrogênio para não comprometer a floração.",
+                pruning: "Pode após a floração para estimular novos brotos e manter a forma arredondada da planta. Evite cortar os ramos muito próximos à base lenhosa.",
+                pests: "Lavanda é resistente, mas pode sofrer com cochonilhas e fungos em solos mal drenados. Boa circulação de ar e sol direto ajudam na prevenção." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "1-2L por planta adulta",
+                frequencia: "quinzenal na primavera/verão",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -262,20 +262,20 @@ const plantsData = [
             tempLevel: 80,
             soilLevel: 50,
             care: {
-                watering: "Regue quando o substrato estiver seco, geralmente 1-2 vezes por semana. Evite encharcar as raízes.",
-                fertilizing: "Use fertilizante específico para orquídeas, diluído, a cada 15 dias durante o crescimento ativo.",
-                pruning: "Remova hastes florais secas e folhas amareladas. Não corte raízes aéreas saudáveis.",
-                pests: "Cochonilhas e pulgões são comuns. Mantenha boa ventilação e umidade adequada." 
+                watering: "Regue quando o substrato estiver seco, geralmente 1–2 vezes por semana. Evite encharcar as raízes para prevenir apodrecimento.",
+                fertilizing: "Use fertilizante específico para orquídeas, sempre diluído. Aplique durante o período de crescimento ativo.",
+                pruning: "Remova apenas hastes florais secas e folhas amareladas. Não corte raízes aéreas saudáveis — elas ajudam na respiração da planta.",
+                pests: "Cochonilhas e pulgões são pragas comuns em orquídeas. Mantenha boa ventilação e evite excesso de umidade." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2–3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -334,20 +334,20 @@ const plantsData = [
             tempLevel: 70,
             soilLevel: 80,
             care: {
-                watering: "Regas regulares nos primeiros anos após o plantio. Após estabelecida, tolera períodos de seca.",
-                fertilizing: "Adubação anual com composto orgânico para estimular o crescimento e floração.",
-                pruning: "Poda de formação nos primeiros anos e remoção de galhos secos ou doentes.",
-                pests: "Geralmente resistente, mas pode ser atacado por pulgões e cochonilhas em casos isolados." 
+                watering: "Regue quando o solo estiver seco, principalmente nos primeiros anos após o plantio. Após bem estabelecido, é resistente à seca.",
+                fertilizing: "Utilize fertilizante equilibrado no início da primavera para estimular o florescimento. Adubos orgânicos também são bem-vindos.",
+                pruning: "Faça podas leves apenas para formação da copa ou remoção de galhos secos ou doentes. Evite podas drásticas.",
+                pests: "O ipê-amarelo é resistente, mas pode sofrer com brocas, pulgões e fungos em ambientes úmidos. Mantenha o solo drenado e observe sinais de infestação." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta jovem",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 4-14-18",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda ou serrote limpos e afiados",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -407,20 +407,20 @@ const plantsData = [
             tempLevel: 75,
             soilLevel: 80,
             care: {
-                watering: "Mantenha o solo sempre úmido, mas evite encharcar. Regue pela manhã.",
-                fertilizing: "Adubação leve a cada 2-3 meses com composto orgânico.",
-                pruning: "Pode as pontas regularmente para estimular o crescimento e evitar a floração precoce.",
-                pests: "Pulgões e lesmas podem atacar. Use defensivos naturais se necessário." 
+                watering: "Regue quando o substrato estiver seco na superfície, mantendo o solo sempre levemente úmido. Evite molhar as folhas para prevenir fungos.",
+                fertilizing: "Use fertilizante equilibrado durante o crescimento, de preferência orgânico ou diluído. Adubar regularmente garante folhas mais aromáticas.",
+                pruning: "Pode regularmente para estimular o crescimento lateral e evitar que floresça cedo demais. Remova flores assim que surgirem, caso o objetivo seja colher folhas.",
+                pests: "Pulgões, cochonilhas e fungos são as principais ameaças. Mantenha boa ventilação e evite excesso de umidade." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno e ao longo do cultivo",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida natural ou preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -480,20 +480,20 @@ const plantsData = [
             tempLevel: 70,
             soilLevel: 75,
             care: {
-                watering: "Mantenha o solo constantemente úmido, mas não encharcado. Borrife água nas folhas regularmente.",
-                fertilizing: "Adube a cada 2-3 meses com fertilizante líquido diluído durante a primavera e verão.",
-                pruning: "Remova folhas secas ou danificadas para manter a planta saudável e bonita.",
-                pests: "Cochonilhas e ácaros podem ser um problema. Aumente a umidade para prevenir." 
+                watering: "A samambaia gosta de umidade constante, mas o solo não deve ficar encharcado. Regue quando o substrato estiver levemente seco na superfície.",
+                fertilizing: "Use fertilizante equilibrado, preferencialmente líquido e diluído, para não agredir as raízes finas. Ideal para manter a folhagem verde e vigorosa.",
+                pruning: "Remova folhas secas, queimadas ou amareladas para estimular o crescimento de novas frondes.",
+                pests: "Pode ser atacada por cochonilhas, ácaros e fungos, especialmente em ambientes abafados. Mantenha o ambiente úmido, mas bem ventilado." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
                 frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -553,18 +553,18 @@ const plantsData = [
             tempLevel: 80,
             soilLevel: 90,
             care: {
-                watering: "Regue apenas quando o solo estiver completamente seco. É muito sensível ao excesso de água.",
-                fertilizing: "Não necessita de muita adubação. Um fertilizante balanceado diluído na primavera é suficiente.",
-                pruning: "Remova folhas secas ou danificadas na base. Colha as folhas externas quando necessário.",
-                pests: "Geralmente livre de pragas, mas pode ter cochonilhas em ambientes úmidos." 
+                watering: "A Aloe vera prefere um solo levemente seco entre as regas. Irrigue de forma profunda, garantindo que a água atinja toda a raiz, mas evite o acúmulo de umidade. Molhar as folhas diretamente pode favorecer o aparecimento de fungos.",
+                fertilizing: "Durante os meses mais quentes, é importante reforçar a nutrição da planta. Use um fertilizante equilibrado mensalmente e, na primavera, opte por um produto com mais fósforo para estimular o desenvolvimento das raízes.",
+                pruning: "Embora a Aloe vera não exija podas frequentes, remover folhas danificadas ou secas ajuda a manter a planta saudável. A poda deve ser feita com cortes limpos e inclinados, próximos à base, sem ferir o caule principal.",
+                pests: "Insetos como pulgões e ácaros podem atacar a planta, além de doenças como oídio e manchas causadas por fungos. Uma boa ventilação e inspeções regulares são essenciais para evitar problemas." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
                 prevenção: "Prevenção: fungicida preventivo na primavera",
                 monitoramento: "Monitoramento: semanal"
             },
@@ -626,20 +626,20 @@ const plantsData = [
             tempLevel: 90,
             soilLevel: 95,
             care: {
-                watering: "Regue muito pouco, apenas quando o solo estiver completamente seco por vários dias. Evite regar no inverno.",
-                fertilizing: "Fertilize com um produto específico para cactos e suculentas, diluído, na primavera e verão.",
+                watering: "Regue profundamente 2 a 3 vezes por semana, permitindo que o solo seque ligeiramente entre as regas. É importante evitar molhar as folhas ou o corpo do cacto, pois isso pode favorecer o surgimento de doenças fúngicas.",
+                fertilizing: "Durante a estação de crescimento (primavera e verão), aplique fertilizante mensalmente para estimular o desenvolvimento saudável.",
                 pruning: "Remova partes secas ou danificadas com cuidado. Use luvas grossas.",
                 pests: "Cochonilhas e ácaros podem aparecer. Mantenha boa ventilação." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo no início primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -699,20 +699,20 @@ const plantsData = [
             tempLevel: 70,
             soilLevel: 70,
             care: {
-                watering: "Mantenha o solo constantemente úmido. Regue diariamente em climas quentes.",
-                fertilizing: "Adubação leve com composto orgânico a cada 2-3 meses.",
-                pruning: "Pode regularmente para controlar o crescimento e estimular a produção de folhas.",
-                pests: "Pulgões e ácaros podem ser um problema. Mantenha a planta vigorosa." 
+                watering: "A hortelã precisa de regas regulares e profundas, cerca de 2 a 3 vezes por semana. Deixe o solo secar levemente entre uma rega e outra. Evite molhar as folhas para prevenir fungos. O melhor horário para regar é no início da manhã.",
+                fertilizing: "Durante a primavera, aplique um fertilizante rico em fósforo para fortalecer o crescimento. Ao longo da primavera e verão, utilize um fertilizante balanceado uma vez por mês. Isso garante plantas vigorosas e aromáticas.",
+                pruning: "Pode a hortelã no final do inverno, removendo galhos secos ou fracos. Faça cortes em ângulo de 45° logo acima de uma gema voltada para fora. Isso estimula brotações novas e mantém a planta saudável e compacta.",
+                pests: "Fique atento a pragas como pulgões e ácaros, e doenças como oídio e ferrugem. Mantenha boa circulação de ar entre as plantas e aplique fungicida preventivo na primavera. Faça inspeções semanais para agir rápido em caso de infestação." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera e manter uma boa circulação de ar",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -772,20 +772,20 @@ const plantsData = [
             tempLevel: 80,
             soilLevel: 80,
             care: {
-                watering: "Mantenha o solo uniformemente úmido. Regue na base da planta para evitar doenças foliares.",
-                fertilizing: "Adube a cada 2 semanas com fertilizante rico em potássio após o início da floração.",
-                pruning: "Remova brotos laterais (ladrões) para direcionar a energia para os frutos. Estaqueie a planta.",
-                pests: "Pulgões, mosca branca e ácaros são comuns. Monitore e use controle biológico." 
+                watering: "O tomate cereja precisa de regas profundas de 2 a 3 vezes por semana. Deixe o solo secar levemente entre as regas para evitar o apodrecimento das raízes. Regue sempre no início da manhã e evite molhar as folhas para reduzir o risco de doenças fúngicas.",
+                fertilizing: "Na primavera, aplique um fertilizante rico em fósforo para estimular a floração e a frutificação. Durante o crescimento ativo (primavera e verão), utilize um fertilizante balanceado uma vez por mês para manter a planta produtiva e saudável.",
+                pruning: "Pode no final do inverno para remover galhos secos, doentes ou fracos. Faça os cortes em um ângulo de 45°, logo acima de uma gema voltada para fora. Isso ajuda na renovação da planta e melhora a ventilação entre os ramos.",
+                pests: "As principais ameaças ao tomate cereja são pulgões, ácaros, oídio e ferrugem. Mantenha boa ventilação entre as plantas, evite excesso de umidade nas folhas e aplique fungicida preventivo na primavera. Faça monitoramentos semanais para identificar e controlar problemas logo no início."
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -844,20 +844,20 @@ const plantsData = [
             tempLevel: 70,
             soilLevel: 70,
             care: {
-                watering: "Regue quando o solo estiver seco na superfície. Tolera curtos períodos de seca.",
-                fertilizing: "Adube a cada 2-4 semanas na primavera e verão com fertilizante líquido diluído.",
-                pruning: "Pode para controlar o tamanho e estimular o adensamento. Remova folhas amareladas.",
-                pests: "Cochonilhas e ácaros podem ocorrer. Limpe as folhas regularmente." 
+                watering: "Regue profundamente de 2 a 3 vezes por semana, permitindo que o solo seque levemente entre as regas. A jiboia é sensível ao excesso de água. Evite molhar as folhas diretamente para prevenir o aparecimento de fungos.",
+                fertilizing: "Na primavera, aplique um fertilizante rico em fósforo para estimular o crescimento das raízes e novos brotos. Durante o período de crescimento ativo (primavera/verão), use fertilizante balanceado uma vez por mês.",
+                pruning: "Pode a jiboia no final do inverno para remover folhas secas, ramos fracos ou doentes e controlar o tamanho. Faça cortes em ângulo de 45° acima de uma gema ou nó para estimular brotação.",
+                pests: "As pragas mais comuns são pulgões e ácaros, além de doenças como oídio e ferrugem. Mantenha boa ventilação e evite acúmulo de umidade." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -917,20 +917,20 @@ const plantsData = [
             tempLevel: 75,
             soilLevel: 80,
             care: {
-                watering: "Regas regulares, especialmente em períodos de seca e durante a frutificação.",
-                fertilizing: "Adubação anual com composto orgânico e fertilizante NPK balanceado.",
-                pruning: "Poda de formação e limpeza para remover galhos secos ou doentes.",
-                pests: "Mosca-das-frutas pode ser um problema. Monitore e use armadilhas." 
+                watering: "Regue profundamente 2 a 3 vezes por semana, permitindo que o solo seque ligeiramente entre as regas. Evite molhar as folhas para prevenir doenças fúngicas.",
+                fertilizing: "Aplique fertilizante rico em fósforo na primavera para estimular o florescimento e frutificação. Durante a estação de crescimento (primavera/verão), utilize fertilizante balanceado mensalmente para manter a planta saudável e produtiva.",
+                pruning: "Pode no final do inverno, removendo galhos secos, doentes e fracos. Faça cortes em ângulo de 45° acima de uma gema voltada para fora para estimular o crescimento vigoroso e saudável.",
+                pests: "Principais problemas incluem pulgões, ácaros, oídio e ferrugem. Mantenha boa circulação de ar ao redor da planta e monitore regularmente para detectar qualquer sinal de infestação ou doença." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -990,20 +990,20 @@ const plantsData = [
             tempLevel: 70,
             soilLevel: 70,
             care: {
-                watering: "Mantenha o solo úmido, mas evite encharcar. Regue na base da planta.",
-                fertilizing: "Não exige muita adubação. Um composto orgânico leve na primavera é suficiente.",
-                pruning: "Remova flores murchas para estimular novas florações.",
-                pests: "Pulgões podem ser um problema. Use sabão inseticida se necessário." 
+                watering: "Regue profundamente 2 a 3 vezes por semana, permitindo que o solo seque ligeiramente entre as regas. Evite molhar as folhas para prevenir doenças fúngicas.",
+                fertilizing: "Aplique fertilizante rico em fósforo na primavera para estimular o florescimento. Durante a estação de crescimento (primavera/verão), utilize fertilizante balanceado mensalmente para manter o vigor da planta.",
+                pruning: "Pode no final do inverno, removendo galhos secos, doentes e fracos. Corte em ângulo de 45° acima de uma gema voltada para fora para estimular novo crescimento.",
+                pests: "Principais problemas: pulgões, ácaros, oídio e ferrugem. Mantenha boa circulação de ar e monitore semanalmente para prevenir infestações." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -1063,20 +1063,20 @@ const plantsData = [
             tempLevel: 70,
             soilLevel: 85,
             care: {
-                watering: "Regue muito pouco, apenas quando o solo estiver completamente seco. Tolera longos períodos de seca.",
-                fertilizing: "Adube 1-2 vezes por ano na primavera/verão com fertilizante líquido diluído.",
-                pruning: "Remova folhas amareladas ou danificadas na base. Não necessita de poda regular.",
-                pests: "Geralmente livre de pragas. O maior problema é o excesso de água." 
+                watering: "A zamioculca é uma planta tolerante à seca e prefere que o solo seque quase por completo entre as regas. Regue moderadamente 1 vez por semana ou menos, evitando o excesso de água para não causar apodrecimento das raízes. Evite molhar as folhas para prevenir doenças fúngicas.",
+                fertilizing: "Aplique fertilizante balanceado diluído a cada 2 meses durante a primavera e verão. A zamioculca não exige muita fertilização. Evite fertilizantes muito ricos em nitrogênio para não estimular crescimento excessivo e fraco.",
+                pruning: "Pode retirar folhas amarelas, secas ou doentes a qualquer momento. A poda para moldar a planta é rara, pois a zamioculca cresce lentamente e naturalmente compacta. Use tesoura limpa e afiada.",
+                pests: "As principais pragas são cochonilhas e ácaros. A zamioculca pode desenvolver podridão por excesso de água, então mantenha boa circulação de ar e solo bem drenado." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "Cerca de 0,5 a 1 litro por planta adulta",
+                frequencia: "a cada 2 meses (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "sempre que necessário",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "Controle preventivo com inseticidas naturais ou fungicidas na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
                 plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
@@ -1136,34 +1136,34 @@ const plantsData = [
             tempLevel: 7,
             soilLevel: 100,
             care: {
-                watering: "Regue moderadamente, permitindo que o solo seque entre as regas. Tolera seca.",
-                fertilizing: "Não exige muita adubação. Um composto orgânico leve na primavera é suficiente.",
-                pruning: "Pode após a floração para manter a forma e estimular o crescimento. Colha os ramos jovens.",
-                pests: "Geralmente resistente, mas pode ter pulgões em condições de estresse." 
+                watering: "O alecrim prefere solo bem drenado e não gosta de solo encharcado. Regue profundamente 2 a 3 vezes por semana, permitindo que o solo seque entre as regas. Evite molhar as folhas para prevenir doenças fúngicas.",
+                fertilizing: "Aplique fertilizante rico em fósforo na primavera para estimular o florescimento e o desenvolvimento saudável. Durante a estação de crescimento (primavera/verão), aplique fertilizante balanceado mensalmente.",
+                pruning: "Pode no final do inverno, removendo galhos secos, doentes ou fracos. Realize cortes em ângulo de 45° acima de uma gema voltada para fora para estimular brotação saudável e manter a planta compacta.",
+                pests: "Principais problemas incluem pulgões, ácaros, oídio e ferrugem. Mantenha boa circulação de ar e evite o excesso de umidade nas folhas para prevenir doenças." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                plantio: "Plante em solo bem drenado, arenoso e com boa fertilidade, preferencialmente com pH entre 6,0 e 7,5. Escolha um local que receba bastante sol direto, essencial para o desenvolvimento saudável da planta.",
                 exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                manutenção: "Remova galhos secos ou muito velhos para estimular a ramificação. O alecrim é tolerante a seca, mas evite encharcar o solo. Proteja contra geadas severas, pois a planta é sensível ao frio intenso.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "40 a 60 cm entre plantas",
+                luz: "Mínimo de 6 horas de sol direto",
+                proteção: "Utilize cobertura morta para conservar a umidade do solo",
+                ideal: "15 a 25°C",
+                tolerancia: "Não tolera geadas severas",
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Usado para temperar carnes, batatas, pães e azeites." },
@@ -1209,34 +1209,34 @@ const plantsData = [
             tempLevel: 80,
             soilLevel: 60,
             care: {
-                watering: "Mantenha o \'copinho\' central com água limpa e troque semanalmente. Regue o substrato moderadamente.",
-                fertilizing: "Adube com fertilizante foliar diluído, borrifando nas folhas e no \'copinho\'.",
-                pruning: "Remova folhas secas ou danificadas. Após a floração, a planta mãe morre e os filhotes crescem.",
-                pests: "Cochonilhas e ácaros podem atacar. Mantenha boa umidade e ventilação." 
+                watering: "Regue moderadamente 2 a 3 vezes por semana, mantendo o copo central sempre com água limpa. Permita que o substrato seque levemente entre as regas, evitando o encharcamento. Evite molhar demais as folhas para prevenir doenças fúngicas.",
+                fertilizing: "Aplique fertilizante rico em fósforo na primavera para estimular o florescimento. Use fertilizante balanceado mensalmente durante a estação de crescimento, aplicando diluído na água da rega ou diretamente no copo da planta.",
+                pruning: "No final do inverno, remova folhas mortas, doentes ou muito danificadas. Use tesoura limpa e afiada para fazer cortes precisos, retirando partes comprometidas e estimulando um crescimento saudável.",
+                pests: "Principais problemas incluem pulgões, ácaros, oídio e ferrugem. Mantenha boa circulação de ar ao redor da planta e faça monitoramento semanal para detectar precocemente qualquer infestação." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo leve, bem drenado e rico em matéria orgânica. Pode ser cultivada em vasos ou diretamente no solo, preferindo substratos que não retenham muita umidade para evitar apodrecimento.",
+                exposição: "Prefere meia sombra ou luz indireta. Evite exposição ao sol pleno, que pode queimar as folhas.",
+                manutenção: "Remova folhas secas e flores murchas para estimular o crescimento e evitar doenças. Proteja contra geadas, pois bromélias são sensíveis a temperaturas muito baixas.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "30 a 50 cm entre plantas",
+                luz: "Luz indireta ou meia sombra",
+                proteção: "Utilize cobertura morta para ajudar a manter a umidade adequada no solo",
+                ideal: "18 a 25°C",
+                tolerancia: "Não tolera geadas severas",
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Muito utilizada em decoração de interiores e jardins tropicais devido às suas cores vibrantes." }
@@ -1281,34 +1281,34 @@ const plantsData = [
             tempLevel: 75,
             soilLevel: 80,
             care: {
-                watering: "Mantenha o solo sempre úmido, especialmente durante a floração e frutificação. Não tolera seca.",
-                fertilizing: "Adubação regular com composto orgânico e fertilizante NPK para frutíferas.",
-                pruning: "Poda de formação e limpeza para remover galhos secos ou doentes. Pode ser podada para controle de tamanho.",
-                pests: "Pulgões e cochonilhas podem atacar. Monitore e use controle biológico." 
+                watering: "Regue profundamente 2 a 3 vezes por semana, permitindo que o solo seque ligeiramente entre as regas. Evite molhar as folhas para prevenir doenças fúngicas.",
+                fertilizing: "Aplique fertilizante rico em fósforo na primavera para estimular a floração e frutificação. Durante a estação de crescimento (primavera/verão), utilize fertilizante balanceado mensalmente para manter a planta saudável e produtiva.",
+                pruning: "Pode no final do inverno, removendo galhos secos, doentes e fracos. Faça cortes em ângulo de 45° acima de uma gema voltada para fora para estimular o crescimento vigoroso e saudável.",
+                pests: "Principais problemas incluem pulgões, ácaros, oídio e ferrugem. Mantenha boa circulação de ar ao redor da planta e monitore regularmente para detectar qualquer sinal de infestação ou doença." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e  7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo fértil, bem drenado e rico em matéria orgânica, com pH entre 5,5 e 6,5. Escolha um local que receba bastante sol, com pelo menos 6 horas de sol direto por dia.",
+                exposição: "A jabuticabeira requer sol pleno para um bom desenvolvimento e produção de frutos.",
+                manutenção: "Remova galhos secos ou doentes para manter a planta saudável. Proteja contra geadas em regiões mais frias, pois a jabuticabeira é sensível a baixas temperaturas.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "4 a 6 metros entre plantas",
+                luz: "Mínimo de 6 horas de sol direto por dia",
+                proteção: "Use cobertura morta para conservar a umidade do solo",
+                ideal: "20 a 30°C",
+                tolerancia: "Não tolera geadas severas",
             },
             uses: [
                 { name: "Alimentício", icon: "fas fa-utensils", text: "Os frutos são consumidos in natura, em geleias, sucos e licores." },
@@ -1354,34 +1354,34 @@ const plantsData = [
             tempLevel: 75,
             soilLevel: 70,
             care: {
-                watering: "Regue quando o solo estiver seco na superfície. Borrife água nas folhas regularmente.",
-                fertilizing: "Adube a cada 2-4 semanas na primavera e verão com fertilizante líquido diluído.",
-                pruning: "Remova folhas amareladas ou danificadas. Pode para controlar o tamanho e formato.",
-                pests: "Cochonilhas e ácaros podem ocorrer. Limpe as folhas regularmente." 
+                watering: "Regue profundamente 1 a 2 vezes por semana, permitindo que o solo seque ligeiramente entre as regas. Evite encharcar o solo e molhar demais as folhas para prevenir doenças fúngicas.",
+                fertilizing: "Aplique fertilizante balanceado mensalmente durante a primavera e verão, preferindo fórmulas com fósforo para estimular o crescimento saudável. Evite excesso de nitrogênio para não deixar as folhas muito macias.",
+                pruning: "Pode no final do inverno, removendo folhas e galhos mortos, doentes ou muito velhos. Corte em ângulo de 45° acima de um nó para estimular brotação.",
+                pests: "Principais problemas: pulgões, ácaros, oídio e ferrugem. Mantenha boa circulação de ar e monitore regularmente para detectar precocemente qualquer infestação ou doença." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica. O pH ideal varia entre 5,5 e 7,0. Escolha um local com sombra parcial ou luz indireta brilhante, evitando sol direto intenso que pode queimar as folhas.",
+                exposição: "Prefere luz indireta forte a moderada, pois o sol pleno pode danificar as folhas. Evite exposição direta por longos períodos.",
+                manutenção: "Remova folhas amarelas ou danificadas para estimular o crescimento saudável. Proteja contra geadas, pois a costela-de-adão é sensível a temperaturas muito baixas.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "50 a 100 cm entre plantas",
+                luz: "Luz indireta brilhante, evitando sol pleno intenso",
+                proteção: "Use cobertura morta para conservar a umidade do solo e proteger as raízes",
+                ideal: "18 a 27°C",
+                tolerancia: "Não tolera geadas severas",
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Muito popular em decoração de interiores devido às suas folhas grandes e exóticas." },
@@ -1427,34 +1427,34 @@ const plantsData = [
             tempLevel: 80,
             soilLevel: 80,
             care: {
-                watering: "Mantenha o solo úmido, mas bem drenado. Evite encharcar.",
-                fertilizing: "Adube a cada 2 semanas com fertilizante rico em potássio durante a frutificação.",
-                pruning: "Pode para estimular o crescimento e a produção de frutos. Remova folhas e galhos secos.",
-                pests: "Pulgões, mosca branca e ácaros são comuns. Use defensivos naturais." 
+                watering: "Regue profundamente 2 a 3 vezes por semana, permitindo que o solo seque ligeiramente entre as regas. Evite molhar as folhas para prevenir doenças fúngicas.",
+                fertilizing: "Aplique fertilizante rico em fósforo na primavera para estimular a floração e frutificação. Durante a estação de crescimento (primavera/verão), use fertilizante balanceado mensalmente para garantir um desenvolvimento saudável.",
+                pruning: "Pode no final do inverno, removendo galhos mortos, doentes e fracos. Faça cortes em ângulo de 45° acima de uma gema voltada para fora para estimular brotação vigorosa.",
+                pests: "Principais problemas incluem pulgões, ácaros, oídio e ferrugem. Mantenha boa circulação de ar e monitore regularmente para detectar qualquer sinal de infestação ou doença." 
             },
             caretips: {
-                manha: "Melhor horário: manhã cedo",
-                quantidade: "Quantidade: 2-3L por planta adulta",
-                frequencia: "Frequência: mensal (primavera/verão)",
-                NPK: "NPK recomendado: 10-10-10 ou 5-10-5",
-                epoca: "Época: final do inverno",
-                ferramentas: "Ferramentas: tesoura de poda limpa e afiada",
-                prevenção: "Prevenção: fungicida preventivo na primavera",
-                monitoramento: "Monitoramento: semanal"
+                manha: "manhã cedo",
+                quantidade: "2-3L por planta adulta",
+                frequencia: "mensal (primavera/verão)",
+                NPK: "10-10-10 ou 5-10-5",
+                epoca: "final do inverno",
+                ferramentas: "tesoura de poda limpa e afiada",
+                prevenção: "fungicida preventivo na primavera",
+                monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica e com pH entre 6.0 e 7.0. Escolha um local que receba pelo menos 6 horas de sol direto por dia para garantir um bom desenvolvimento.",
+                exposição: "A pimenteira requer sol pleno para crescer forte e produzir flores e frutos abundantes. O mínimo ideal é de 6 horas de sol direto diariamente.",
+                manutenção: "Remova flores murchas para estimular a produção contínua de novas flores. Em regiões frias, proteja a planta contra geadas, pois a pimenteira não tolera geadas severas.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "primavera",
+                espaçamento: "30-60cm entre plantas",
+                luz: "Pelo menos 6 horas de sol direto por dia",
+                proteção: "Use cobertura morta para conservar a umidade do solo",
+                ideal: "15-25°C",
+                tolerancia: "não tolera geadas severas",
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Usada para dar sabor e picância a diversos pratos da culinária mundial." }
