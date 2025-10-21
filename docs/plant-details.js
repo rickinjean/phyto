@@ -5,7 +5,7 @@ const plantsData = [
         scientificName: "Rosa spp.",
         description: "A rosa é uma das flores mais populares e simbólicas do mundo, conhecida por sua beleza, fragrância e variedade de cores. Pertencente à família Rosaceae, esta planta perene é cultivada há milhares de anos tanto para fins ornamentais quanto medicinais.",
     image: "imagens/rosavermelha1.jpg",
-    images: ["imagens/rosavermelha1.jpg", "imagens/rosavermelha1.jpg", "imagens/rosavermelha1.jpg"],
+    images: ["imagens/rosavermelha1.jpg", "../imagens/rosavermelha1.jpg", "../imagens/rosavermelha1.jpg"],
         category: "ornamental",
         size: "medio",
         light: "sol-pleno",
@@ -51,17 +51,17 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                plantio: "Plante em solo bem drenado, fértil e rico em matéria orgânica, preferencialmente com pH entre 6,0 e 7,0. Escolha um local que receba bastante sol direto, essencial para a floração abundante e saudável.",
                 exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                manutenção: "Realize podas regulares para remover galhos secos e estimular nova brotação. Regue com frequência, mantendo o solo úmido, mas evite encharcamento. Controle pragas e doenças com produtos adequados.",
                 
             },
             cultivationtips: {
-                estação: "primavera",
-                espaçamento: "30-60cm entre plantas",
+                estação: "Primavera",
+                espaçamento: "40-60cm entre as plantas",
                 luz: "Mínimo de 6 horas de sol direto.",
-                proteção: "cobertura morta para conservar umidade",
-                ideal: "15-25°C",
+                proteção: "Use cobertura morta para conservar umidade do solo",
+                ideal: "18-25°C",
                 tolerancia: "não tolera geadas severas",
             },
             uses: [
@@ -130,18 +130,17 @@ const plantsData = [
                 monitoramento: "Verificar folhas e caule regularmente"
             },
             cultivation:{
-                plantio: "Cultivado a partir de sementes diretamente no solo ou a partir de mudas. Prefere solo bem drenado, fértil e sol pleno.",
-                exposição: "Para flores grandes e saudáveis, deve receber pelo menos 6 a 8 horas de luz direta diariamente. Evitar locais sombreados e proteger do vento forte ajuda no crescimento do caule e das flores.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
-                
+                plantio: "Plante em solo bem drenado, fértil e arenoso, preferencialmente com pH entre 6,0 e 7,5. Escolha um local que receba bastante sol direto, fundamental para o desenvolvimento e a floração da planta.",
+                exposição: "Requer sol pleno para crescimento vigoroso e floração abundante. Mínimo de 6 horas de sol direto.",
+                manutenção: "Regue regularmente para manter o solo úmido, especialmente durante a germinação e o crescimento inicial. Evite encharcar. Remova plantas daninhas próximas para não competir por nutrientes e água. Pode ser necessário tutoramento em plantas altas.",
             },
             cultivationtips: {
                 estação: "Primavera e início do verão.",
-                espaçamento: "30-50 cm entre plantas, 60-90 cm entre fileiras.",
+                espaçamento: "30-50cm entre as plantas, 60-90 cm entre as fileiras.",
                 luz: "6-8 horas de luz solar direta por dia.",
                 proteção: "Proteção: cobertura morta para conservar umidade",
                 ideal: "15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                tolerancia: "não tolera geadas severas",
             },
             uses: [
                 { name: "Alimentício", icon: "fas fa-utensils", text: "Suas sementes são consumidas torradas ou usadas para extração de óleo comestível." },
@@ -204,18 +203,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                plantio: "Plante em solo bem drenado, arenoso e com boa fertilidade, preferencialmente com pH entre 6,0 e 8,0. Evite solos muito argilosos e encharcados, que prejudicam o desenvolvimento da planta.",
                 exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                manutenção: "Realize podas leves após a floração para estimular a ramificação e evitar o crescimento excessivo. A lavanda é tolerante à seca, mas regue moderadamente durante os períodos mais secos. Evite encharcar o solo.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "40-60cm entre as plantas",
+                luz: "Mínimo de 6 horas de sol direto",
+                proteção: "Utilize cobertura morta para conservar a umidade do solo",
+                ideal: "15 a 25°C",
+                tolerancia: "Não tolera geadas severas",
             },
             uses: [
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "Usada em chás e óleos essenciais para aliviar estresse, ansiedade e insônia." },
@@ -278,18 +277,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em substrato leve e bem drenado, como casca de pinus, fibra de coco ou esfagno. Prefira vasos com boa ventilação para as raízes. O pH ideal do substrato deve estar entre 5,5 e 6,5.",
+                exposição: "Prefere luz indireta e filtrada. Evite exposição direta ao sol forte, que pode queimar as folhas. Luz moderada a intensa, mas difusa, é ideal para o crescimento e floração.",
+                manutenção: "Regue com moderação, permitindo que o substrato seque levemente entre regas. Evite encharcar as raízes. Fertilize a cada 15 dias durante a fase de crescimento com fertilizante específico para orquídeas. Remova flores e folhas secas para estimular a floração.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "Espaçamento: 15-30cm entre as plantas",
+                luz: "Luz indireta por pelo menos 6 horas",
+                proteção: "Proteja contra sol direto intenso e ventos fortes",
+                ideal: "18 a 25°C",
+                tolerancia: "Não tolera geadas nem temperaturas abaixo de 10°C",
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Muito valorizada como planta de interior e para arranjos florais devido à sua beleza única." }
@@ -350,18 +349,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, fértil e arenoso, preferencialmente com pH entre 5,5 e 6,5. O ipê amarelo é uma árvore que se adapta bem a solos de média fertilidade, mas cresce melhor em locais com boa drenagem.",
+                exposição: "Requer sol pleno para desenvolvimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
+                manutenção: "Realize podas leves para retirada de galhos secos e manutenção da forma da árvore. O ipê amarelo tolera períodos de seca, mas cresce melhor com irrigação moderada. Proteja as mudas de geadas severas.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "5-7 metros entre as plantas",
+                luz: "Mínimo de 6 horas de sol direto",
+                proteção: "Utilize cobertura morta para conservar a umidade do solo",
+                ideal: "20 a 28°C",
+                tolerancia: "Não tolera geadas severas",
             },
             uses: [
                 { name: "Paisagismo", icon: "fas fa-tree", text: "Muito utilizada em arborização urbana e paisagismo devido à sua espetacular floração." },
@@ -423,18 +422,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, arenoso e com boa fertilidade, preferencialmente com pH entre 6,0 e 7,5. Escolha um local que receba bastante sol direto, essencial para o desenvolvimento saudável da planta e maior produção de óleos essenciais.",
+                exposição: "Requer sol pleno para um crescimento vigoroso e folhas mais aromáticas. Mínimo de 6 horas de sol direto.",
+                manutenção: "Faça podas regulares para estimular o crescimento e evitar o florescimento precoce (que reduz o sabor das folhas). Regue sempre que o solo estiver seco na superfície, evitando encharcar. A colheita frequente também favorece a ramificação.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "30-40cm entre as plantas",
+                luz: "Mínimo de 6 horas de sol direto",
+                proteção: "Utilize cobertura morta para conservar a umidade do solo",
+                ideal: "20 a 30°C",
+                tolerancia: "Não tolera geadas nem frio intenso",
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Ingrediente essencial em molhos, saladas, pizzas e pratos italianos." },
@@ -496,18 +495,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, rico em matéria orgânica e com boa retenção de umidade, preferencialmente com pH entre 6,0 e 7,5. Pode ser cultivada em vasos suspensos, jardineiras ou diretamente no solo, em locais protegidos do sol direto.",
+                exposição: "Prefere meia-sombra, com luz indireta abundante. Sol direto pode queimar as folhas. Ideal para ambientes internos iluminados ou áreas externas sombreadas.",
+                manutenção: "Regue com frequência, mantendo o solo levemente úmido, mas nunca encharcado. Retire folhas secas ou danificadas para estimular brotações novas. Pode-se borrifar água nas folhas nos dias mais secos para manter a umidade. Evite deixar o substrato secar completamente.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "40-60cm entre as plantas",
+                luz: "Luz indireta ou filtrada por pelo menos 6 horas",
+                proteção: "Proteja contra sol forte direto e ventos intensos",
+                ideal: "18 a 25°C",
+                tolerancia: "Não tolera geadas nem frio intenso abaixo de 10°C",
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Excelente para decoração de interiores, especialmente em vasos suspensos." },
@@ -569,18 +568,18 @@ const plantsData = [
                 monitoramento: "Monitoramento: semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, arenoso e com boa fertilidade, preferencialmente com pH entre 6,0 e 7,5. Use uma mistura com areia grossa, terra comum e composto orgânico. Escolha um local com boa exposição solar e proteção contra encharcamento.",
+                exposição: "Requer sol pleno para um crescimento saudável e produção adequada do gel. Mínimo de 6 horas de sol direto por dia.",
+                manutenção: "Regue apenas quando o solo estiver completamente seco. Evite molhar o centro da planta. Retire folhas externas e velhas para estimular o crescimento de novas. A babosa é bastante resistente à seca, mas sensível ao excesso de água.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "40-60cm entre as plantas",
+                luz: "Mínimo de 6 horas de sol direto",
+                proteção: "Utilize cobertura morta ao redor da base para conservar a umidade",
+                ideal: "20 a 30°C",
+                tolerancia: "Não tolera geadas nem frio intenso abaixo de 10°C",
             },
             uses: [
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "O gel das folhas é usado para tratar queimaduras, feridas e irritações na pele." },
@@ -642,18 +641,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, preferencialmente arenoso, com boa aeração e baixo teor de matéria orgânica. O pH ideal varia entre 6,0 e 7,5. É essencial evitar solos compactados e úmidos. Use substrato próprio para cactos ou misturas com areia grossa e perlita.",
+                exposição: "Requer sol pleno para um crescimento saudável e floração (em espécies floríferas). Mínimo de 6 horas de sol direto por dia.",
+                manutenção: "Regue de forma espaçada, apenas quando o substrato estiver completamente seco. Durante o inverno, reduza drasticamente as regas. Não tolera excesso de umidade. Remova partes secas ou danificadas com cuidado. Replante a cada 2 ou 3 anos para renovação do substrato.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "20-50cm entre as plantas",
+                luz: "Mínimo de 6 horas de sol direto",
+                proteção: "proteja do sol intenso nas horas mais fortes do dia para evitar queimaduras",
+                ideal: "20 a 30°C",
+                tolerancia: "Tolera altas temperaturas e seca prolongada",
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Popular em jardins de pedras, vasos e como elemento decorativo de baixa manutenção." },
@@ -715,18 +714,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, arenoso e com boa fertilidade, preferencialmente com pH entre 6,0 e 7,5. Escolha um local que receba bastante sol direto, essencial para o desenvolvimento saudável da planta.",
+                exposição: "Requer sol pleno para um crescimento saudável e produção intensa de folhas aromáticas. Mínimo de 6 horas de sol direto.",
+                manutenção: "Realize podas frequentes para evitar florescimento precoce e estimular o crescimento de novas folhas. O hortelã aprecia solo úmido, portanto, regue regularmente, evitando encharcamento. Recomenda-se o cultivo em vasos ou canteiros delimitados, pois a planta se espalha com facilidade.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "30-40cm entre as plantas",
+                luz: "Mínimo de 6 horas de sol direto",
+                proteção: "Utilize cobertura morta para conservar a umidade do sol",
+                ideal: "15 a 25°C",
+                tolerancia: "Não tolera geadas severas",
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Usada em chás, sucos, sobremesas, molhos e para temperar carnes." },
@@ -788,18 +787,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, arenoso e com boa fertilidade, preferencialmente com pH entre 6,0 e 7,5. Escolha um local que receba bastante sol direto, essencial para o desenvolvimento saudável da planta.",
+                exposição: "Requer sol pleno para um crescimento saudável e frutificação abundante. Mínimo de 6 horas de sol direto.",
+                manutenção: "Realize tutoramento (estacas ou suportes) para sustentar a planta e evitar contato dos frutos com o solo. Faça podas leves para retirar brotações laterais (ladrões) e folhas inferiores. Regue com frequência, mantendo o solo úmido, mas nunca encharcado.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "40-60cm entre as plantas",
+                luz: "Mínimo de 6 horas de sol direto",
+                proteção: "Utilize cobertura morta para conservar a umidade do solo",
+                ideal: "20 a 28°C",
+                tolerancia: "Sensível a geadas e a variações bruscas de temperatura",
             },
             uses: [
                 { name: "Culinário", icon: "fas fa-utensils", text: "Ideal para saladas, molhos, aperitivos e como lanche saudável." }
@@ -860,18 +859,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, leve e rico em matéria orgânica, preferencialmente com pH entre 6,0 e 7,5. Pode ser cultivada em vasos, jardineiras ou diretamente no solo. Ideal para interiores ou áreas com luz filtrada..",
+                exposição: "Prefere luz indireta ou meia-sombra. Evite sol direto, que pode queimar suas folhas, especialmente nas horas mais quentes do dia.",
+                manutenção: "Pode ser conduzida como planta pendente ou trepadeira. Realize podas para controlar o tamanho e estimular novas brotações. Rega moderada — apenas quando o solo estiver seco na superfície. Tolera períodos curtos de seca, mas não encharque o solo.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "Primavera",
+                espaçamento: "30-50cm entre as plantas",
+                luz: "Luz indireta ou meia-sombra com boa luminosidade",
+                proteção: "Evite exposição direta ao sol forte",
+                ideal: "18 a 28°C",
+                tolerancia: "Não tolera geadas nem frio intenso abaixo de 15°C",
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Excelente para decoração de interiores, em vasos suspensos ou como trepadeira." },
@@ -933,18 +932,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, arenoso e com boa fertilidade, preferencialmente com pH entre 6,0 e 7,5. Escolha um local que receba bastante sol direto, essencial para o desenvolvimento saudável da planta.",
+                exposição: "Requer sol pleno para um crescimento saudável e frutificação abundante. Mínimo de 6 horas de sol direto.",
+                manutenção: "Realize podas leves após a frutificação para estimular a formação de novos ramos. A pitangueira é resistente à seca moderada após bem estabelecida, mas o solo deve permanecer levemente úmido durante a fase de desenvolvimento dos frutos. Evite encharcamento.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "primavera",
+                espaçamento: "4-6 metros entre as plantas",
+                luz: "Mínimo de 6 horas de sol direto.",
+                proteção: "Utilize cobertura morta ao redor do tronco para conservar a umidade",
+                ideal: "20 a 30°C",
+                tolerancia: "Tolera frio leve, mas não resiste bem a geadas severas",
             },
             uses: [
                 { name: "Alimentício", icon: "fas fa-utensils", text: "Os frutos são consumidos in natura, em sucos, geleias e doces." },
@@ -1006,18 +1005,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
+                plantio: "Plante em solo bem drenado, arenoso e com boa fertilidade, preferencialmente com pH entre 6,0 e 7,5. Escolha um local que receba bastante sol direto, essencial para o desenvolvimento saudável da planta.",
                 exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                manutenção: "Remova flores secas para estimular novas florações. A camomila é moderadamente resistente à seca, mas o solo deve permanecer levemente úmido durante a floração. Evite encharcar. Pode ser sensível a ventos fortes e geadas.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "primavera",
+                espaçamento: "20-30cm entre as plantas",
+                luz: "Mínimo de 6 horas de sol direto",
+                proteção: "Utilize cobertura morta para conservar a umidade do solo",
+                ideal: "15 a 25°C",
+                tolerancia: "Não tolera geadas severas",
             },
             uses: [
                 { name: "Medicinal", icon: "fas fa-mortar-pestle", text: "Usada para chás com propriedades calmantes, anti-inflamatórias e digestivas." },
@@ -1079,18 +1078,18 @@ const plantsData = [
                 monitoramento: "semanal"
             },
             cultivation:{
-                plantio: "Plante em solo bem drenado, rico em matéria orgânica, com pH entre 6.0 e 7.0. Escolha um local com pelo menos 6 horas de sol direto por dia.",
-                exposição: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                manutenção: "Remova flores murchas para estimular novas florações. Proteja contra geadas em regiões mais frias.",
+                plantio: "Plante em solo bem drenado, leve e rico em matéria orgânica, preferencialmente com pH entre 6,0 e 7,5. Evite encharcamento, pois a planta é sensível ao excesso de umidade nas raízes.",
+                exposição: "Prefere luz indireta brilhante, mas tolera sombra parcial. A exposição direta ao sol intenso pode queimar suas folhas, especialmente nas horas mais quentes do dia.",
+                manutenção: "Remova folhas amareladas ou danificadas para manter o visual limpo. A zamioculca é bastante resistente e requer pouca rega — apenas quando o solo estiver seco. Evite solos constantemente úmidos. Pode ser cultivada em vasos ou direto no solo em regiões tropicais.",
                 
             },
             cultivationtips: {
-                estação: "Melhor época: primavera",
-                espaçamento: "Espaçamento: 30-60cm entre plantas",
-                luz: "Requer sol pleno para um crescimento saudável e floração abundante. Mínimo de 6 horas de sol direto.",
-                proteção: "Proteção: cobertura morta para conservar umidade",
-                ideal: "Temperatura ideal: 15-25°C",
-                tolerancia: "Tolerância: não tolera geadas severas",
+                estação: "primavera",
+                espaçamento: "30-50cm entre as plantas",
+                luz: "Luz indireta ou filtrada por pelo menos 6 horas",
+                proteção: "Evite exposição ao sol forte direto; mantenha em local bem ventilado",
+                ideal: "18 a 28°C",
+                tolerancia: "Não tolera geadas nem temperaturas abaixo de 15°Cs",
             },
             uses: [
                 { name: "Ornamental", icon: "fas fa-palette", text: "Ideal para ambientes internos com pouca luz, como escritórios e salas." },
@@ -1159,7 +1158,7 @@ const plantsData = [
             },
             cultivationtips: {
                 estação: "Primavera",
-                espaçamento: "40 a 60 cm entre plantas",
+                espaçamento: "40 a 60 cm entre as plantas",
                 luz: "Mínimo de 6 horas de sol direto",
                 proteção: "Utilize cobertura morta para conservar a umidade do solo",
                 ideal: "15 a 25°C",
@@ -1232,7 +1231,7 @@ const plantsData = [
             },
             cultivationtips: {
                 estação: "Primavera",
-                espaçamento: "30 a 50 cm entre plantas",
+                espaçamento: "30 a 50 cm entre as plantas",
                 luz: "Luz indireta ou meia sombra",
                 proteção: "Utilize cobertura morta para ajudar a manter a umidade adequada no solo",
                 ideal: "18 a 25°C",
@@ -1304,7 +1303,7 @@ const plantsData = [
             },
             cultivationtips: {
                 estação: "Primavera",
-                espaçamento: "4 a 6 metros entre plantas",
+                espaçamento: "4 a 6 metros entre as plantas",
                 luz: "Mínimo de 6 horas de sol direto por dia",
                 proteção: "Use cobertura morta para conservar a umidade do solo",
                 ideal: "20 a 30°C",
@@ -1377,9 +1376,9 @@ const plantsData = [
             },
             cultivationtips: {
                 estação: "Primavera",
-                espaçamento: "50 a 100 cm entre plantas",
-                luz: "Luz indireta brilhante, evitando sol pleno intenso",
-                proteção: "Use cobertura morta para conservar a umidade do solo e proteger as raízes",
+                espaçamento: "50 a 100 cm entre as plantas",
+                luz: "Luz indireta, evitando sol pleno intenso",
+                proteção: "Use cobertura morta para conservar a umidade do solo",
                 ideal: "18 a 27°C",
                 tolerancia: "Não tolera geadas severas",
             },
@@ -1450,7 +1449,7 @@ const plantsData = [
             },
             cultivationtips: {
                 estação: "primavera",
-                espaçamento: "30-60cm entre plantas",
+                espaçamento: "30-60cm entre as plantas",
                 luz: "Pelo menos 6 horas de sol direto por dia",
                 proteção: "Use cobertura morta para conservar a umidade do solo",
                 ideal: "15-25°C",
